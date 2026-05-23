@@ -75,6 +75,16 @@ Yegor Bugayenko's [XDSD methodology](https://www.xdsd.org/) was originally desig
 
 Background research is in [`research/zerocracy_2026_status_and_evolution.md`](./research/zerocracy_2026_status_and_evolution.md) and [`research/yegor_ideas_for_solo_dev_workflow.md`](./research/yegor_ideas_for_solo_dev_workflow.md).
 
+## Talk transcript
+
+The full SRT and plain-text transcript of Yegor's 2016 XDSD talk live on the `talks` branch:
+
+```
+git checkout talks
+```
+
+Kept off `main` so a default clone stays lean.
+
 ## Credits
 
 All philosophies are distilled from [Yegor Bugayenko](https://www.yegor256.com/)'s writings on eXtremely Distributed Software Development, including:
