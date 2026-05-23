@@ -12,12 +12,12 @@
 ```
 yegor/
 ├── .git/
-├── .gitignore                          # transcripts, scripts/, .claude/, OS junk
+├── .gitignore                          # scripts/, .claude/, OS junk
 ├── project_setup_notes.md              # this file
 ├── XDSD_YouTube_Talk/
 │   ├── key_takeaways.md                # tracked
-│   ├── XDSD_talk_yegor_2016.srt        # gitignored (recoverable via yt-dlp)
-│   └── XDSD_talk_yegor_2016.txt        # gitignored
+│   ├── XDSD_talk_yegor_2016.srt        # tracked on `talks` branch only
+│   └── XDSD_talk_yegor_2016.txt        # tracked on `talks` branch only
 ├── research/                           # deep reference docs (tracked)
 │   ├── philosophy_01_pdd_puzzle_driven_development.md
 │   ├── philosophy_02_bdd_bug_driven_development.md
