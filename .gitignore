@@ -1,7 +1,3 @@
-# Transcripts (recoverable via yt-dlp)
-XDSD_YouTube_Talk/*.srt
-XDSD_YouTube_Talk/*.txt
-
 # Local utility scripts (per user preference — kept out of source control)
 scripts/
 

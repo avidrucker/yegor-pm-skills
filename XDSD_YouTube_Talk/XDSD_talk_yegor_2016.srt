@@ -1,0 +1,5308 @@
+1
+00:00:00,030 --> 00:00:02,270
+Yegor: A few words about myself just quickly.
+
+2
+00:00:02,700 --> 00:00:05,600
+I'm writing software for 25 years,
+
+3
+00:00:05,600 --> 00:00:07,780
+starting in school.
+
+4
+00:00:08,080 --> 00:00:10,670
+For about 15 years, I was managing a team,
+
+5
+00:00:10,670 --> 00:00:14,130
+different teams, up to 120 people, sometimes of developers,
+
+6
+00:00:14,130 --> 00:00:16,700
+in Ukraine mostly.
+
+7
+00:00:17,540 --> 00:00:19,800
+I'm also a Java developer myself, a project manager,
+
+8
+00:00:19,800 --> 00:00:22,560
+and an owner of a company [which]
+
+9
+00:00:22,560 --> 00:00:24,740
+was, you know, managing all these people.
+
+10
+00:00:24,740 --> 00:00:27,210
+You can see my Twitter account.
+
+11
+00:00:27,210 --> 00:00:29,820
+You can see my blog. Please subscribe.
+
+12
+00:00:29,820 --> 00:00:30,990
+That will be interesting, because everything
+
+13
+00:00:30,990 --> 00:00:32,970
+I'm gonna say today is explained in my
+
+14
+00:00:32,970 --> 00:00:34,590
+blog and many different articles. So,
+
+15
+00:00:34,590 --> 00:00:36,660
+I'm gonna present [to] you the way we manage
+
+16
+00:00:36,660 --> 00:00:38,730
+programmers, the way we manage projects,
+
+17
+00:00:38,730 --> 00:00:41,040
+and it's quite different from everything
+
+18
+00:00:41,040 --> 00:00:42,810
+you've seen in many - in all - other places.
+
+19
+00:00:42,810 --> 00:00:45,030
+So, that's why you definitely will
+
+20
+00:00:45,030 --> 00:00:47,190
+be interested to see more content from me.
+
+21
+00:00:47,190 --> 00:00:50,580
+Here's the subject. Here's the problem.
+
+22
+00:00:50,580 --> 00:00:52,800
+So, in all my projects, for many, many
+
+23
+00:00:52,800 --> 00:00:55,770
+years I had the same [issue] as these people are
+
+24
+00:00:55,770 --> 00:00:58,170
+saying about the industry in general. So
+
+25
+00:00:58,170 --> 00:00:59,850
+all our projects, all the software
+
+26
+00:00:59,850 --> 00:01:01,730
+development we have, is basically chaos.
+
+27
+00:01:01,730 --> 00:01:06,210
+So, we fail, we slip the schedule,
+
+28
+00:01:06,210 --> 00:01:09,030
+we miss time, we don't complete
+
+29
+00:01:09,030 --> 00:01:11,160
+the requirements, we don't deliver,
+
+30
+00:01:11,160 --> 00:01:13,260
+we spend money, and customers are not happy.
+
+31
+00:01:13,260 --> 00:01:15,990
+I've had that for 15 years - in all - in most
+
+32
+00:01:15,990 --> 00:01:18,090
+of our projects. And, I found
+
+33
+00:01:18,090 --> 00:01:20,340
+statistics in the report which says
+
+34
+00:01:20,340 --> 00:01:22,320
+we're in chaos. And, they say that about
+
+35
+00:01:22,320 --> 00:01:25,050
+like 94 - which is almost a hundred -
+
+36
+00:01:25,050 --> 00:01:27,510
+percent of projects actually
+
+37
+00:01:27,510 --> 00:01:30,270
+fail and have to restart. That's what the
+
+38
+00:01:30,270 --> 00:01:31,830
+report says about the entire industry.
+
+39
+00:01:31,830 --> 00:01:34,080
+And, they say that only seven percent of
+
+40
+00:01:34,080 --> 00:01:36,030
+[the] projects failed because of
+
+41
+00:01:36,030 --> 00:01:38,940
+technical incompetence. So,
+
+42
+00:01:38,940 --> 00:01:40,740
+the problem is not with programmers.
+
+43
+00:01:40,740 --> 00:01:43,200
+The problem is with the management.
+
+44
+00:01:43,200 --> 00:01:45,030
+They fail because we miss requirements,
+
+45
+00:01:45,030 --> 00:01:46,500
+because we don't understand what to do,
+
+46
+00:01:46,500 --> 00:01:48,210
+because we cannot control what we do,
+
+47
+00:01:48,210 --> 00:01:50,460
+because we cannot manage ourselves. It's not because
+
+48
+00:01:50,460 --> 00:01:52,110
+we're bad programmers, not because we
+
+49
+00:01:52,110 --> 00:01:54,240
+don't know Java or Ruby or whatever.
+
+50
+00:01:54,240 --> 00:01:56,100
+It's because we don't manage ourselves the
+
+51
+00:01:56,100 --> 00:01:57,990
+right way. And, I've had the same [issue], so
+
+52
+00:01:57,990 --> 00:01:59,760
+that's why I tried to solve the problem,
+
+53
+00:01:59,760 --> 00:02:02,240
+and invented the methodology which
+
+54
+00:02:02,240 --> 00:02:04,650
+actually, in my case, in my experience,
+
+55
+00:02:04,650 --> 00:02:06,390
+in our projects, actually helped us
+
+56
+00:02:06,390 --> 00:02:09,150
+a lot to to resolve that [issue] and
+
+57
+00:02:09,150 --> 00:02:12,210
+be successful. There are five things that -
+
+58
+00:02:12,210 --> 00:02:13,690
+the methodology is quite big, but
+
+59
+00:02:13,690 --> 00:02:15,310
+there are five things - I want to
+
+60
+00:02:15,310 --> 00:02:17,590
+highlight today. They're quite
+
+61
+00:02:17,590 --> 00:02:18,910
+controversial. That's why it's
+
+62
+00:02:18,910 --> 00:02:21,850
+interesting. So, five things. How we are
+
+63
+00:02:21,850 --> 00:02:23,410
+different from everything you've seen before:
+
+64
+00:02:23,410 --> 00:02:29,170
+Thing number one: Traditionally, we
+
+65
+00:02:29,170 --> 00:02:31,330
+believe, traditionally you believe, or
+
+66
+00:02:31,330 --> 00:02:33,790
+they believe, that the teamwork is so
+
+67
+00:02:33,790 --> 00:02:35,710
+important for the success of the project.
+
+68
+00:02:35,710 --> 00:02:39,400
+We think that it's so important to
+
+69
+00:02:39,400 --> 00:02:41,230
+keep the team together, to make sure that
+
+70
+00:02:41,230 --> 00:02:43,390
+people stay together, that they are
+
+71
+00:02:43,390 --> 00:02:45,970
+motivated to work together. And, the job
+
+72
+00:02:45,970 --> 00:02:48,340
+of the manager is to make sure there's a
+
+73
+00:02:48,340 --> 00:02:50,650
+team there, [and to] make sure that people match
+
+74
+00:02:50,650 --> 00:02:53,080
+to each other. And, this is
+
+75
+00:02:53,080 --> 00:02:55,600
+the key factor for the
+
+76
+00:02:55,600 --> 00:02:57,220
+success of this team, for the success of
+
+77
+00:02:57,220 --> 00:03:01,480
+the project. So, we just spend a
+
+78
+00:03:01,480 --> 00:03:04,190
+lot of time on on the team building, on team spirit,
+
+79
+00:03:04,480 --> 00:03:06,740
+on making sure the people love each other.
+
+80
+00:03:06,740 --> 00:03:08,940
+And, that's how we guarantee the success.
+
+81
+00:03:09,790 --> 00:03:12,520
+I think that this approach is for lazy managers.
+
+82
+00:03:13,180 --> 00:03:14,180
+This is for people
+
+83
+00:03:14,180 --> 00:03:15,470
+who cannot understand how to
+
+84
+00:03:15,470 --> 00:03:17,560
+manage programmers. This is for people
+
+85
+00:03:17,560 --> 00:03:19,660
+who are not really managers. This is what
+
+86
+00:03:19,660 --> 00:03:21,310
+causes troubles in projects. This is what
+
+87
+00:03:21,310 --> 00:03:24,400
+this is what leads to loss of the
+
+88
+00:03:24,400 --> 00:03:26,380
+"A players". Do you know what "A players,
+
+89
+00:03:26,380 --> 00:03:28,570
+B players, and C players" is? This is the
+
+90
+00:03:28,570 --> 00:03:30,370
+terminology from the sales [world] actually, but,
+
+91
+00:03:30,370 --> 00:03:32,230
+I think it can be applied to programming
+
+92
+00:03:32,230 --> 00:03:33,970
+as well. So, in any team, we have
+
+93
+00:03:33,970 --> 00:03:35,620
+A players, B players, and C players.
+
+94
+00:03:35,620 --> 00:03:36,910
+Like senior programmers, medium
+
+95
+00:03:36,910 --> 00:03:38,590
+programmers, and junior programmers.
+
+96
+00:03:38,590 --> 00:03:40,510
+So A players, they're always - you know - aiming
+
+97
+00:03:40,510 --> 00:03:41,740
+for excellence. They're always
+
+98
+00:03:41,740 --> 00:03:43,960
+trying to do better. C players are
+
+99
+00:03:43,960 --> 00:03:45,910
+the people who we kind of have to remove
+
+100
+00:03:45,910 --> 00:03:47,950
+from the team. So, this approach with the
+
+101
+00:03:47,950 --> 00:03:50,500
+teamwork in our experience is really
+
+102
+00:03:50,500 --> 00:03:52,450
+good for C players and its really good
+
+103
+00:03:52,450 --> 00:03:55,300
+for lazy managers. In our case, we do the
+
+104
+00:03:55,300 --> 00:03:58,690
+opposite. We aim for individual
+
+105
+00:03:58,690 --> 00:04:00,700
+responsibility. Not team responsibility,
+
+106
+00:04:00,700 --> 00:04:02,650
+but individual responsibility, always. So,
+
+107
+00:04:02,650 --> 00:04:04,330
+we don't like the idea of the team in
+
+108
+00:04:04,330 --> 00:04:06,490
+general. We always pay attention to, "Who
+
+109
+00:04:06,490 --> 00:04:08,590
+is doing what?", "What's the personal scope
+
+110
+00:04:08,590 --> 00:04:10,630
+of the task?", and we scope that task
+
+111
+00:04:10,630 --> 00:04:12,850
+individually. So, we always assign tasks
+
+112
+00:04:12,850 --> 00:04:14,890
+individually to programmers. We always
+
+113
+00:04:14,890 --> 00:04:17,260
+give tasks to [the programmers.] We always control the
+
+114
+00:04:17,260 --> 00:04:19,060
+results of each programmer individually.
+
+115
+00:04:19,060 --> 00:04:20,710
+So - we never - we don't do the
+
+116
+00:04:20,710 --> 00:04:23,410
+teamwork at all. So, we clearly define the
+
+117
+00:04:23,410 --> 00:04:25,600
+rules of the work. And this is
+
+118
+00:04:25,600 --> 00:04:28,460
+a lot of job we do on the management side.
+
+119
+00:04:28,460 --> 00:04:30,440
+We always have an architect on our team
+
+120
+00:04:30,440 --> 00:04:32,360
+who is the person who is
+
+121
+00:04:32,360 --> 00:04:34,070
+responsible - personally responsible - for
+
+122
+00:04:34,070 --> 00:04:35,210
+the success of the project,
+
+123
+00:04:35,210 --> 00:04:37,330
+and who is making all technical decisions.
+
+124
+00:04:37,520 --> 00:04:39,010
+So, we don't have any democracy
+
+125
+00:04:39,010 --> 00:04:41,310
+in our teams. We don't vote for technical decisions.
+
+126
+00:04:41,490 --> 00:04:42,860
+It's always the architects who
+
+127
+00:04:42,860 --> 00:04:44,720
+makes the decisions and always the team -
+
+128
+00:04:44,720 --> 00:04:46,610
+the players or developers - who are
+
+129
+00:04:46,610 --> 00:04:48,590
+responsible for their own scope of work -
+
+130
+00:04:48,590 --> 00:04:52,100
+for their own tasks. We always work
+
+131
+00:04:52,100 --> 00:04:54,320
+remotely. So, that's probably what is
+
+132
+00:04:54,320 --> 00:04:56,030
+different from other teams. But, we work
+
+133
+00:04:56,030 --> 00:04:57,860
+remotely. So, all our programmers - they
+
+134
+00:04:57,860 --> 00:04:59,690
+stay in their own places, in their
+
+135
+00:04:59,690 --> 00:05:02,030
+own countries, and we work. We don't have
+
+136
+00:05:02,030 --> 00:05:04,520
+a central office at all. So, all our teams
+
+137
+00:05:04,520 --> 00:05:06,500
+work remotely. And, they communicate
+
+138
+00:05:06,500 --> 00:05:09,140
+only electronically. So, that also
+
+139
+00:05:09,140 --> 00:05:10,940
+helps us to stay away from this "team idea"
+
+140
+00:05:10,940 --> 00:05:13,670
+and to focus on an "individual results" idea.
+
+141
+00:05:13,670 --> 00:05:17,000
+That's [the] first thing. The second one
+
+142
+00:05:17,000 --> 00:05:21,530
+is over time. Traditionally - (Yegor points at slides) - What's on
+
+143
+00:05:21,530 --> 00:05:22,730
+the left it's "traditionally". What's on
+
+144
+00:05:22,730 --> 00:05:23,780
+the right is our approach. So,
+
+145
+00:05:23,780 --> 00:05:27,320
+traditionally, programmers are managed by
+
+146
+00:05:27,320 --> 00:05:30,380
+stress, in most cases. So, we just know
+
+147
+00:05:30,380 --> 00:05:34,130
+that programmers [are], in general, I mean
+
+148
+00:05:34,130 --> 00:05:35,900
+managers assume that programmers, in
+
+149
+00:05:35,900 --> 00:05:37,820
+general, are kind of lazy. So, the best way
+
+150
+00:05:37,820 --> 00:05:39,560
+to manage them is to put the deadlines
+
+151
+00:05:39,560 --> 00:05:41,750
+as close as possible, and then stress
+
+152
+00:05:41,750 --> 00:05:43,760
+them so they work overtime. They work on
+
+153
+00:05:43,760 --> 00:05:45,380
+the weekend, and that's how they will
+
+154
+00:05:45,380 --> 00:05:46,910
+achieve better results. That's how they
+
+155
+00:05:46,910 --> 00:05:48,530
+will be more or less under control.
+
+156
+00:05:48,530 --> 00:05:50,480
+That's the only way bad managers can
+
+157
+00:05:50,480 --> 00:05:51,830
+control people - [it] is just to keep them
+
+158
+00:05:51,830 --> 00:05:54,020
+under stress. And that's how programmers
+
+159
+00:05:54,020 --> 00:05:56,870
+will do something. So we give them
+
+160
+00:05:56,870 --> 00:05:58,940
+deadlines, we give them stress, and we get
+
+161
+00:05:58,940 --> 00:06:01,010
+overtime. So they work more, they spend
+
+162
+00:06:01,010 --> 00:06:02,570
+more, and we believe, and - managers in
+
+163
+00:06:02,570 --> 00:06:04,310
+general assume that if people stay
+
+164
+00:06:04,310 --> 00:06:05,960
+overtime, if they stay in the office,
+
+165
+00:06:05,960 --> 00:06:08,030
+after the office is closed, these are the
+
+166
+00:06:08,030 --> 00:06:09,230
+"good programmers". These are the good
+
+167
+00:06:09,230 --> 00:06:11,150
+developers who stay over time to spend
+
+168
+00:06:11,150 --> 00:06:13,910
+more time in the office. In our case, it's
+
+169
+00:06:13,910 --> 00:06:16,580
+quite the opposite. So, we don't want
+
+170
+00:06:16,580 --> 00:06:18,560
+programmers to work more. We want to work
+
+171
+00:06:18,560 --> 00:06:21,710
+them less. We expect them to develop and
+
+172
+00:06:21,710 --> 00:06:23,540
+to commit their code, and to close their
+
+173
+00:06:23,540 --> 00:06:25,490
+tasks, and to close their tickets, and to
+
+174
+00:06:25,490 --> 00:06:27,710
+do anything voluntarily - only when they
+
+175
+00:06:27,710 --> 00:06:29,990
+want to do that. So, we allow our
+
+176
+00:06:29,990 --> 00:06:31,970
+programmers to reject tasks if they
+
+177
+00:06:31,970 --> 00:06:33,770
+don't want to do them. If they don't feel
+
+178
+00:06:33,770 --> 00:06:36,200
+like it. So, we just give them tasks and
+
+179
+00:06:36,200 --> 00:06:37,730
+allow them to choose whether it's a good
+
+180
+00:06:37,730 --> 00:06:39,770
+time for them to work on them or not.
+
+181
+00:06:39,770 --> 00:06:41,600
+Whether it's a good task for them or not. And,
+
+182
+00:06:41,600 --> 00:06:44,030
+whether it's a good time for them to do
+
+183
+00:06:44,030 --> 00:06:46,310
+it now. And, in most cases, most projects,
+
+184
+00:06:46,310 --> 00:06:48,020
+our programmers, when the project is full
+
+185
+00:06:48,020 --> 00:06:50,090
+of work - and, we have a lot of tasks - they
+
+186
+00:06:50,090 --> 00:06:53,660
+spend three, four hours a day for the
+
+187
+00:06:53,660 --> 00:06:55,310
+development, not more. So, we never work
+
+188
+00:06:55,310 --> 00:06:57,140
+eight hours a day. Forget the
+
+189
+00:06:57,140 --> 00:06:58,730
+overtime. We don't have overtime at all.
+
+190
+00:06:58,730 --> 00:07:01,130
+So three, four hours a day. It's - in my
+
+191
+00:07:01,130 --> 00:07:03,200
+experience - it's the maximum time a good
+
+192
+00:07:03,200 --> 00:07:05,750
+programmer can spend a day for actually
+
+193
+00:07:05,750 --> 00:07:07,520
+productive work. And they do it
+
+194
+00:07:07,520 --> 00:07:09,950
+voluntarily because, I'll say about it
+
+195
+00:07:09,950 --> 00:07:11,510
+later but, because we pay for results,
+
+196
+00:07:11,510 --> 00:07:13,730
+that's why they're really interested to
+
+197
+00:07:13,730 --> 00:07:15,410
+do the work, because, they get - you know -
+
+198
+00:07:15,410 --> 00:07:17,750
+they get money for that. So, they do
+
+199
+00:07:17,750 --> 00:07:19,940
+it when they feel like it. Sometimes they
+
+200
+00:07:19,940 --> 00:07:22,010
+commit a lot of time one week and the
+
+201
+00:07:22,010 --> 00:07:24,200
+next week they commit less time. So, the
+
+202
+00:07:24,200 --> 00:07:26,420
+graph jumps up and down. And, it's not
+
+203
+00:07:26,420 --> 00:07:27,800
+under control of the manager. The manager
+
+204
+00:07:27,800 --> 00:07:30,500
+doesn't push the person - any developer - to
+
+205
+00:07:30,500 --> 00:07:32,960
+any amount of work. If we don't
+
+206
+00:07:32,960 --> 00:07:34,940
+have enough - you know - resources, if we
+
+207
+00:07:34,940 --> 00:07:37,250
+don't have enough people to close all
+
+208
+00:07:37,250 --> 00:07:40,010
+our tasks, then our managers have to find
+
+209
+00:07:40,010 --> 00:07:42,200
+more people. Then we have to find more
+
+210
+00:07:42,200 --> 00:07:43,670
+resources - I mean developers, programmers,
+
+211
+00:07:43,670 --> 00:07:46,010
+resources, whatever. So, we find more of
+
+212
+00:07:46,010 --> 00:07:47,780
+these resources, and it's a job of a
+
+213
+00:07:47,780 --> 00:07:49,940
+manager how to - you know - to find more
+
+214
+00:07:49,940 --> 00:07:51,590
+more resources and give that
+
+215
+00:07:51,590 --> 00:07:54,080
+tasks to that people. But, we never stress
+
+216
+00:07:54,080 --> 00:07:55,820
+programmers. We never expect them to work
+
+217
+00:07:55,820 --> 00:08:00,020
+more than they want to. So, it's the job
+
+218
+00:08:00,020 --> 00:08:01,610
+of a manager. That's what I'm saying. So,
+
+219
+00:08:01,610 --> 00:08:03,710
+our managers are way more busy than
+
+220
+00:08:03,710 --> 00:08:05,570
+traditional managers, because they really
+
+221
+00:08:05,570 --> 00:08:07,160
+have to do the management work. They
+
+222
+00:08:07,160 --> 00:08:09,080
+don't need to stress anybody. They need
+
+223
+00:08:09,080 --> 00:08:12,560
+to schedule tasks on a timeline. So, we
+
+224
+00:08:12,560 --> 00:08:15,050
+don't have ever overtimes at all. Number
+
+225
+00:08:15,050 --> 00:08:18,860
+three is "Learnings." I'm going from this
+
+226
+00:08:18,860 --> 00:08:20,990
+from the [least] critical to the
+
+227
+00:08:20,990 --> 00:08:22,430
+more and more critical. So, "Learning".
+
+228
+00:08:22,430 --> 00:08:25,070
+Traditionally, in any project which I've
+
+229
+00:08:25,070 --> 00:08:30,370
+seen before, people, programmers, the core,
+
+230
+00:08:30,370 --> 00:08:34,010
+are the main holder of information and
+
+231
+00:08:34,010 --> 00:08:35,330
+knowledge. So, this is the most
+
+232
+00:08:35,330 --> 00:08:36,980
+knowledgeable part of any project. This
+
+233
+00:08:36,980 --> 00:08:38,480
+is the most important part of any
+
+234
+00:08:38,480 --> 00:08:41,450
+project. If programmers know enough about
+
+235
+00:08:41,450 --> 00:08:43,910
+the stuff they develop, then the project
+
+236
+00:08:43,910 --> 00:08:45,800
+is more or less successful. The more they
+
+237
+00:08:45,800 --> 00:08:47,870
+know, the more knowledgeable they are, the
+
+238
+00:08:47,870 --> 00:08:51,050
+higher the chances of success. And, if
+
+239
+00:08:51,050 --> 00:08:53,090
+somebody - someone new - [a]
+
+240
+00:08:53,090 --> 00:08:55,460
+new programmer joins the project, then it
+
+241
+00:08:55,460 --> 00:08:57,620
+takes some time to ramp up that person,
+
+242
+00:08:57,620 --> 00:09:01,250
+to - you know - to teach that person all
+
+243
+00:09:01,250 --> 00:09:02,540
+the new technologies and everything
+
+244
+00:09:02,540 --> 00:09:04,100
+which is in the project. And, it takes a
+
+245
+00:09:04,100 --> 00:09:05,690
+month. It takes two months. And, it takes
+
+246
+00:09:05,690 --> 00:09:07,880
+sometimes three months. So, it takes long
+
+247
+00:09:07,880 --> 00:09:10,040
+enough to bring somebody new to the
+
+248
+00:09:10,040 --> 00:09:11,420
+project. This is the traditional way. That's
+
+249
+00:09:11,420 --> 00:09:14,840
+what we have in most projects. And, in
+
+250
+00:09:14,840 --> 00:09:16,880
+most cases, we have so-called experts -
+
+251
+00:09:16,880 --> 00:09:18,590
+subject-matter experts - so, people who
+
+252
+00:09:18,590 --> 00:09:22,340
+know most of the - they possess the
+
+253
+00:09:22,340 --> 00:09:24,050
+majority of the knowledge in the project.
+
+254
+00:09:24,050 --> 00:09:26,210
+So, they know a lot. And, these people are
+
+255
+00:09:26,210 --> 00:09:28,880
+the key decision-makers in the project.
+
+256
+00:09:28,880 --> 00:09:31,130
+If we lose that person in a traditional
+
+257
+00:09:31,130 --> 00:09:33,710
+environment, if we lose that expert, we
+
+258
+00:09:33,710 --> 00:09:35,810
+lose a lot. And that's why [these] people
+
+259
+00:09:35,810 --> 00:09:38,690
+kind of start to control the owners of
+
+260
+00:09:38,690 --> 00:09:40,730
+the project. It's not that the manager
+
+261
+00:09:40,730 --> 00:09:43,010
+who controls the the development
+
+262
+00:09:43,010 --> 00:09:44,390
+environment. It's the people, the experts,
+
+263
+00:09:44,390 --> 00:09:46,940
+who control people with the money. So,
+
+264
+00:09:46,940 --> 00:09:48,530
+they tell the customers what's going to
+
+265
+00:09:48,530 --> 00:09:50,330
+happen, not the customer says what's
+
+266
+00:09:50,330 --> 00:09:51,530
+gonna happen, but the people who are
+
+267
+00:09:51,530 --> 00:09:54,380
+experts. They start to manipulate people
+
+268
+00:09:54,380 --> 00:09:56,810
+with money. This is what I've
+
+269
+00:09:56,810 --> 00:09:58,640
+seen in a lot of places. We change that
+
+270
+00:09:58,640 --> 00:10:02,660
+completely. In our case, we don't really
+
+271
+00:10:02,660 --> 00:10:05,990
+like the idea of having people who know
+
+272
+00:10:05,990 --> 00:10:10,310
+too much in the project. We want
+
+273
+00:10:10,310 --> 00:10:14,420
+our artifacts - our documents - to know
+
+274
+00:10:14,420 --> 00:10:18,350
+"too much". We want our product to be self-
+
+275
+00:10:18,350 --> 00:10:21,320
+explainable so that anybody tomorrow
+
+276
+00:10:21,320 --> 00:10:23,240
+joins the project and can
+
+277
+00:10:23,240 --> 00:10:25,430
+understand everything in just a few
+
+278
+00:10:25,430 --> 00:10:29,090
+hours. It may sound crazy, but it really
+
+279
+00:10:29,090 --> 00:10:30,770
+happens in our projects. We bring
+
+280
+00:10:30,770 --> 00:10:32,870
+sometimes new programmers to the project
+
+281
+00:10:32,870 --> 00:10:34,940
+which is one year old. And, that new
+
+282
+00:10:34,940 --> 00:10:37,550
+developer starts writing code and making
+
+283
+00:10:37,550 --> 00:10:39,320
+new classes, writing new unit tests,
+
+284
+00:10:39,320 --> 00:10:42,380
+committing code, in just one hour. So, it
+
+285
+00:10:42,380 --> 00:10:44,090
+doesn't take a month or two months to
+
+286
+00:10:44,090 --> 00:10:46,730
+learn because we don't have experts. We
+
+287
+00:10:46,730 --> 00:10:48,410
+don't have people who know "too much". We
+
+288
+00:10:48,410 --> 00:10:51,500
+only have documents, and source code, and
+
+289
+00:10:51,500 --> 00:10:54,440
+diagrams which explain everything. How we
+
+290
+00:10:54,440 --> 00:10:58,370
+achieve that: We - first of all - we rotate
+
+291
+00:10:58,370 --> 00:11:00,980
+people. We change people from project to
+
+292
+00:11:00,980 --> 00:11:03,170
+project. We move them because we
+
+293
+00:11:03,170 --> 00:11:05,540
+understand that the more experts we have
+
+294
+00:11:05,540 --> 00:11:06,690
+the bigger is the trouble
+
+295
+00:11:06,690 --> 00:11:08,880
+for us. We don't want experts. We want
+
+296
+00:11:08,880 --> 00:11:12,480
+people [to] be - How [do] they say it? - like commodity
+
+297
+00:11:12,480 --> 00:11:14,460
+programmers. So, they're like - they can
+
+298
+00:11:14,460 --> 00:11:15,840
+work here, and then, tomorrow they can
+
+299
+00:11:15,840 --> 00:11:17,910
+work there. So they can go from project
+
+300
+00:11:17,910 --> 00:11:19,920
+to project and can contribute there as
+
+301
+00:11:19,920 --> 00:11:22,020
+effectively as they were contributing
+
+302
+00:11:22,020 --> 00:11:23,730
+yesterday in a different project. So,
+
+303
+00:11:23,730 --> 00:11:25,710
+first of all, we did - i'll say a
+
+304
+00:11:25,710 --> 00:11:28,980
+few words about it later - But, here we
+
+305
+00:11:28,980 --> 00:11:33,110
+rotate them. We change them. And, second,
+
+306
+00:11:33,110 --> 00:11:38,640
+we promote the idea of "always blame the
+
+307
+00:11:38,640 --> 00:11:40,050
+project, don't blame yourselves". If you
+
+308
+00:11:40,050 --> 00:11:41,640
+start working in a project, you don't
+
+309
+00:11:41,640 --> 00:11:43,110
+understand anything. You don't need to
+
+310
+00:11:43,110 --> 00:11:45,240
+learn. You need to say that the project
+
+311
+00:11:45,240 --> 00:11:47,460
+is not is not sufficient enough for me
+
+312
+00:11:47,460 --> 00:11:49,740
+to understand how it works. If you open
+
+313
+00:11:49,740 --> 00:11:51,540
+the piece of code, if you look at it, you
+
+314
+00:11:51,540 --> 00:11:52,800
+don't understand how it works.
+
+315
+00:11:52,800 --> 00:11:54,630
+You don't learn it. You don't ask anybody.
+
+316
+00:11:54,630 --> 00:11:56,490
+You don't find an expert. You just say,
+
+317
+00:11:56,490 --> 00:11:58,620
+"Hey, your class or your piece of code is
+
+318
+00:11:58,620 --> 00:12:01,350
+not clear enough. So, fix it." And then, we
+
+319
+00:12:01,350 --> 00:12:03,420
+fix it for you. And then, it will be easier
+
+320
+00:12:03,420 --> 00:12:05,430
+for you to understand it later. So, we
+
+321
+00:12:05,430 --> 00:12:07,950
+always ask programmers to blame us - the
+
+322
+00:12:07,950 --> 00:12:11,790
+project - for not being clear enough. And,
+
+323
+00:12:11,790 --> 00:12:14,520
+we fix that. We improve the quality of
+
+324
+00:12:14,520 --> 00:12:16,020
+the documentation. And, we bring it back
+
+325
+00:12:16,020 --> 00:12:18,420
+to you and ask, "Can you fix it now?" If you
+
+326
+00:12:18,420 --> 00:12:20,520
+can't fix it now, then again you blame
+
+327
+00:12:20,520 --> 00:12:22,680
+us. And then, in a number of [those] cycles,
+
+328
+00:12:22,680 --> 00:12:25,110
+eventually the project becomes as clear
+
+329
+00:12:25,110 --> 00:12:28,320
+for you so you can understand it in half
+
+330
+00:12:28,320 --> 00:12:31,020
+an hour. You probably have questions.
+
+331
+00:12:31,020 --> 00:12:34,650
+We'll get back to it. [audience laughs] Number four: We have
+
+332
+00:12:34,650 --> 00:12:39,080
+five in total. Number four: "Meetings"
+
+333
+00:12:39,080 --> 00:12:42,570
+Traditionally, people believe that the
+
+334
+00:12:42,570 --> 00:12:44,880
+more programmers communicate, the more
+
+335
+00:12:44,880 --> 00:12:47,250
+meetings they have, the higher the
+
+336
+00:12:47,250 --> 00:12:49,440
+chances of success in the project. The
+
+337
+00:12:49,440 --> 00:12:51,510
+more - the closer - they stay together, the
+
+338
+00:12:51,510 --> 00:12:53,670
+more of these face-to-face communications
+
+339
+00:12:53,670 --> 00:12:55,890
+they have, the higher the chances that
+
+340
+00:12:55,890 --> 00:12:57,240
+they will actually understand what's
+
+341
+00:12:57,240 --> 00:12:58,650
+going on. And, they will produce something.
+
+342
+00:12:58,650 --> 00:13:01,290
+So, that's why we have these Slack chats. We
+
+343
+00:13:01,290 --> 00:13:02,700
+have these Skype calls. We have
+
+344
+00:13:02,700 --> 00:13:05,460
+conference calls. Sometimes, the senior
+
+345
+00:13:05,460 --> 00:13:07,140
+developers spend half of their day
+
+346
+00:13:07,140 --> 00:13:09,240
+or maybe sometimes the full day in just
+
+347
+00:13:09,240 --> 00:13:11,010
+meetings and just talking and talking
+
+348
+00:13:11,010 --> 00:13:13,140
+and exchanging information. And, this is
+
+349
+00:13:13,140 --> 00:13:15,180
+what - you know - managers believe is a good
+
+350
+00:13:15,180 --> 00:13:17,520
+way to do. They think that senior
+
+351
+00:13:17,520 --> 00:13:19,110
+developers have to be in [those] meetings.
+
+352
+00:13:19,110 --> 00:13:19,380
+They [the senior developers]
+
+353
+00:13:19,380 --> 00:13:21,360
+have to spend time on talking instead of
+
+354
+00:13:21,360 --> 00:13:23,850
+writing code. And, even [the] Agile manifesto
+
+355
+00:13:23,850 --> 00:13:26,040
+says so, like [that] face-to-face communications
+
+356
+00:13:26,040 --> 00:13:28,380
+is always better than documentation. We
+
+357
+00:13:28,380 --> 00:13:29,960
+completely disagree with that.
+
+358
+00:13:29,960 --> 00:13:32,400
+We believe that the more meetings you
+
+359
+00:13:32,400 --> 00:13:34,440
+have, the more informal communications,
+
+360
+00:13:34,440 --> 00:13:36,270
+the more these chats you have, and the
+
+361
+00:13:36,270 --> 00:13:38,100
+more face-to-face calls or whatever you
+
+362
+00:13:38,100 --> 00:13:40,590
+call it by - "remote calls" - doesn't matter.
+
+363
+00:13:40,590 --> 00:13:43,140
+The more you have of that, the bigger the
+
+364
+00:13:43,140 --> 00:13:44,780
+trouble you [have] caused to the project.
+
+365
+00:13:44,780 --> 00:13:46,920
+Because, you exchange the information
+
+366
+00:13:46,920 --> 00:13:49,530
+which stays nowhere. We talk to each
+
+367
+00:13:49,530 --> 00:13:51,510
+other. I explain [to] you how it works. You
+
+368
+00:13:51,510 --> 00:13:53,940
+understand how it works. But tomorrow,
+
+369
+00:13:53,940 --> 00:13:55,710
+somebody else will join the project. And,
+
+370
+00:13:55,710 --> 00:13:57,330
+that person will not know how it works.
+
+371
+00:13:57,330 --> 00:13:58,920
+So, we will have to explain again. We'll
+
+372
+00:13:58,920 --> 00:14:00,870
+have to explain again. So, every minute
+
+373
+00:14:00,870 --> 00:14:02,940
+spent in the meeting is the wasted money
+
+374
+00:14:02,940 --> 00:14:05,880
+of the customer. So, the more we talk, the
+
+375
+00:14:05,880 --> 00:14:07,950
+more we exchange information informally,
+
+376
+00:14:07,950 --> 00:14:09,870
+the more money we waste, which the
+
+377
+00:14:09,870 --> 00:14:12,810
+customer is paying us. So, good developers,
+
+378
+00:14:12,810 --> 00:14:15,180
+I believe, and - we seriously preach
+
+379
+00:14:15,180 --> 00:14:17,250
+this idea - the good developers - good
+
+380
+00:14:17,250 --> 00:14:19,020
+engineers - they exchange informations
+
+381
+00:14:19,020 --> 00:14:20,910
+through documents, through
+
+382
+00:14:20,910 --> 00:14:24,210
+diagrams, through the source code, through
+
+383
+00:14:24,210 --> 00:14:26,130
+formal written communication. [Good engineers use written communication] which is
+
+384
+00:14:26,130 --> 00:14:28,440
+maintainable, which we can get back to in
+
+385
+00:14:28,440 --> 00:14:30,720
+a year, in a month, in a week, in an hour,
+
+386
+00:14:30,720 --> 00:14:33,420
+and understand why that decision was
+
+387
+00:14:33,420 --> 00:14:35,460
+made, who made that decision, [and] what was the
+
+388
+00:14:35,460 --> 00:14:38,640
+reason behind that decision. To achieve
+
+389
+00:14:38,640 --> 00:14:41,400
+that - you know - not to enforce,
+
+390
+00:14:41,400 --> 00:14:43,740
+but encourage people to actually use
+
+391
+00:14:43,740 --> 00:14:47,100
+documents instead of calls, we don't
+
+392
+00:14:47,100 --> 00:14:52,050
+allow them to call. [laughs] We just - that's so
+
+393
+00:14:52,050 --> 00:14:54,170
+easy. [clapping in the audience]
+
+394
+00:14:55,400 --> 00:14:58,710
+We just - we just don't. [laughs] They just don't
+
+395
+00:14:58,710 --> 00:15:01,620
+have phone numbers of each other. So, we
+
+396
+00:15:01,620 --> 00:15:03,510
+don't have that Slack chats. We don't
+
+397
+00:15:03,510 --> 00:15:05,010
+have that Skype calls. They don't know, I
+
+398
+00:15:05,010 --> 00:15:06,450
+mean, they know each other, but only
+
+399
+00:15:06,450 --> 00:15:08,280
+through... We work on GitHub. So, they only
+
+400
+00:15:08,280 --> 00:15:10,350
+know their GitHub accounts. All they
+
+401
+00:15:10,350 --> 00:15:12,030
+can do in a project... If I don't know
+
+402
+00:15:12,030 --> 00:15:13,860
+anything, for example: I joined the
+
+403
+00:15:13,860 --> 00:15:15,540
+project. There are like 20 developers
+
+404
+00:15:15,540 --> 00:15:16,860
+in there. I don't have some
+
+405
+00:15:16,860 --> 00:15:19,230
+information. I can't call anybody. I can't
+
+406
+00:15:19,230 --> 00:15:21,570
+ask anybody. All I can do is I can submit
+
+407
+00:15:21,570 --> 00:15:23,430
+the ticket and say, "Hey, this piece of
+
+408
+00:15:23,430 --> 00:15:24,630
+information is missing from that
+
+409
+00:15:24,630 --> 00:15:27,480
+document. Can you please - you know - fix
+
+410
+00:15:27,480 --> 00:15:29,010
+that and put that piece of information
+
+411
+00:15:29,010 --> 00:15:31,500
+into that document?" And, somebody will fix
+
+412
+00:15:31,500 --> 00:15:33,090
+that for me. I don't care who it's gonna
+
+413
+00:15:33,090 --> 00:15:35,430
+be. I don't care who's gonna fix that. All
+
+414
+00:15:35,430 --> 00:15:37,170
+I care about is that I look at the
+
+415
+00:15:37,170 --> 00:15:38,850
+document and I find that missing piece
+
+416
+00:15:38,850 --> 00:15:42,060
+of information. That's the idea. So, if you
+
+417
+00:15:42,060 --> 00:15:44,370
+allow programmers - you know - to talk to
+
+418
+00:15:44,370 --> 00:15:46,620
+each other, they will. If you allow them
+
+419
+00:15:46,620 --> 00:15:48,240
+to call, they will, because it's naturally
+
+420
+00:15:48,240 --> 00:15:49,740
+better for us - you know - to communicate -
+
+421
+00:15:49,740 --> 00:15:52,230
+you know - face to face. Just - here's the - my
+
+422
+00:15:52,230 --> 00:15:53,670
+friend sitting next to me. I'm gonna ask
+
+423
+00:15:53,670 --> 00:15:55,440
+him. I'm not gonna - you know -
+
+424
+00:15:55,440 --> 00:15:57,360
+get the document. I'm gonna just ask and
+
+425
+00:15:57,360 --> 00:15:58,080
+get the information.
+
+426
+00:15:58,080 --> 00:16:00,120
+We completely disallow that. For us, it's
+
+427
+00:16:00,120 --> 00:16:02,670
+easy because we work remotely. So, all our
+
+428
+00:16:02,670 --> 00:16:04,830
+developers are somewhere. They're like -
+
+429
+00:16:04,830 --> 00:16:06,300
+you know - in different countries, in
+
+430
+00:16:06,300 --> 00:16:08,010
+different time zones. So, we don't have a
+
+431
+00:16:08,010 --> 00:16:10,110
+central place. So, we just keep them like
+
+432
+00:16:10,110 --> 00:16:12,000
+that. And, we don't allow them to - you know -
+
+433
+00:16:12,000 --> 00:16:14,400
+to get into some Slack chat and talk. All
+
+434
+00:16:14,400 --> 00:16:15,960
+they can do is communicate through
+
+435
+00:16:15,960 --> 00:16:17,460
+ticketing systems, through the source
+
+436
+00:16:17,460 --> 00:16:19,320
+code. And that's how we achieve that
+
+437
+00:16:19,320 --> 00:16:21,300
+results. So, we have only documents and
+
+438
+00:16:21,300 --> 00:16:22,980
+only diagrams. And, I'm saying it again.
+
+439
+00:16:22,980 --> 00:16:25,020
+Sometimes, it's very often we have
+
+440
+00:16:25,020 --> 00:16:27,060
+projects which are one year old and the
+
+441
+00:16:27,060 --> 00:16:29,130
+new developer jumps in and there's like
+
+442
+00:16:29,130 --> 00:16:31,410
+50 thousand lines of code of Java code -
+
+443
+00:16:31,410 --> 00:16:33,570
+like serious Java code. And, the new
+
+444
+00:16:33,570 --> 00:16:35,580
+developer jumps in and starts writing
+
+445
+00:16:35,580 --> 00:16:37,200
+code in just one hour.
+
+446
+00:16:37,200 --> 00:16:39,900
+It's unachievable in a
+
+447
+00:16:39,900 --> 00:16:43,890
+traditional project configuration. The
+
+448
+00:16:43,890 --> 00:16:46,640
+last one. And [then] we [will] have questions. "Salaries":
+
+449
+00:16:46,640 --> 00:16:50,580
+The biggest problem. So,
+
+450
+00:16:50,580 --> 00:16:53,550
+traditionally, we believe
+
+451
+00:16:53,550 --> 00:16:57,000
+that - I mean, everybody believes that - it's
+
+452
+00:16:57,000 --> 00:16:59,280
+so important to keep the developer happy
+
+453
+00:16:59,280 --> 00:17:02,010
+and to keep the developer safe. And, it's -
+
+454
+00:17:02,010 --> 00:17:04,260
+you know - to get and keep the loyalty from
+
+455
+00:17:04,260 --> 00:17:06,190
+the person. So, we need long time, long
+
+456
+00:17:06,190 --> 00:17:10,360
+term contracts, good salary, paid every
+
+457
+00:17:10,360 --> 00:17:13,570
+month, and that's how we're gonna
+
+458
+00:17:13,570 --> 00:17:15,640
+achieve - you know - good results from that
+
+459
+00:17:15,640 --> 00:17:18,580
+particular person. So, we usually pay for
+
+460
+00:17:18,580 --> 00:17:22,540
+when - not we, but you - you usually get paid for
+
+461
+00:17:22,540 --> 00:17:25,630
+per month, per time, sometimes per hour,
+
+462
+00:17:25,630 --> 00:17:28,720
+sometimes per month. But, it's always for
+
+463
+00:17:28,720 --> 00:17:30,760
+time. You just sit in front of the
+
+464
+00:17:30,760 --> 00:17:32,650
+computer, and you do something, and they
+
+465
+00:17:32,650 --> 00:17:34,810
+pay you for this time. You achieve the
+
+466
+00:17:34,810 --> 00:17:36,220
+result, they pay you. You don't achieve
+
+467
+00:17:36,220 --> 00:17:39,940
+the result, they still pay. You work,
+
+468
+00:17:39,940 --> 00:17:41,320
+they pay you.
+
+469
+00:17:41,320 --> 00:17:44,050
+You don't work, they still pay you. That's
+
+470
+00:17:44,050 --> 00:17:46,480
+a huge problem, I believe, especially for
+
+471
+00:17:46,480 --> 00:17:49,630
+A players. Remember that A, B, C players. We
+
+472
+00:17:49,630 --> 00:17:51,610
+have "A players", people who really want to
+
+473
+00:17:51,610 --> 00:17:53,260
+achieve something, and we have "C players"
+
+474
+00:17:53,260 --> 00:17:55,300
+who just enjoy being in front of the
+
+475
+00:17:55,300 --> 00:17:58,750
+computer. So, the A players,
+
+476
+00:17:58,750 --> 00:18:01,540
+they don't like that. They will
+
+477
+00:18:01,540 --> 00:18:03,400
+leave your project. And, they will not be
+
+478
+00:18:03,400 --> 00:18:05,290
+productive at all because this
+
+479
+00:18:05,290 --> 00:18:07,990
+format - you know - puts everybody on the
+
+480
+00:18:07,990 --> 00:18:10,240
+same level. [That is] because, if I'm the A player
+
+481
+00:18:10,240 --> 00:18:12,670
+and I produce results, I'm still
+
+482
+00:18:12,670 --> 00:18:14,290
+paid more or less at the same level as
+
+483
+00:18:14,290 --> 00:18:16,270
+the C player who produces zero results.
+
+484
+00:18:16,270 --> 00:18:20,380
+And then another [issue] is "soft skills". So then, in
+
+485
+00:18:20,380 --> 00:18:22,210
+the end, to make a decision [about] who's gonna
+
+486
+00:18:22,210 --> 00:18:23,920
+get more salary, who's gonna get the raise,
+
+487
+00:18:23,920 --> 00:18:25,720
+who's gonna get the - you know - who's gonna
+
+488
+00:18:25,720 --> 00:18:28,510
+get fired - we use "soft skills". Who is the
+
+489
+00:18:28,510 --> 00:18:30,760
+nicer guy in the team, who talks more,
+
+490
+00:18:30,760 --> 00:18:32,410
+who is more communicative, who is the
+
+491
+00:18:32,410 --> 00:18:34,060
+good match for the team - that's how we
+
+492
+00:18:34,060 --> 00:18:36,130
+decide who gets the raise. [This is] instead of
+
+493
+00:18:36,130 --> 00:18:37,810
+looking at the real results. Instead of
+
+494
+00:18:37,810 --> 00:18:39,280
+looking at the numbers. I don't know [if it's]
+
+495
+00:18:39,280 --> 00:18:41,350
+numbers but, [I mean] the actual results that
+
+496
+00:18:41,350 --> 00:18:43,720
+people provide. So, we use the "soft skills".
+
+497
+00:18:43,720 --> 00:18:45,400
+It completely demotivates A
+
+498
+00:18:45,400 --> 00:18:48,460
+players, in my experience. So, we remove
+
+499
+00:18:48,460 --> 00:18:50,410
+that. We don't have salaries at all. Well,
+
+500
+00:18:50,410 --> 00:18:52,770
+we pay money, but we don't pay salaries. [laughs]
+
+501
+00:18:52,770 --> 00:18:55,560
+We pay for results. Every time
+
+502
+00:18:55,560 --> 00:18:58,360
+developers complete something - close the
+
+503
+00:18:58,360 --> 00:19:01,840
+ticket, file a bug. Basically two things:
+
+504
+00:19:01,840 --> 00:19:03,970
+Close the ticket, and file the bug. So, fix
+
+505
+00:19:03,970 --> 00:19:06,760
+the bug or file a bug. We pay for that.
+
+506
+00:19:06,760 --> 00:19:09,250
+And, we do micro payments. So, we pay our
+
+507
+00:19:09,250 --> 00:19:11,200
+developers in like really small,
+
+508
+00:19:11,200 --> 00:19:12,910
+micro payments. We can do that because we
+
+509
+00:19:12,910 --> 00:19:14,530
+work with remote programmers and
+
+510
+00:19:14,530 --> 00:19:17,320
+freelancers mostly. And, we pay them
+
+511
+00:19:17,320 --> 00:19:19,430
+through like PayPal, BitCoin,
+
+512
+00:19:19,430 --> 00:19:21,050
+whatever. So, we just - you know - we have
+
+513
+00:19:21,050 --> 00:19:22,670
+these transactions - many transactions -
+
+514
+00:19:22,670 --> 00:19:24,950
+every day. And, the more they commit, the
+
+515
+00:19:24,950 --> 00:19:26,330
+more they, not commit but, the more
+
+516
+00:19:26,330 --> 00:19:28,130
+results they produce... It's not about the
+
+517
+00:19:28,130 --> 00:19:29,630
+number of lines of code,
+
+518
+00:19:29,630 --> 00:19:33,050
+It's not about some productivity metrics.
+
+519
+00:19:33,050 --> 00:19:35,120
+It's about, close the task, or not close
+
+520
+00:19:35,120 --> 00:19:36,740
+the task. Here's the problem: You either
+
+521
+00:19:36,740 --> 00:19:38,420
+solve the problem or you don't solve the
+
+522
+00:19:38,420 --> 00:19:40,010
+problem. When the problem is solved... And,
+
+523
+00:19:40,010 --> 00:19:41,750
+we have small problems. We always have
+
+524
+00:19:41,750 --> 00:19:43,640
+small tasks, half an hour, or one hour,
+
+525
+00:19:43,640 --> 00:19:46,730
+really micro tasks... The task is closed. We
+
+526
+00:19:46,730 --> 00:19:48,380
+pay. The task is not closed - we don't pay.
+
+527
+00:19:48,380 --> 00:19:50,600
+So, there's no salaries. This is how we
+
+528
+00:19:50,600 --> 00:19:52,940
+make it so easy to measure the
+
+529
+00:19:52,940 --> 00:19:55,400
+performance, and productivity, and
+
+530
+00:19:55,400 --> 00:19:57,590
+motivation of everybody in the project.
+
+531
+00:19:57,590 --> 00:19:59,510
+Because, we - I mean - we don't pay in the
+
+532
+00:19:59,510 --> 00:20:00,860
+end of the month. We pay when the project -
+
+533
+00:20:00,860 --> 00:20:03,790
+when the task - is closed.
+
+534
+00:20:03,790 --> 00:20:06,290
+So, I'm basically done. I think you will
+
+535
+00:20:06,290 --> 00:20:07,880
+have questions but let me [first] summarize. So,
+
+536
+00:20:07,880 --> 00:20:09,890
+in this model of work which I just
+
+537
+00:20:09,890 --> 00:20:11,960
+explained, we've been working for about
+
+538
+00:20:11,960 --> 00:20:16,160
+three years already. 250 developers went
+
+539
+00:20:16,160 --> 00:20:18,080
+through this model. So, 250 people
+
+540
+00:20:18,080 --> 00:20:19,910
+actually tried that and got some money
+
+541
+00:20:19,910 --> 00:20:22,250
+from us in different tasks
+
+542
+00:20:22,250 --> 00:20:24,470
+and different projects. [These projects are] mostly Java, 90%
+
+543
+00:20:24,470 --> 00:20:29,780
+is Java. 25 projects completed. Commercial
+
+544
+00:20:29,780 --> 00:20:31,580
+and open source. We have open source
+
+545
+00:20:31,580 --> 00:20:33,350
+projects as well, so you can look at them.
+
+546
+00:20:33,350 --> 00:20:34,850
+Come to me later, [and] I'll give you my
+
+547
+00:20:34,850 --> 00:20:36,500
+coordinates. You can look at the GitHub
+
+548
+00:20:36,500 --> 00:20:37,940
+account. And, you will see a number of
+
+549
+00:20:37,940 --> 00:20:40,970
+projects which were completed using this
+
+550
+00:20:40,970 --> 00:20:42,590
+technology - this approach. And, you
+
+551
+00:20:42,590 --> 00:20:44,180
+will see how we communicate to each
+
+552
+00:20:44,180 --> 00:20:46,760
+other in GitHub tickets. So, you will see
+
+553
+00:20:46,760 --> 00:20:48,320
+how we get rid of these meetings [completely].
+
+554
+00:20:48,320 --> 00:20:51,650
+And, all our communications are there. You
+
+555
+00:20:51,650 --> 00:20:53,420
+will see even how we pay programmers
+
+556
+00:20:53,420 --> 00:20:55,190
+because all these like payment - you know -
+
+557
+00:20:55,190 --> 00:20:57,560
+successful payment notifications are
+
+558
+00:20:57,560 --> 00:20:59,150
+there in GitHub. It will be quite
+
+559
+00:20:59,150 --> 00:21:01,720
+interesting. And, we produced about
+
+560
+00:21:01,720 --> 00:21:04,100
+300,000 lines of Java code. It's pretty
+
+561
+00:21:04,100 --> 00:21:05,960
+big amount of code. And, all of these
+
+562
+00:21:05,960 --> 00:21:06,860
+projects were really successful
+
+563
+00:21:06,860 --> 00:21:09,020
+comparing to what I had before for many
+
+564
+00:21:09,020 --> 00:21:11,390
+years. So, I'm asking you to follow me.
+
+565
+00:21:11,390 --> 00:21:13,520
+Subscribe to the blog and you will
+
+566
+00:21:13,520 --> 00:21:15,350
+learn more. So, now questions from you
+
+567
+00:21:15,350 --> 00:21:17,470
+guys.  [audience applause]
+
+568
+00:21:21,670 --> 00:21:24,860
+Moderator: So, we have a plenty of questions in
+
+569
+00:21:24,860 --> 00:21:27,440
+slider and I will start with the most
+
+570
+00:21:27,440 --> 00:21:31,760
+voted ones. Okay? And, so you talk about
+
+571
+00:21:31,760 --> 00:21:34,070
+information but, what about designing
+
+572
+00:21:34,070 --> 00:21:37,280
+together? Because the design is - it's - a
+
+573
+00:21:37,280 --> 00:21:39,070
+product of a conversation.
+
+574
+00:21:39,070 --> 00:21:41,750
+Yegor: Well, yeah. It's... yeah. I've heard the
+
+575
+00:21:41,750 --> 00:21:43,700
+question many times. So, people again
+
+576
+00:21:43,700 --> 00:21:45,530
+believe that the design is the
+
+577
+00:21:45,530 --> 00:21:47,390
+result of the conversation of the
+
+578
+00:21:47,390 --> 00:21:52,040
+work of the group. But, in my experience
+
+579
+00:21:52,040 --> 00:21:54,110
+it's not that true. In my experience, the
+
+580
+00:21:54,110 --> 00:21:56,090
+design is always the result of one
+
+581
+00:21:56,090 --> 00:21:58,880
+person thinking and asking people around.
+
+582
+00:21:58,880 --> 00:22:01,670
+So, when we start a project, we always
+
+583
+00:22:01,670 --> 00:22:04,070
+have some person as an architect - in
+
+584
+00:22:04,070 --> 00:22:05,150
+the role of the architect - and that
+
+585
+00:22:05,150 --> 00:22:06,890
+person is responsible for creating the
+
+586
+00:22:06,890 --> 00:22:08,750
+skeleton, the prototype of the product.
+
+587
+00:22:08,750 --> 00:22:11,240
+That person may collect information from
+
+588
+00:22:11,240 --> 00:22:12,650
+other people, asking, "What do you think
+
+589
+00:22:12,650 --> 00:22:14,420
+about this? I'm not sure about choosing
+
+590
+00:22:14,420 --> 00:22:16,280
+the database. So, tell me which database
+
+591
+00:22:16,280 --> 00:22:18,530
+would you think I should use? Tell me
+
+592
+00:22:18,530 --> 00:22:20,180
+about the technology I should use." So,
+
+593
+00:22:20,180 --> 00:22:22,370
+questions are welcome. That the architect
+
+594
+00:22:22,370 --> 00:22:24,680
+has to have - has to ask - questions, this
+
+595
+00:22:24,680 --> 00:22:26,240
+is perfect. But, the final decision -
+
+596
+00:22:26,240 --> 00:22:28,580
+the final design - has to be made by one
+
+597
+00:22:28,580 --> 00:22:31,020
+person. That's what I believe.
+
+598
+00:22:31,020 --> 00:22:34,910
+Moderator: Buf if they get paid for answers, if they don't get paid, they don't get to ask questions.
+
+599
+00:22:34,910 --> 00:22:37,610
+Yegor: We pay for answering questions, of course. But,
+
+600
+00:22:37,610 --> 00:22:39,470
+all questions are like tickets. So, let's
+
+601
+00:22:39,470 --> 00:22:40,880
+say, for example, you're a good database
+
+602
+00:22:40,880 --> 00:22:42,980
+engineer, yeah. And, I am like an architect.
+
+603
+00:22:42,980 --> 00:22:44,210
+And, I don't really know what kind of
+
+604
+00:22:44,210 --> 00:22:45,770
+database to choose, MySQL or
+
+605
+00:22:45,770 --> 00:22:47,660
+PostgreSQL. So, I'm sorry, I'm submitting a
+
+606
+00:22:47,660 --> 00:22:50,150
+ticket and saying, "Hey, I['m] miss[ing] a
+
+607
+00:22:50,150 --> 00:22:53,210
+comparison of MySQL and PostgreSQL. I
+
+608
+00:22:53,210 --> 00:22:55,130
+need a comparison provided for me. This
+
+609
+00:22:55,130 --> 00:22:57,260
+is a task for you for an hour. So, you
+
+610
+00:22:57,260 --> 00:22:59,030
+work for an hour, give me the table, a
+
+611
+00:22:59,030 --> 00:23:01,400
+spreadsheet, comparing why MySQL is
+
+612
+00:23:01,400 --> 00:23:03,020
+better for us and why PostgreSQL is better
+
+613
+00:23:03,020 --> 00:23:04,820
+for us. And, I say, "Thank you very much." I
+
+614
+00:23:04,820 --> 00:23:07,880
+know that. Now, let me make a decision. So,
+
+615
+00:23:07,880 --> 00:23:09,500
+that's how it should be - iteratively
+
+616
+00:23:09,500 --> 00:23:11,180
+goes through questions, and answers, and
+
+617
+00:23:11,180 --> 00:23:13,010
+then finally, I will be able to make my
+
+618
+00:23:13,010 --> 00:23:16,190
+decision. Again, it's not easy. It's way
+
+619
+00:23:16,190 --> 00:23:17,810
+easier to sit together in the same room
+
+620
+00:23:17,810 --> 00:23:18,950
+and say, "Hey, what do you think about
+
+621
+00:23:18,950 --> 00:23:20,930
+PostgreSQL?" and you say, "Well, MySQL
+
+622
+00:23:20,930 --> 00:23:22,610
+is better." "Oh, that's right, thank you very
+
+623
+00:23:22,610 --> 00:23:24,290
+much!" and then I make a decision. But then,
+
+624
+00:23:24,290 --> 00:23:26,390
+in two months, somebody will come and
+
+625
+00:23:26,390 --> 00:23:28,220
+say, "Hey, why the decision for MySQL
+
+626
+00:23:28,220 --> 00:23:30,590
+was made?" and, I'm gone from the project
+
+627
+00:23:30,590 --> 00:23:32,300
+because - you know - they fired me already.
+
+628
+00:23:32,300 --> 00:23:33,950
+You're gone as well. [audience laughs] They fired
+
+629
+00:23:33,950 --> 00:23:36,320
+you, too. And then, the question is, "Who
+
+630
+00:23:36,320 --> 00:23:38,240
+made the decision?" Well, there were two
+
+631
+00:23:38,240 --> 00:23:39,650
+guys - you know - yeah. I still have the
+
+632
+00:23:39,650 --> 00:23:41,300
+phone number of the one guy. Let me call
+
+633
+00:23:41,300 --> 00:23:44,390
+him. But instead, we're gonna have the
+
+634
+00:23:44,390 --> 00:23:46,490
+detailed conversation. And, the ticket for
+
+635
+00:23:46,490 --> 00:23:47,930
+that. And, everybody will be able to jump
+
+636
+00:23:47,930 --> 00:23:50,210
+in and see, "Yeah, that guy who is
+
+637
+00:23:50,210 --> 00:23:52,520
+fired asked the question, "Why MySQL?"
+
+638
+00:23:52,520 --> 00:23:54,470
+And, another guy submitted the detailed
+
+639
+00:23:54,470 --> 00:23:57,730
+explanation of them. That's a perfect meeting traceability.
+
+640
+00:23:57,920 --> 00:23:58,940
+Moderator: My friends, there
+
+641
+00:23:58,940 --> 00:24:00,710
+are so many questions in slider. Go
+
+642
+00:24:00,710 --> 00:24:02,420
+ahead and vote for questions, because,
+
+643
+00:24:02,420 --> 00:24:05,360
+oh, let's make it moderated, OK? I'll
+
+644
+00:24:05,360 --> 00:24:08,060
+ask the top most questions. And, there are
+
+645
+00:24:08,060 --> 00:24:09,740
+many. So, there is the - it's not a
+
+646
+00:24:09,740 --> 00:24:11,480
+question. It's like a complaint: Three
+
+647
+00:24:11,480 --> 00:24:13,760
+hours of work, are you kidding? My manager
+
+648
+00:24:13,760 --> 00:24:15,590
+will kill me. The stock will decrease. And,
+
+649
+00:24:15,590 --> 00:24:19,010
+the company will close. Yegor: For three hours
+
+650
+00:24:19,010 --> 00:24:20,960
+of work? Moderator: Three hours of work, are you kidding me? Yegor: Yeah
+
+651
+00:24:20,960 --> 00:24:23,330
+per day. Yeah. I believe honestly that a
+
+652
+00:24:23,330 --> 00:24:25,670
+productive - like a good engineer - Well, I'm
+
+653
+00:24:25,670 --> 00:24:28,160
+talking about myself, first of all. So, I
+
+654
+00:24:28,160 --> 00:24:30,410
+can't imagine working for eight hours a
+
+655
+00:24:30,410 --> 00:24:32,510
+day on something which is not my
+
+656
+00:24:32,510 --> 00:24:34,250
+personal project - you know - which I really
+
+657
+00:24:34,250 --> 00:24:36,920
+love. So, working for somebody, for some
+
+658
+00:24:36,920 --> 00:24:39,890
+project, for money, 3-4 hours a day, is the
+
+659
+00:24:39,890 --> 00:24:42,140
+total maximum and normal - you know - good
+
+660
+00:24:42,140 --> 00:24:44,300
+engineer can really handle, I think.
+
+661
+00:24:44,300 --> 00:24:44,660
+So,
+
+662
+00:24:44,660 --> 00:24:47,090
+otherwise, it's eight hours and three
+
+663
+00:24:47,090 --> 00:24:49,190
+five hours of Facebook watching - you know -
+
+664
+00:24:49,190 --> 00:24:49,990
+out of this.
+
+665
+00:24:49,990 --> 00:24:52,850
+So, it's gonna be three hours, in any case.
+
+666
+00:24:52,850 --> 00:24:54,890
+So, you're not going to be productive for
+
+667
+00:24:54,890 --> 00:24:56,930
+eight hours, it's not possible. You can
+
+668
+00:24:56,930 --> 00:24:59,060
+really write code for three [hours]. Sometimes,
+
+669
+00:24:59,060 --> 00:25:01,670
+even two hours is enough. But, I think
+
+670
+00:25:01,670 --> 00:25:03,290
+that, in general, programmers have to be
+
+671
+00:25:03,290 --> 00:25:05,990
+paid way better. So, we need to earn way
+
+672
+00:25:05,990 --> 00:25:07,910
+more. We need to make more money per hour
+
+673
+00:25:07,910 --> 00:25:10,370
+and spend less time in front of the
+
+674
+00:25:10,370 --> 00:25:12,770
+computer. You know [what I mean]? So, I don't know how
+
+675
+00:25:12,770 --> 00:25:14,510
+much you're making, but an average like
+
+676
+00:25:14,510 --> 00:25:16,220
+say, for example, now programmers are
+
+677
+00:25:16,220 --> 00:25:18,470
+making like - personaly, I dunno - 25 euros an
+
+678
+00:25:18,470 --> 00:25:20,180
+hour, thirty euros an hour.
+
+679
+00:25:20,180 --> 00:25:22,460
+They have to make a hundred [Euros], but work
+
+680
+00:25:22,460 --> 00:25:26,060
+three times less. In this case - but - they
+
+681
+00:25:26,060 --> 00:25:27,770
+work three times less. But - they have to be
+
+682
+00:25:27,770 --> 00:25:30,740
+paid for results, not for the time. So now,
+
+683
+00:25:30,740 --> 00:25:32,630
+we are all paid for eight hours - you know -
+
+684
+00:25:32,630 --> 00:25:33,890
+from the morning till the evening.
+
+685
+00:25:33,890 --> 00:25:36,320
+Whatever I do, you pay me. But, it should
+
+686
+00:25:36,320 --> 00:25:37,460
+be the other way. It should be the
+
+687
+00:25:37,460 --> 00:25:39,920
+opposite: You pay me way more, but only
+
+688
+00:25:39,920 --> 00:25:42,020
+for the results I produce. In the end, it
+
+689
+00:25:42,020 --> 00:25:43,670
+will be the same amount of
+
+690
+00:25:43,670 --> 00:25:45,230
+money in cash. Maybe a little bit more,
+
+691
+00:25:45,230 --> 00:25:47,450
+but I will be focused on results.
+
+692
+00:25:47,450 --> 00:25:48,920
+I'll be really motivated and
+
+693
+00:25:48,920 --> 00:25:51,140
+interested to actually work, instead of
+
+694
+00:25:51,140 --> 00:25:53,000
+just pretending I'm working, just sitting
+
+695
+00:25:53,000 --> 00:25:55,820
+there. And, just going to, okay, so the
+
+696
+00:25:55,820 --> 00:25:57,290
+three hours is that. Three hours is the
+
+697
+00:25:57,290 --> 00:26:00,170
+maximum. Well, four. Moderator: The next question: Who
+
+698
+00:26:00,170 --> 00:26:02,780
+decides how much time the problem
+
+699
+00:26:02,780 --> 00:26:05,810
+takes to solve? If it's the
+
+700
+00:26:05,810 --> 00:26:08,000
+business, how can [they] estimate? They always
+
+701
+00:26:08,000 --> 00:26:10,000
+think the task is easy.
+
+702
+00:26:10,000 --> 00:26:14,720
+Yegor: Well, yeah. We just, in our
+
+703
+00:26:14,720 --> 00:26:18,260
+approach, we always give the same
+
+704
+00:26:18,260 --> 00:26:21,260
+budget for all tasks. So, we always give
+
+705
+00:26:21,260 --> 00:26:23,780
+it a really small budget. And then, we use
+
+706
+00:26:23,780 --> 00:26:25,340
+this technology where we allow
+
+707
+00:26:25,340 --> 00:26:28,220
+developers to return back the code in
+
+708
+00:26:28,220 --> 00:26:31,460
+incomplete state. So, I guess you're
+
+709
+00:26:31,460 --> 00:26:32,990
+developers, right? Who are the developers?
+
+710
+00:26:32,990 --> 00:26:36,890
+Who actually writes code here? Like 75%,
+
+711
+00:26:36,890 --> 00:26:39,620
+maybe more. So, you should understand that.
+
+712
+00:26:39,620 --> 00:26:42,530
+Let's say you get a task [where] you have to
+
+713
+00:26:42,530 --> 00:26:44,390
+implement that feature. And, the feature
+
+714
+00:26:44,390 --> 00:26:47,150
+is way bigger than one hour. So, we don't
+
+715
+00:26:47,150 --> 00:26:49,460
+ask you to - you know - to... We ask you to
+
+716
+00:26:49,460 --> 00:26:52,040
+cheat, basically. We ask you to implement
+
+717
+00:26:52,040 --> 00:26:53,960
+the - provide the high level
+
+718
+00:26:53,960 --> 00:26:56,540
+implementation with certain parts not
+
+719
+00:26:56,540 --> 00:26:59,420
+implemented yet. So, we say, this feature,
+
+720
+00:26:59,420 --> 00:27:00,950
+for example, I have to be able to click
+
+721
+00:27:00,950 --> 00:27:04,100
+the button and log in. And, this is one
+
+722
+00:27:04,100 --> 00:27:05,300
+hour for you. And, you understand that's
+
+723
+00:27:05,300 --> 00:27:06,530
+one hour. It's not enough. It should be
+
+724
+00:27:06,530 --> 00:27:08,720
+like five hours. So, you just create a
+
+725
+00:27:08,720 --> 00:27:10,970
+button. It says "log in". It's clickable.
+
+726
+00:27:10,970 --> 00:27:13,910
+But, it doesn't log in. So, you just return
+
+727
+00:27:13,910 --> 00:27:15,860
+back the code to me - to the master
+
+728
+00:27:15,860 --> 00:27:18,110
+branch - and say, the button is there but,
+
+729
+00:27:18,110 --> 00:27:20,510
+there is a marker [which] says "to-do later:
+
+730
+00:27:20,510 --> 00:27:22,730
+Implement the log-in this and that way."
+
+731
+00:27:22,730 --> 00:27:25,130
+So, you kind of help us to improve - to
+
+732
+00:27:25,130 --> 00:27:27,350
+design that. And, by introducing the
+
+733
+00:27:27,350 --> 00:27:29,720
+high level solution, and then keeping the
+
+734
+00:27:29,720 --> 00:27:32,000
+markers of where other programmers have
+
+735
+00:27:32,000 --> 00:27:34,010
+to contribute more. So, you return back
+
+736
+00:27:34,010 --> 00:27:36,140
+the code with the markers. And then, these
+
+737
+00:27:36,140 --> 00:27:39,230
+markers we convert back to new tasks. So,
+
+738
+00:27:39,230 --> 00:27:41,720
+we ask developers to help us break down
+
+739
+00:27:41,720 --> 00:27:44,120
+the problem into smaller pieces. That's
+
+740
+00:27:44,120 --> 00:27:46,490
+how we do it. Moderator: Next question. Yegor: We call it
+
+741
+00:27:46,490 --> 00:27:48,110
+"puzzle driven development". So, we call
+
+742
+00:27:48,110 --> 00:27:49,970
+these pieces "puzzles". So, we give you
+
+743
+00:27:49,970 --> 00:27:51,980
+the task. You return it back with puzzles
+
+744
+00:27:51,980 --> 00:27:53,840
+inside. And then, somebody else will solve
+
+745
+00:27:53,840 --> 00:27:55,610
+[those] puzzles. And while people
+
+746
+00:27:55,610 --> 00:27:56,870
+solve the puzzles, they will introduce
+
+747
+00:27:56,870 --> 00:27:59,150
+new puzzles. So, when we start developing,
+
+748
+00:27:59,150 --> 00:28:00,860
+it's just a few puzzles. And then, it goes
+
+749
+00:28:00,860 --> 00:28:02,270
+like that. [Yegor gestures an expanding mountain with his hands] So, there are like
+
+750
+00:28:02,270 --> 00:28:04,130
+hundreds of puzzles. And then, when all of
+
+751
+00:28:04,130 --> 00:28:06,050
+them get fixed, the software gets back [together],
+
+752
+00:28:06,050 --> 00:28:08,300
+and it starts to work well. It becomes
+
+753
+00:28:08,300 --> 00:28:10,610
+completely functional. If you're interested,
+
+754
+00:28:10,610 --> 00:28:12,170
+come back to me later. I'll explain.
+
+755
+00:28:12,170 --> 00:28:13,100
+Moderator: Next question.
+
+756
+00:28:13,100 --> 00:28:15,620
+Isn't there a lack of quality? Developers
+
+757
+00:28:15,620 --> 00:28:17,660
+deliver the code and go. There is no
+
+758
+00:28:17,660 --> 00:28:19,580
+motivation in delivering good code. Who
+
+759
+00:28:19,580 --> 00:28:21,950
+decides whether to pay or not?
+
+760
+00:28:22,100 --> 00:28:24,110
+Yegor: Yeah, that's a good question. So, definitely. And,
+
+761
+00:28:24,110 --> 00:28:26,540
+we really ask our developers
+
+762
+00:28:26,540 --> 00:28:29,960
+to be lazy. So, be lazy. Don't try to do
+
+763
+00:28:29,960 --> 00:28:31,670
+more than you can do. But, be prepared
+
+764
+00:28:31,670 --> 00:28:34,550
+that the quality control is really
+
+765
+00:28:34,550 --> 00:28:36,770
+strict in front of you. So, when you get
+
+766
+00:28:36,770 --> 00:28:38,120
+the task and you have to implement
+
+767
+00:28:38,120 --> 00:28:40,790
+something, do as little as you can. You
+
+768
+00:28:40,790 --> 00:28:42,620
+don't need to - you know - to make it hard.
+
+769
+00:28:42,620 --> 00:28:44,690
+You don't make the quality higher than
+
+770
+00:28:44,690 --> 00:28:46,460
+the quality bar we have in front of you.
+
+771
+00:28:46,460 --> 00:28:48,890
+And, the quality bar is quite high. So, for
+
+772
+00:28:48,890 --> 00:28:50,960
+you to return back the code to us, to the
+
+773
+00:28:50,960 --> 00:28:53,120
+master branch, it has to pass two code
+
+774
+00:28:53,120 --> 00:28:55,850
+reviews plus the automated merge
+
+775
+00:28:55,850 --> 00:28:57,890
+instruments. So, we're going to merge your
+
+776
+00:28:57,890 --> 00:29:00,500
+branch back to master branch only if all
+
+777
+00:29:00,500 --> 00:29:02,510
+the tests and all the static analysis
+
+778
+00:29:02,510 --> 00:29:04,310
+and all the coverage control, everything
+
+779
+00:29:04,310 --> 00:29:07,250
+passes. So, for example, they'll give you
+
+780
+00:29:07,250 --> 00:29:09,020
+the example of how high is the quality
+
+781
+00:29:09,020 --> 00:29:12,170
+bar for us. Static analysis is the step
+
+782
+00:29:12,170 --> 00:29:15,200
+in the build for us. So, we
+
+783
+00:29:15,200 --> 00:29:16,910
+don't with - The build is not going to
+
+784
+00:29:16,910 --> 00:29:17,480
+pass
+
+785
+00:29:17,480 --> 00:29:20,420
+if the static analyzer says there are
+
+786
+00:29:20,420 --> 00:29:23,060
+any bugs, any warnings, [or] any complaints. You
+
+787
+00:29:23,060 --> 00:29:25,940
+know what static analysis is, right? Do
+
+788
+00:29:25,940 --> 00:29:29,180
+you know what static analysis is? Okay,
+
+789
+00:29:29,180 --> 00:29:29,570
+good.
+
+790
+00:29:29,570 --> 00:29:31,220
+So you understand the static analysis is
+
+791
+00:29:31,220 --> 00:29:33,560
+usually is used as a tool which is - you
+
+792
+00:29:33,560 --> 00:29:35,510
+know - which we run on the code and which
+
+793
+00:29:35,510 --> 00:29:37,580
+generates some - you know - spreadsheets,
+
+794
+00:29:37,580 --> 00:29:39,470
+some interesting web pages, which we'll
+
+795
+00:29:39,470 --> 00:29:42,050
+look at and say, "Hey, the rate of our
+
+796
+00:29:42,050 --> 00:29:44,540
+static analysis warnings is a bit lower
+
+797
+00:29:44,540 --> 00:29:47,180
+than the yesterday. That's great, but,
+
+798
+00:29:47,180 --> 00:29:48,800
+there's still a lot of them - Still a lot
+
+799
+00:29:48,800 --> 00:29:50,570
+of complaints." Look at your project. Run
+
+800
+00:29:50,570 --> 00:29:52,400
+the static analyzer for your project. No
+
+801
+00:29:52,400 --> 00:29:53,840
+matter what language you're using, you
+
+802
+00:29:53,840 --> 00:29:55,730
+will see there many of them. In our case,
+
+803
+00:29:55,730 --> 00:29:58,490
+there is zero. So, we run the static
+
+804
+00:29:58,490 --> 00:30:00,320
+analysis on the entire code base. And,
+
+805
+00:30:00,320 --> 00:30:02,630
+there should be zero warnings, which is
+
+806
+00:30:02,630 --> 00:30:04,040
+really difficult to achieve. If you're
+
+807
+00:30:04,040 --> 00:30:05,420
+serious, if your static analysis is
+
+808
+00:30:05,420 --> 00:30:07,100
+configured properly, it's really
+
+809
+00:30:07,100 --> 00:30:08,360
+difficult to achieve. Especially, there
+
+810
+00:30:08,360 --> 00:30:09,590
+are many people working there. And, the
+
+811
+00:30:09,590 --> 00:30:11,630
+code base is quite big in our case. No
+
+812
+00:30:11,630 --> 00:30:13,070
+matter how big is the code base, no
+
+813
+00:30:13,070 --> 00:30:13,760
+matter how
+
+814
+00:30:13,760 --> 00:30:15,470
+many developers are there, we're
+
+815
+00:30:15,470 --> 00:30:17,360
+not gonna merge your stuff unless
+
+816
+00:30:17,360 --> 00:30:19,640
+there's no bugs. There's no static
+
+817
+00:30:19,640 --> 00:30:21,590
+analysis complaints. So, that's an
+
+818
+00:30:21,590 --> 00:30:23,570
+example of how high is the quality bar.
+
+819
+00:30:23,570 --> 00:30:25,970
+So, what I'm saying is that, we're kind of
+
+820
+00:30:25,970 --> 00:30:27,650
+building a conflict. Here's your task.
+
+821
+00:30:27,650 --> 00:30:29,750
+You're gonna get the money when it's
+
+822
+00:30:29,750 --> 00:30:31,460
+merged. But, you're not gonna get [your code] merged
+
+823
+00:30:31,460 --> 00:30:34,580
+if the quality is not high enough. And, we
+
+824
+00:30:34,580 --> 00:30:37,490
+do it for every single task. So, for each -
+
+825
+00:30:37,490 --> 00:30:39,740
+for every single increment. For every
+
+826
+00:30:39,740 --> 00:30:41,540
+single developer who is trying to change
+
+827
+00:30:41,540 --> 00:30:43,760
+the code and commit the new stuff into
+
+828
+00:30:43,760 --> 00:30:45,980
+our code base into master. We always
+
+829
+00:30:45,980 --> 00:30:47,450
+check the quality. We'll always check the
+
+830
+00:30:47,450 --> 00:30:49,340
+quality. So, when the project is one year
+
+831
+00:30:49,340 --> 00:30:52,100
+old, we merged already a thousand pull
+
+832
+00:30:52,100 --> 00:30:54,470
+requests. And, for all these thousand pull
+
+833
+00:30:54,470 --> 00:30:56,660
+requests, for thousand[s of] steps, micro
+
+834
+00:30:56,660 --> 00:30:58,460
+increments, we check the quality again,
+
+835
+00:30:58,460 --> 00:31:00,470
+again, and again. So, in the end, the
+
+836
+00:31:00,470 --> 00:31:02,150
+quality is really high. Again, you can
+
+837
+00:31:02,150 --> 00:31:03,770
+check our GitHub projects in Java. You
+
+838
+00:31:03,770 --> 00:31:05,540
+will see how high is
+
+839
+00:31:05,540 --> 00:31:08,450
+the quality of our code. Moderator: Okay, great.
+
+840
+00:31:08,450 --> 00:31:10,220
+There was a comment. Maybe you have
+
+841
+00:31:10,220 --> 00:31:12,740
+something to say about it. Even prisoners
+
+842
+00:31:12,740 --> 00:31:17,240
+are allowed one call. Yegor: [laughs] Well, yeah. For the
+
+843
+00:31:17,240 --> 00:31:18,770
+call. Yeah. I've heard that complain a lot.
+
+844
+00:31:18,770 --> 00:31:20,570
+So, people saying like, "Hey, we're people.
+
+845
+00:31:20,570 --> 00:31:21,890
+We love to call each other. We love
+
+846
+00:31:21,890 --> 00:31:23,630
+to say good morning sometimes. What kind
+
+847
+00:31:23,630 --> 00:31:25,370
+of work is that when there is like, yeah,
+
+848
+00:31:25,370 --> 00:31:27,860
+people don't talk to each other?" I also
+
+849
+00:31:27,860 --> 00:31:30,920
+thought so. I had that fear years ago
+
+850
+00:31:30,920 --> 00:31:32,540
+when I introduced that [no call policy]. I was like hey,
+
+851
+00:31:32,540 --> 00:31:34,310
+programmers not gonna like it, because
+
+852
+00:31:34,310 --> 00:31:36,290
+they're kind of used to talking to each other.
+
+853
+00:31:36,290 --> 00:31:38,780
+They love these, all these Slack chats, and
+
+854
+00:31:38,780 --> 00:31:41,660
+hashtags, and everything. But, when we're
+
+855
+00:31:41,660 --> 00:31:43,430
+talking about A players, when we're
+
+856
+00:31:43,430 --> 00:31:45,110
+talking about senior developers, they
+
+857
+00:31:45,110 --> 00:31:47,930
+really don't like that. They like to stay
+
+858
+00:31:47,930 --> 00:31:49,430
+focused on their stuff, which is really
+
+859
+00:31:49,430 --> 00:31:51,350
+interesting for them. They have other
+
+860
+00:31:51,350 --> 00:31:53,060
+places where we can - where they can - talk
+
+861
+00:31:53,060 --> 00:31:54,710
+to somebody. They can - you know - have beer.
+
+862
+00:31:54,710 --> 00:31:57,410
+They can smile. They can joke. That the
+
+863
+00:31:57,410 --> 00:31:59,360
+work and the project is the place where
+
+864
+00:31:59,360 --> 00:32:00,530
+people are interested in professional
+
+865
+00:32:00,530 --> 00:32:04,190
+growth, not - you know - interpersonal
+
+866
+00:32:04,190 --> 00:32:06,500
+communications, in my experience. Because,
+
+867
+00:32:06,500 --> 00:32:08,510
+let's face the reality: The project is
+
+868
+00:32:08,510 --> 00:32:11,330
+just a temporary group of
+
+869
+00:32:11,330 --> 00:32:13,520
+people who have nothing in common
+
+870
+00:32:13,520 --> 00:32:15,770
+basically. In most cases, they're
+
+871
+00:32:15,770 --> 00:32:17,030
+from different countries, they're from
+
+872
+00:32:17,030 --> 00:32:18,170
+different cultures, they're from
+
+873
+00:32:18,170 --> 00:32:20,420
+different - they're different ages, they're
+
+874
+00:32:20,420 --> 00:32:22,340
+just different people. They come together
+
+875
+00:32:22,340 --> 00:32:24,500
+because they are Java experts, for
+
+876
+00:32:24,500 --> 00:32:26,950
+example. And, this is what they have in common.
+
+877
+00:32:26,950 --> 00:32:29,470
+That's it. They're not friends. They never
+
+878
+00:32:29,470 --> 00:32:31,210
+been to school together. They don't live
+
+879
+00:32:31,210 --> 00:32:32,680
+together. They don't have - you know - their
+
+880
+00:32:32,680 --> 00:32:34,360
+families are not friends. So,
+
+881
+00:32:34,360 --> 00:32:36,430
+they want to focus on stuff which they
+
+882
+00:32:36,430 --> 00:32:37,810
+have in common. And, when traditional
+
+883
+00:32:37,810 --> 00:32:40,630
+projects - you know - trying to make a team
+
+884
+00:32:40,630 --> 00:32:42,310
+of them, trying to use these
+
+885
+00:32:42,310 --> 00:32:44,260
+team-building things, and trying to - you
+
+886
+00:32:44,260 --> 00:32:45,580
+know - say like, "Hey, we're one family",
+
+887
+00:32:45,580 --> 00:32:48,160
+They're not one family. They don't have
+
+888
+00:32:48,160 --> 00:32:50,530
+anything in common. Like - you know - I'm
+
+889
+00:32:50,530 --> 00:32:55,080
+40. He's 16. What kind of family is this?
+
+890
+00:32:58,680 --> 00:33:01,330
+And, this is really annoying for A
+
+891
+00:33:01,330 --> 00:33:02,740
+players. This is really annoying for
+
+892
+00:33:02,740 --> 00:33:04,630
+senior developers to be in the team like
+
+893
+00:33:04,630 --> 00:33:06,220
+that when people are trying to put them
+
+894
+00:33:06,220 --> 00:33:07,780
+together and say it's one family, one
+
+895
+00:33:07,780 --> 00:33:09,640
+team, "we're all together". They['re] just [like,] "Leave
+
+896
+00:33:09,640 --> 00:33:10,090
+me alone.
+
+897
+00:33:10,090 --> 00:33:11,980
+Let me code. Let me - [you] know - write the code.
+
+898
+00:33:11,980 --> 00:33:13,720
+Let me focus on that [which] we are doing."
+
+899
+00:33:13,720 --> 00:33:15,160
+Exactly that. We're just saying remove
+
+900
+00:33:15,160 --> 00:33:18,880
+that interpersonal - you know - stop and
+
+901
+00:33:18,880 --> 00:33:21,220
+focus on this, on the technical, on the
+
+902
+00:33:21,220 --> 00:33:22,840
+technical problems, and people really
+
+903
+00:33:22,840 --> 00:33:25,330
+appreciate it - A players. C players, yeah,
+
+904
+00:33:25,330 --> 00:33:27,010
+they complain. They complain they say
+
+905
+00:33:27,010 --> 00:33:28,870
+like, "Hey, where's your Slack chat? How can
+
+906
+00:33:28,870 --> 00:33:30,460
+I call you? I can explain. You let me call
+
+907
+00:33:30,460 --> 00:33:31,960
+you and I explain everything." We're just
+
+908
+00:33:31,960 --> 00:33:33,550
+saying, "No, here's the ticket. Submit the
+
+909
+00:33:33,550 --> 00:33:35,560
+ticket. You don't like the objective code?
+
+910
+00:33:35,560 --> 00:33:37,060
+You don't like the documentation? Submit
+
+911
+00:33:37,060 --> 00:33:38,950
+the ticket." And he's like, "Yeah, it's not
+
+912
+00:33:38,950 --> 00:33:40,750
+really how I'm used to them to do that.
+
+913
+00:33:40,750 --> 00:33:42,970
+Let me call, it'd be easier for me. It's a
+
+914
+00:33:42,970 --> 00:33:44,770
+clear indication that he's a C player.
+
+915
+00:33:44,770 --> 00:33:47,470
+Or she. Moderator: This is always a man. So, let's
+
+916
+00:33:47,470 --> 00:33:49,810
+move on. If people are only paid for
+
+917
+00:33:49,810 --> 00:33:52,300
+results, how do you handle periods where
+
+918
+00:33:52,300 --> 00:33:54,730
+people have less productivity? They have
+
+919
+00:33:54,730 --> 00:33:56,650
+personal issues, for example. But, they are
+
+920
+00:33:56,650 --> 00:34:01,060
+temporary. Yegor: It's their own problems. I mean,
+
+921
+00:34:01,060 --> 00:34:03,340
+yeah. But, we, there... We're adults, I mean.
+
+922
+00:34:03,340 --> 00:34:06,580
+It's business. So, we, this is... We pay
+
+923
+00:34:06,580 --> 00:34:08,890
+people. I mean, our rates are high.
+
+924
+00:34:08,890 --> 00:34:11,800
+That's first. So, we pay people. We work
+
+925
+00:34:11,800 --> 00:34:13,330
+remotely. And, there are people from
+
+926
+00:34:13,330 --> 00:34:14,710
+mostly from not really expensive
+
+927
+00:34:14,710 --> 00:34:17,470
+countries. And, we pay like 40 bucks an
+
+928
+00:34:17,470 --> 00:34:19,600
+hour, 45 dollars an hour. It's pretty high
+
+929
+00:34:19,600 --> 00:34:21,970
+rate. So, we allow them to make money
+
+930
+00:34:21,970 --> 00:34:24,700
+while they are productive,
+
+931
+00:34:24,700 --> 00:34:27,340
+while they have time. So, they are - you
+
+932
+00:34:27,340 --> 00:34:28,960
+know - they should be smart enough. They
+
+933
+00:34:28,960 --> 00:34:31,540
+should be grown-up people to manage
+
+934
+00:34:31,540 --> 00:34:33,370
+their own finance, to manage their own
+
+935
+00:34:33,370 --> 00:34:35,530
+money. So, save something for the time
+
+936
+00:34:35,530 --> 00:34:37,750
+which for your vacation or whatever. So,
+
+937
+00:34:37,750 --> 00:34:38,980
+we're not trying to - you know - we're
+
+938
+00:34:38,980 --> 00:34:40,090
+trying to respect our
+
+939
+00:34:40,090 --> 00:34:41,890
+people with - our programmers - we're trying
+
+940
+00:34:41,890 --> 00:34:44,080
+to treat them as - you know - as equal.
+
+941
+00:34:44,080 --> 00:34:46,150
+They're not kids. They're not
+
+942
+00:34:46,150 --> 00:34:47,470
+children. So, they don't need to be
+
+943
+00:34:47,470 --> 00:34:49,180
+patronized like in traditional teams.
+
+944
+00:34:49,180 --> 00:34:50,350
+Like, yeah, we're gonna cover your
+
+945
+00:34:50,350 --> 00:34:53,110
+vacation, just sit in the office. It, again,
+
+946
+00:34:53,110 --> 00:34:54,850
+it doesn't motivate A players. It
+
+947
+00:34:54,850 --> 00:34:56,650
+motivates C players. With those, like, hey,
+
+948
+00:34:56,650 --> 00:34:58,570
+I'm productive now because it's luck.
+
+949
+00:34:58,570 --> 00:35:00,310
+Maybe tomorrow I will stop being
+
+950
+00:35:00,310 --> 00:35:01,750
+productive because, who knows. What's
+
+951
+00:35:01,750 --> 00:35:03,130
+gonna happen? They're afraid of that. And,
+
+952
+00:35:03,130 --> 00:35:04,590
+that's why they want to be patronized,
+
+953
+00:35:04,590 --> 00:35:06,760
+protected. They want somebody to take
+
+954
+00:35:06,760 --> 00:35:08,980
+care of them. We just let them take
+
+955
+00:35:08,980 --> 00:35:10,630
+care of themselves. So, we treat them
+
+956
+00:35:10,630 --> 00:35:11,950
+equally. This is the project. We have
+
+957
+00:35:11,950 --> 00:35:13,450
+money here. You produce something. You
+
+958
+00:35:13,450 --> 00:35:14,770
+give the results. We transfer the money
+
+959
+00:35:14,770 --> 00:35:17,050
+from here to here. And then, we're - you
+
+960
+00:35:17,050 --> 00:35:20,950
+know - just go our own ways. So, we don't
+
+961
+00:35:20,950 --> 00:35:22,990
+have any vacations, paid vacations,
+
+962
+00:35:22,990 --> 00:35:25,180
+anything. Moderator: Who is responsible for the
+
+963
+00:35:25,180 --> 00:35:27,700
+final production result? Yegor: Well, for the
+
+964
+00:35:27,700 --> 00:35:28,930
+final productions result, is the
+
+965
+00:35:28,930 --> 00:35:30,820
+architect. So, technically, we have an
+
+966
+00:35:30,820 --> 00:35:32,410
+architect, like I said, in any project. And,
+
+967
+00:35:32,410 --> 00:35:34,240
+that person is responsible for final
+
+968
+00:35:34,240 --> 00:35:37,330
+production result and responsible. We
+
+969
+00:35:37,330 --> 00:35:38,820
+don't like the word responsible, because,
+
+970
+00:35:38,820 --> 00:35:41,950
+responsibility means some - you know - means
+
+971
+00:35:41,950 --> 00:35:43,570
+that you're gonna lose something if
+
+972
+00:35:43,570 --> 00:35:45,550
+something happens. In our case, it doesn't
+
+973
+00:35:45,550 --> 00:35:47,860
+happen. So, in our case, if the project
+
+974
+00:35:47,860 --> 00:35:50,500
+doesn't work in the end, then, you know,
+
+975
+00:35:50,500 --> 00:35:52,570
+that's it. So, there is no - you know -
+
+976
+00:35:52,570 --> 00:35:54,340
+financial responsibility of that person.
+
+977
+00:35:54,340 --> 00:35:55,600
+We're not gonna say like, "Hey, now you're
+
+978
+00:35:55,600 --> 00:35:56,890
+gonna pay us something because you were
+
+979
+00:35:56,890 --> 00:35:58,930
+the architect for a month and you didn't
+
+980
+00:35:58,930 --> 00:36:01,660
+produce anything." So, the word "responsible",
+
+981
+00:36:01,660 --> 00:36:03,640
+in this case, we don't like to use, even
+
+982
+00:36:03,640 --> 00:36:05,350
+with the customer. So, when customers come
+
+983
+00:36:05,350 --> 00:36:07,750
+to us and say like, "Hey, are you gonna be
+
+984
+00:36:07,750 --> 00:36:10,150
+responsible? Is [it] gonna work?" We say, "No, we
+
+985
+00:36:10,150 --> 00:36:11,620
+can't guarantee that the software will
+
+986
+00:36:11,620 --> 00:36:13,570
+work. All we can guarantee [is] that the way
+
+987
+00:36:13,570 --> 00:36:16,150
+we manage the development is effective."
+
+988
+00:36:16,150 --> 00:36:18,250
+It's like it's, I'm always giving this
+
+989
+00:36:18,250 --> 00:36:20,440
+example with the taxi driver. You go into
+
+990
+00:36:20,440 --> 00:36:22,270
+the taxi and you ask, "Can you guarantee
+
+991
+00:36:22,270 --> 00:36:24,640
+that you will take me to the airport?" If
+
+992
+00:36:24,640 --> 00:36:26,350
+the taxi driver is professional enough,
+
+993
+00:36:26,350 --> 00:36:28,330
+he will say like, "No, I can't guarantee
+
+994
+00:36:28,330 --> 00:36:30,310
+you that, because, anything may happen. The
+
+995
+00:36:30,310 --> 00:36:31,750
+car may break. There's gonna be a
+
+996
+00:36:31,750 --> 00:36:33,520
+roadblock, whatever. Anything can happen.
+
+997
+00:36:33,520 --> 00:36:35,140
+All I can guarantee you [is] that I have a
+
+998
+00:36:35,140 --> 00:36:36,850
+GPS, I have a map, I have a driving
+
+999
+00:36:36,850 --> 00:36:38,740
+license, I have the gas in my car.
+
+1000
+00:36:38,740 --> 00:36:41,290
+Let's go. Let's go and see what happens.
+
+1001
+00:36:41,290 --> 00:36:43,300
+So, we are together in this
+
+1002
+00:36:43,300 --> 00:36:44,560
+journey, you know? The same should happen
+
+1003
+00:36:44,560 --> 00:36:46,990
+in software development. Any attempt to
+
+1004
+00:36:46,990 --> 00:36:49,180
+put responsibility on
+
+1005
+00:36:49,180 --> 00:36:52,480
+on the team like say, "Hey guys. Whatever
+
+1006
+00:36:52,480 --> 00:36:53,530
+happens, you have to
+
+1007
+00:36:53,530 --> 00:36:55,870
+make it work. It's just against the idea
+
+1008
+00:36:55,870 --> 00:36:57,970
+of software development. It's wrong. You
+
+1009
+00:36:57,970 --> 00:36:59,680
+shouldn't. Well, if you [are] a
+
+1010
+00:36:59,680 --> 00:37:01,000
+customer, you shouldn't do it like that.
+
+1011
+00:37:01,000 --> 00:37:03,340
+You should check how your
+
+1012
+00:37:03,340 --> 00:37:05,290
+team works. How effective are the
+
+1013
+00:37:05,290 --> 00:37:07,510
+mechanisms and methods they use to
+
+1014
+00:37:07,510 --> 00:37:09,250
+organize their work? And then, see what
+
+1015
+00:37:09,250 --> 00:37:09,760
+happens.
+
+1016
+00:37:09,760 --> 00:37:12,010
+And also, it's also related to the
+
+1017
+00:37:12,010 --> 00:37:13,600
+estimate. So, sometimes people say like
+
+1018
+00:37:13,600 --> 00:37:15,130
+"Can you estimate the project? How much
+
+1019
+00:37:15,130 --> 00:37:17,980
+will it cost?" We can't estimate, but, we
+
+1020
+00:37:17,980 --> 00:37:20,080
+never put that in the contract [that] we can't
+
+1021
+00:37:20,080 --> 00:37:21,490
+give you some number and say like, "We
+
+1022
+00:37:21,490 --> 00:37:22,900
+estimate it's gonna cost a hundred
+
+1023
+00:37:22,900 --> 00:37:25,090
+thousand dollars." Yes, that's an estimate.
+
+1024
+00:37:25,090 --> 00:37:28,930
+But, it may be a million easy. So, we just
+
+1025
+00:37:28,930 --> 00:37:31,390
+gonna see what happens. We will
+
+1026
+00:37:31,390 --> 00:37:33,610
+drive. We're in the taxi. We will drive.
+
+1027
+00:37:33,610 --> 00:37:36,310
+But, if on that way straight there, if
+
+1028
+00:37:36,310 --> 00:37:40,150
+there will be some - you know - detours and
+
+1029
+00:37:40,150 --> 00:37:41,980
+some roadblocks, then we will make
+
+1030
+00:37:41,980 --> 00:37:43,870
+detours. And, it will cost you more and
+
+1031
+00:37:43,870 --> 00:37:46,780
+more and more. The only thing we can
+
+1032
+00:37:46,780 --> 00:37:48,340
+guarantee is that we're not gonna cheat.
+
+1033
+00:37:48,340 --> 00:37:49,810
+We're not gonna - you know - make extra
+
+1034
+00:37:49,810 --> 00:37:51,790
+detours. That's what you can blame
+
+1035
+00:37:51,790 --> 00:37:53,500
+us for. But, don't blame us for - you know -
+
+1036
+00:37:53,500 --> 00:37:55,750
+for the road being longer than you were
+
+1037
+00:37:55,750 --> 00:37:58,480
+expecting. That's the philosophy. I mean,
+
+1038
+00:37:58,480 --> 00:37:59,980
+not every customer will like that, but...
+
+1039
+00:37:59,980 --> 00:38:02,380
+Moderator: Okay, let's move on. How do you know that
+
+1040
+00:38:02,380 --> 00:38:04,540
+your developers didn't form up hidden
+
+1041
+00:38:04,540 --> 00:38:08,680
+secret chat groups? [Yegor and audience laugh] How do you know that
+
+1042
+00:38:08,680 --> 00:38:11,560
+your developers does not form up a
+
+1043
+00:38:11,560 --> 00:38:13,780
+secret chat groups? Yegor: Well, yeah. We thought
+
+1044
+00:38:13,780 --> 00:38:15,670
+about that. And - you know - when they start
+
+1045
+00:38:15,670 --> 00:38:16,810
+working, they - sometimes they try.
+
+1046
+00:38:16,810 --> 00:38:23,260
+Sometimes they try. [audience laughs] I had - it's a real
+
+1047
+00:38:23,260 --> 00:38:25,570
+story. I had a story with the customer. So,
+
+1048
+00:38:25,570 --> 00:38:27,310
+the customer came to us. And, I explained
+
+1049
+00:38:27,310 --> 00:38:29,350
+the idea, like how we work, and he
+
+1050
+00:38:29,350 --> 00:38:30,880
+said like, "I love it. Let's do it your way."
+
+1051
+00:38:30,880 --> 00:38:33,370
+And, then we started to work. And then, in
+
+1052
+00:38:33,370 --> 00:38:35,980
+about a month, I realized that I
+
+1053
+00:38:35,980 --> 00:38:37,960
+don't have enough - you know - tickets. So,
+
+1054
+00:38:37,960 --> 00:38:39,520
+he's coming to me and giving me some
+
+1055
+00:38:39,520 --> 00:38:41,170
+information which I can't find hidden in
+
+1056
+00:38:41,170 --> 00:38:43,510
+tickets. So, he's saying like, "Hey, we're
+
+1057
+00:38:43,510 --> 00:38:45,070
+using that technology. It's really great."
+
+1058
+00:38:45,070 --> 00:38:46,540
+and I'm like, "Yeah, but, who made that
+
+1059
+00:38:46,540 --> 00:38:47,980
+decision?" and he's like, "Yeah, that
+
+1060
+00:38:47,980 --> 00:38:49,720
+developer made the decision." and I'm
+
+1061
+00:38:49,720 --> 00:38:51,610
+like, "Where? Where's the ticket?" and he's
+
+1062
+00:38:51,610 --> 00:38:53,380
+like, "Forget it. No problem. You already
+
+1063
+00:38:53,380 --> 00:38:55,060
+made it." And then, I realized that he
+
+1064
+00:38:55,060 --> 00:38:57,570
+created the chat - the customer. And, [he]
+
+1065
+00:38:57,570 --> 00:39:00,340
+invited developers there. And, they
+
+1066
+00:39:00,340 --> 00:39:02,650
+started to talk there. And, I'm like - and
+
+1067
+00:39:02,650 --> 00:39:04,600
+me and my managers were like - watching in
+
+1068
+00:39:04,600 --> 00:39:06,100
+the tickets. And, the tickets - the amount of
+
+1069
+00:39:06,100 --> 00:39:07,120
+tickets - go down.
+
+1070
+00:39:07,120 --> 00:39:09,340
+The conversations stop there. But, the
+
+1071
+00:39:09,340 --> 00:39:10,750
+information - but the code - is being
+
+1072
+00:39:10,750 --> 00:39:12,820
+written. So, they write code. They make
+
+1073
+00:39:12,820 --> 00:39:14,320
+decisions. But, we don't see what's going
+
+1074
+00:39:14,320 --> 00:39:16,630
+on. And then, I talk to the customer and
+
+1075
+00:39:16,630 --> 00:39:18,640
+said like, "Do you have some - you know - do
+
+1076
+00:39:18,640 --> 00:39:20,410
+they talk to them?" And he's like, "Yeah.
+
+1077
+00:39:20,410 --> 00:39:22,420
+What's wrong with that?" And I'm like, "Dude.
+
+1078
+00:39:22,420 --> 00:39:25,270
+I told you; that's completely against our -
+
+1079
+00:39:25,270 --> 00:39:26,890
+you know - our principles, our
+
+1080
+00:39:26,890 --> 00:39:28,480
+philosophy." And he's like, "All right. All
+
+1081
+00:39:28,480 --> 00:39:30,700
+right. I promise you. No more talking." And
+
+1082
+00:39:30,700 --> 00:39:33,550
+then, again, the same. So, he just
+
+1083
+00:39:33,550 --> 00:39:35,890
+opened the box. And, he ruined the whole
+
+1084
+00:39:35,890 --> 00:39:37,600
+thing. So, in the end, the project failed.
+
+1085
+00:39:37,600 --> 00:39:39,880
+In the end, it was nowhere, because we
+
+1086
+00:39:39,880 --> 00:39:41,260
+completely lost control of the situation.
+
+1087
+00:39:41,260 --> 00:39:42,970
+You know - you understand why, because
+
+1088
+00:39:42,970 --> 00:39:44,800
+these people started it all. They started
+
+1089
+00:39:44,800 --> 00:39:46,780
+to make decisions. And then, this -
+
+1090
+00:39:46,780 --> 00:39:49,210
+we completely lost control. That's it. So,
+
+1091
+00:39:49,210 --> 00:39:50,770
+the project failed, and quite -
+
+1092
+00:39:50,770 --> 00:39:52,570
+Yeah. They told him like - this customer - I
+
+1093
+00:39:52,570 --> 00:39:53,920
+told him like, "Look, I can't be
+
+1094
+00:39:53,920 --> 00:39:55,510
+responsible anymore for anything because
+
+1095
+00:39:55,510 --> 00:39:57,610
+you['re] just doing things which
+
+1096
+00:39:57,610 --> 00:39:59,530
+are completely wrong. You shouldn't do
+
+1097
+00:39:59,530 --> 00:40:01,240
+that. You shouldn't allow them to have
+
+1098
+00:40:01,240 --> 00:40:03,700
+that conversation." So, it happened. And,
+
+1099
+00:40:03,700 --> 00:40:05,680
+second question. Yes. Moderator: So, one more
+
+1100
+00:40:05,680 --> 00:40:07,570
+question. What stops me from generating
+
+1101
+00:40:07,570 --> 00:40:11,020
+the bugs [that] I will fix for your money?
+
+1102
+00:40:11,020 --> 00:40:13,540
+What stops me from generating
+
+1103
+00:40:13,540 --> 00:40:16,990
+the bugs that will get fixed for your
+
+1104
+00:40:16,990 --> 00:40:17,860
+money? So, basically -
+
+1105
+00:40:17,860 --> 00:40:19,330
+Yegor: Okay, yeah. That's a good question. So, what
+
+1106
+00:40:19,330 --> 00:40:20,800
+stops the developer from generating -
+
+1107
+00:40:20,800 --> 00:40:22,810
+while writing - the code and introducing
+
+1108
+00:40:22,810 --> 00:40:24,970
+some bugs which will be fixed
+
+1109
+00:40:24,970 --> 00:40:27,190
+later. And then, the developer will make
+
+1110
+00:40:27,190 --> 00:40:28,510
+more money, right? That's the question.
+
+1111
+00:40:28,510 --> 00:40:31,270
+Well, first of all we assign. But, we
+
+1112
+00:40:31,270 --> 00:40:34,120
+assign bugs to fix not to the same
+
+1113
+00:40:34,120 --> 00:40:35,560
+people who introduced them. So, we
+
+1114
+00:40:35,560 --> 00:40:37,810
+randomly assign tickets. So, let's say
+
+1115
+00:40:37,810 --> 00:40:39,490
+you're the developer. So, you create a
+
+1116
+00:40:39,490 --> 00:40:41,050
+piece of code. And, in that piece of code
+
+1117
+00:40:41,050 --> 00:40:42,880
+there is some bugs intentionally made.
+
+1118
+00:40:42,880 --> 00:40:44,860
+Okay, you made them intentionally. But,
+
+1119
+00:40:44,860 --> 00:40:46,510
+then these bugs will be fixed by that
+
+1120
+00:40:46,510 --> 00:40:48,370
+person, that person, and that person - randomly.
+
+1121
+00:40:48,370 --> 00:40:50,680
+So, there is no real reason for the
+
+1122
+00:40:50,680 --> 00:40:52,510
+developer to introduce bugs. Like, there's
+
+1123
+00:40:52,510 --> 00:40:55,860
+no, I haven't seen that any, like never. So -
+
+1124
+00:40:55,860 --> 00:40:59,770
+Say again? [listens to audience member speaking inaudibly, then audience laughs] Well, unless they have a secret
+
+1125
+00:40:59,770 --> 00:41:02,830
+chat. But, *we* assign tickets. So, they
+
+1126
+00:41:02,830 --> 00:41:04,570
+don't make this decision. We always give
+
+1127
+00:41:04,570 --> 00:41:06,400
+them tickets. We say like, "Hey, Jeff. This
+
+1128
+00:41:06,400 --> 00:41:08,110
+is your ticket." You can't choose it. I
+
+1129
+00:41:08,110 --> 00:41:09,760
+mean, you can say, "No, give me that
+
+1130
+00:41:09,760 --> 00:41:12,430
+one." It's always randomly only always
+
+1131
+00:41:12,430 --> 00:41:13,900
+to random people. That's how we actually
+
+1132
+00:41:13,900 --> 00:41:15,700
+solve the problem with no experts at all.
+
+1133
+00:41:15,700 --> 00:41:18,040
+So, because every time we give
+
+1134
+00:41:18,040 --> 00:41:20,220
+bugs and troubles to differ
+
+1135
+00:41:20,220 --> 00:41:21,480
+people. So, they always have to
+
+1136
+00:41:21,480 --> 00:41:23,610
+understand the new piece of code. So,
+
+1137
+00:41:23,610 --> 00:41:24,900
+there [is] always something in the code
+
+1138
+00:41:24,900 --> 00:41:26,790
+base - something new arrived into the
+
+1139
+00:41:26,790 --> 00:41:29,790
+person, and it helps. So, I haven't
+
+1140
+00:41:29,790 --> 00:41:31,500
+seen that. Moderator: Okay, great.
+
+1141
+00:41:31,500 --> 00:41:34,700
+Another question: So, how do you decide
+
+1142
+00:41:34,700 --> 00:41:37,290
+how much do you pay for a particular
+
+1143
+00:41:37,290 --> 00:41:39,870
+task? Yegor: Well, like I said, we always give the
+
+1144
+00:41:39,870 --> 00:41:42,240
+same. We say in the same budget. Let's say
+
+1145
+00:41:42,240 --> 00:41:45,810
+one hour, and one hour means multiplied
+
+1146
+00:41:45,810 --> 00:41:48,360
+by the hourly rate of the developer. So,
+
+1147
+00:41:48,360 --> 00:41:50,100
+we have like a group of developers. Let's
+
+1148
+00:41:50,100 --> 00:41:52,410
+say 20 people in the project. And, that
+
+1149
+00:41:52,410 --> 00:41:54,180
+person is 50 bucks an hour, or that
+
+1150
+00:41:54,180 --> 00:41:56,250
+person is 30 bucks an hour. So, and then,
+
+1151
+00:41:56,250 --> 00:41:58,740
+we have a bug for one hour. So, we
+
+1152
+00:41:58,740 --> 00:42:00,510
+randomly select the person and give it
+
+1153
+00:42:00,510 --> 00:42:03,200
+to that person. Okay, it's gonna cost $50.
+
+1154
+00:42:03,200 --> 00:42:04,880
+[audience member speaking inaudibly]
+
+1155
+00:42:04,880 --> 00:42:07,410
+Yeah, like, I just explained before. So, we just
+
+1156
+00:42:07,410 --> 00:42:10,080
+always say one hour. We don't know - we
+
+1157
+00:42:10,080 --> 00:42:12,150
+don't estimate. We don't care. So, we just
+
+1158
+00:42:12,150 --> 00:42:13,950
+say one hour. Well, in our case, it's half
+
+1159
+00:42:13,950 --> 00:42:16,080
+an hour. We try it - one hour - but, now we
+
+1160
+00:42:16,080 --> 00:42:17,760
+use 30 minutes. So, it's always half an
+
+1161
+00:42:17,760 --> 00:42:21,540
+hour. And, we allow developers to cheat and
+
+1162
+00:42:21,540 --> 00:42:24,360
+return back the code - return back to fix
+
+1163
+00:42:24,360 --> 00:42:27,180
+not completely fixed. So, sometimes we
+
+1164
+00:42:27,180 --> 00:42:31,350
+have bugs which takes an oh, five, seven,
+
+1165
+00:42:31,350 --> 00:42:33,660
+ten steps. So, let's say, I create - there's
+
+1166
+00:42:33,660 --> 00:42:36,420
+a bug. I assign it to you. You fix it not
+
+1167
+00:42:36,420 --> 00:42:38,160
+completely. You just say, "Hey, I just - for
+
+1168
+00:42:38,160 --> 00:42:40,500
+example - I introduced the unit test which
+
+1169
+00:42:40,500 --> 00:42:42,870
+which proves that this is not the
+
+1170
+00:42:42,870 --> 00:42:43,410
+problem."
+
+1171
+00:42:43,410 --> 00:42:45,060
+But, I don't know what the problem is. So,
+
+1172
+00:42:45,060 --> 00:42:47,520
+I introduce new unit test. And, I put a
+
+1173
+00:42:47,520 --> 00:42:49,200
+new marker saying like, "Hey, please
+
+1174
+00:42:49,200 --> 00:42:51,240
+investigate further, because it looks
+
+1175
+00:42:51,240 --> 00:42:52,950
+like - here's the new unit test but - it
+
+1176
+00:42:52,950 --> 00:42:54,540
+doesn't prove that the bug is there." I've
+
+1177
+00:42:54,540 --> 00:42:56,400
+returned that code back. The new
+
+1178
+00:42:56,400 --> 00:42:58,470
+developer picks up the marker and tries
+
+1179
+00:42:58,470 --> 00:43:00,930
+again. Again, it can [be] that the developer
+
+1180
+00:43:00,930 --> 00:43:03,060
+can't do anything. Again, the new code comes
+
+1181
+00:43:03,060 --> 00:43:04,830
+into master branch. The new developer is
+
+1182
+00:43:04,830 --> 00:43:06,540
+assigned. A new developer is assigned. So,
+
+1183
+00:43:06,540 --> 00:43:07,890
+we can jump back and forth, back and
+
+1184
+00:43:07,890 --> 00:43:09,960
+forth, on these iterations, sometimes for
+
+1185
+00:43:09,960 --> 00:43:11,880
+ten times, and eventually that will be
+
+1186
+00:43:11,880 --> 00:43:13,920
+fixed. So, the total cost of the bug will
+
+1187
+00:43:13,920 --> 00:43:15,780
+be 10 multiplied by 30 minutes. There's
+
+1188
+00:43:15,780 --> 00:43:18,510
+gonna be 300 minutes - the total budget.
+
+1189
+00:43:18,510 --> 00:43:20,910
+But, it's going to be 10 increments. 10
+
+1190
+00:43:20,910 --> 00:43:23,070
+Increments with 10 people, which is a way
+
+1191
+00:43:23,070 --> 00:43:24,570
+more manageable situation
+
+1192
+00:43:24,570 --> 00:43:27,570
+comparing to one person [spending] 300
+
+1193
+00:43:27,570 --> 00:43:29,880
+minutes. "Hey, here's your task work for
+
+1194
+00:43:29,880 --> 00:43:32,060
+300 minutes" which means, what, five hours.
+
+1195
+00:43:32,060 --> 00:43:33,380
+Maybe,
+
+1196
+00:43:33,380 --> 00:43:35,120
+you will fix it. In our case, it's going to be
+
+1197
+00:43:35,120 --> 00:43:37,190
+ten people touching that problem. Ten
+
+1198
+00:43:37,190 --> 00:43:39,920
+people. Eventually, the person number ten
+
+1199
+00:43:39,920 --> 00:43:40,910
+will fix it.
+
+1200
+00:43:40,910 --> 00:43:43,190
+Which one is manageable - more manageable?
+
+1201
+00:43:43,190 --> 00:43:46,310
+Obviously, the - our approach. So, we don't
+
+1202
+00:43:46,310 --> 00:43:47,990
+estimate. We just always say thirty
+
+1203
+00:43:47,990 --> 00:43:49,430
+minutes, half an hour, whatever. You do
+
+1204
+00:43:49,430 --> 00:43:50,930
+half an hour, do something, do something,
+
+1205
+00:43:50,930 --> 00:43:53,150
+do something. And then, we iterate, iterate,
+
+1206
+00:43:53,150 --> 00:43:56,750
+iterate. Moderator: Okay, great. And what about "Ops"
+
+1207
+00:43:56,750 --> 00:43:58,280
+now what about operations and
+
+1208
+00:43:58,280 --> 00:44:00,040
+infrastructure? How do you pay for that?
+
+1209
+00:44:00,040 --> 00:44:04,010
+Yegor: Well for DevOps, it's kind of something
+
+1210
+00:44:04,010 --> 00:44:06,770
+we haven't touched like seriously. So, I'm
+
+1211
+00:44:06,770 --> 00:44:08,780
+not sure how it's gonna work for DevOps.
+
+1212
+00:44:08,780 --> 00:44:10,430
+For the current situation with DevOps
+
+1213
+00:44:10,430 --> 00:44:12,050
+where people actually - you know - configure
+
+1214
+00:44:12,050 --> 00:44:14,270
+servers and install something on servers.
+
+1215
+00:44:14,270 --> 00:44:16,400
+So, my answer is, "I don't know."
+
+1216
+00:44:16,400 --> 00:44:18,800
+We'll try. We haven't touched that area
+
+1217
+00:44:18,800 --> 00:44:20,840
+yet. Maybe with the immutable servers -
+
+1218
+00:44:20,840 --> 00:44:22,250
+which i think is gonna be the future -
+
+1219
+00:44:22,250 --> 00:44:24,350
+when we'll have mutable servers, and then
+
+1220
+00:44:24,350 --> 00:44:26,120
+the entire infrastructure will be kept
+
+1221
+00:44:26,120 --> 00:44:28,130
+in the in the repository as a code, and
+
+1222
+00:44:28,130 --> 00:44:30,320
+everything will happen in the code, and
+
+1223
+00:44:30,320 --> 00:44:31,340
+then the infrastructure will be
+
+1224
+00:44:31,340 --> 00:44:32,870
+automatically deployed to production
+
+1225
+00:44:32,870 --> 00:44:35,930
+like in one-click, then probably the
+
+1226
+00:44:35,930 --> 00:44:38,030
+DevOps will be equal to developer. And
+
+1227
+00:44:38,030 --> 00:44:39,710
+then, the problem will be solved. But,
+
+1228
+00:44:39,710 --> 00:44:41,330
+right now it's more like people with the
+
+1229
+00:44:41,330 --> 00:44:45,620
+SSH consoles. So, it's difficult to do.
+
+1230
+00:44:45,620 --> 00:44:48,170
+Moderator: If the server is down, the spacer duty also
+
+1231
+00:44:48,170 --> 00:44:50,960
+just open a ticket? Yegor: Well, in most cases. Yeah, in
+
+1232
+00:44:50,960 --> 00:44:52,820
+most cases of the server is down, we also
+
+1233
+00:44:52,820 --> 00:44:54,440
+open the ticket. We also open the ticket
+
+1234
+00:44:54,440 --> 00:44:56,090
+and say, "Hey, somebody fixd that." And,
+
+1235
+00:44:56,090 --> 00:44:57,800
+sometimes - it's a good question -
+
+1236
+00:44:57,800 --> 00:44:59,270
+sometimes, we need that ticket to be
+
+1237
+00:44:59,270 --> 00:45:01,400
+fixed now instead of in five hours. And,
+
+1238
+00:45:01,400 --> 00:45:04,070
+[in] that case, we increase the budget. We just
+
+1239
+00:45:04,070 --> 00:45:05,600
+say, "It's not 30 minutes. It's two hours."
+
+1240
+00:45:05,600 --> 00:45:07,280
+Even though we understand it's a work
+
+1241
+00:45:07,280 --> 00:45:09,230
+for five minutes or 15 minutes. We
+
+1242
+00:45:09,230 --> 00:45:11,810
+just multiply - we boost - the budget. We say
+
+1243
+00:45:11,810 --> 00:45:14,120
+like "multiple"
+
+1244
+00:45:14,120 --> 00:45:15,920
+and it means like the developer will
+
+1245
+00:45:15,920 --> 00:45:17,420
+pick it up immediately and will try to
+
+1246
+00:45:17,420 --> 00:45:19,670
+do everything to close because the
+
+1247
+00:45:19,670 --> 00:45:21,320
+budget is way higher. So, we can - we
+
+1248
+00:45:21,320 --> 00:45:23,570
+actually motivate by money which is [a]
+
+1249
+00:45:23,570 --> 00:45:24,380
+really good thing.
+
+1250
+00:45:24,380 --> 00:45:26,210
+So, most people say that money is not a
+
+1251
+00:45:26,210 --> 00:45:27,800
+motivator. We completely disagree with
+
+1252
+00:45:27,800 --> 00:45:30,110
+that. Money is the greatest motivator.
+
+1253
+00:45:30,110 --> 00:45:32,240
+That is the greatest motivator ever
+
+1254
+00:45:32,240 --> 00:45:34,940
+invented in human history. We don't
+
+1255
+00:45:34,940 --> 00:45:36,260
+need anything else. We don't need [these] -
+
+1256
+00:45:36,260 --> 00:45:37,940
+you know - tennis tables in the office. We
+
+1257
+00:45:37,940 --> 00:45:39,290
+don't need these coffee machines. We need
+
+1258
+00:45:39,290 --> 00:45:41,480
+money. Just give money to people in a
+
+1259
+00:45:41,480 --> 00:45:43,010
+clear way so the developers will
+
+1260
+00:45:43,010 --> 00:45:44,750
+understand why the money coming there,
+
+1261
+00:45:44,750 --> 00:45:46,850
+how to increase the amount of money. I
+
+1262
+00:45:46,850 --> 00:45:48,830
+don't need this soft skills. I don't - I
+
+1263
+00:45:48,830 --> 00:45:50,750
+don't need to please my manager. I just
+
+1264
+00:45:50,750 --> 00:45:53,270
+need to close more tickets. This is, I
+
+1265
+00:45:53,270 --> 00:45:54,950
+think, the way more productive - you know -
+
+1266
+00:45:54,950 --> 00:45:56,960
+approach to motivating people. There's
+
+1267
+00:45:56,960 --> 00:46:00,920
+the question here. Maybe, yeah. [audience member speaks inaudibly] Taxes? Well,
+
+1268
+00:46:00,920 --> 00:46:03,140
+we pay taxes. Programmers pay taxes. So,
+
+1269
+00:46:03,140 --> 00:46:04,580
+programmers want to send money to -
+
+1270
+00:46:04,580 --> 00:46:06,050
+programmers, they pay all their own
+
+1271
+00:46:06,050 --> 00:46:09,800
+taxes, of course. Yeah. Moderator: How much do you pay
+
+1272
+00:46:09,800 --> 00:46:12,470
+managers and how well for managers? Yegor: We
+
+1273
+00:46:12,470 --> 00:46:14,630
+pay in the same, well, we also pay by task.
+
+1274
+00:46:14,630 --> 00:46:18,380
+And so, the more tasks a manager is
+
+1275
+00:46:18,380 --> 00:46:20,660
+managing, is assigning, closing, assigning,
+
+1276
+00:46:20,660 --> 00:46:22,550
+closing, the more money the manager gets.
+
+1277
+00:46:22,550 --> 00:46:24,260
+So, we're always trying to attach
+
+1278
+00:46:24,260 --> 00:46:26,720
+everybody in the project for results. So,
+
+1279
+00:46:26,720 --> 00:46:29,090
+the more the project produces - the more
+
+1280
+00:46:29,090 --> 00:46:31,640
+we deliver to the customer more code - the
+
+1281
+00:46:31,640 --> 00:46:33,650
+more everybody - you know - gets. And, the
+
+1282
+00:46:33,650 --> 00:46:35,120
+customers appreciate it. And, we build
+
+1283
+00:46:35,120 --> 00:46:37,040
+them like that. So, in
+
+1284
+00:46:37,040 --> 00:46:40,250
+the end of the week, end of
+
+1285
+00:46:40,250 --> 00:46:41,720
+the month, we just show the customer the
+
+1286
+00:46:41,720 --> 00:46:44,300
+total amount of tasks we closed, bugs we
+
+1287
+00:46:44,300 --> 00:46:46,550
+solved, and this is the amount of money the
+
+1288
+00:46:46,550 --> 00:46:50,360
+customer pays. Yeah. Moderator: Okay. Who is breaking
+
+1289
+00:46:50,360 --> 00:46:53,510
+up work in chunks? What if the chunk is
+
+1290
+00:46:53,510 --> 00:46:55,640
+too big? Yegor: Well, I just explained that. I
+
+1291
+00:46:55,640 --> 00:46:57,230
+explained that. We just - you know - we just
+
+1292
+00:46:57,230 --> 00:46:58,760
+give the full chunk to [the] developer and
+
+1293
+00:46:58,760 --> 00:47:00,410
+then we allow [the] developer to cheat. So,
+
+1294
+00:47:00,410 --> 00:47:02,750
+that's how we break it. Moderator: Do you even have
+
+1295
+00:47:02,750 --> 00:47:04,160
+permanent employees in the company,
+
+1296
+00:47:04,160 --> 00:47:08,090
+except yourself? Yegor: Well, we - I'm, in general,
+
+1297
+00:47:08,090 --> 00:47:10,160
+against permanent employment. I think
+
+1298
+00:47:10,160 --> 00:47:11,840
+it's a modern form of
+
+1299
+00:47:11,840 --> 00:47:12,320
+slavery.
+
+1300
+00:47:12,320 --> 00:47:15,380
+So, this long-term employment is,
+
+1301
+00:47:15,380 --> 00:47:17,960
+well, it's really good for lazy
+
+1302
+00:47:17,960 --> 00:47:19,700
+developers. It's really, it's
+
+1303
+00:47:19,700 --> 00:47:21,680
+perfect. Because, like I said, no matter
+
+1304
+00:47:21,680 --> 00:47:23,660
+what you do, you get the money. But, it's
+
+1305
+00:47:23,660 --> 00:47:25,160
+not really good for people who are - you
+
+1306
+00:47:25,160 --> 00:47:27,790
+know - who are
+
+1307
+00:47:27,800 --> 00:47:30,260
+self-motivated, who are interested to
+
+1308
+00:47:30,260 --> 00:47:32,480
+grow, who wants to get pleasure from the
+
+1309
+00:47:32,480 --> 00:47:34,190
+work. So, this full time employment -
+
+1310
+00:47:34,190 --> 00:47:36,230
+long-term employment - is really not
+
+1311
+00:47:36,230 --> 00:47:37,820
+productive. It's everywhere right now. All
+
+1312
+00:47:37,820 --> 00:47:40,220
+companies pay that. And - you know - it's
+
+1313
+00:47:40,220 --> 00:47:42,140
+really difficult to fight against that.
+
+1314
+00:47:42,140 --> 00:47:43,910
+But, I think the future is different. I
+
+1315
+00:47:43,910 --> 00:47:45,980
+think, in the future, we'll get more money
+
+1316
+00:47:45,980 --> 00:47:47,810
+per hour, but, we'll get
+
+1317
+00:47:47,810 --> 00:47:49,880
+paid for results. I think that's the
+
+1318
+00:47:49,880 --> 00:47:51,860
+future for professional development - not
+
+1319
+00:47:51,860 --> 00:47:53,030
+what we have right now. What we have
+
+1320
+00:47:53,030 --> 00:47:54,770
+right now is, like I'm saying, it's modern
+
+1321
+00:47:54,770 --> 00:47:58,160
+slavery of the 21st century. It's gonna
+
+1322
+00:47:58,160 --> 00:47:59,930
+go. Moderator: Okay, and the last question. From
+
+1323
+00:47:59,930 --> 00:48:02,450
+me actually to the audience. Yegor: Yeah. Moderator: How many
+
+1324
+00:48:02,450 --> 00:48:07,450
+people agree with this approach? Yegor: See? 50%.
+
+1325
+00:48:07,450 --> 00:48:10,250
+Moderator: Thank you, Yegor. That was awesome. Yegor: Thank
+
+1326
+00:48:10,250 --> 00:48:11,760
+you very much.
+
+1327
+00:48:11,760 --> 00:48:19,730
+[Applause]
+
