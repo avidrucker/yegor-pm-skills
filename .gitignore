@@ -1,0 +1,27 @@
+# Transcripts (recoverable via yt-dlp)
+XDSD_YouTube_Talk/*.srt
+XDSD_YouTube_Talk/*.txt
+
+# Local utility scripts (per user preference — kept out of source control)
+scripts/
+
+# Claude Code project-local state (settings, transcripts, etc.)
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
