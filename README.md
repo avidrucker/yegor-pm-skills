@@ -14,6 +14,9 @@ Eight versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](https
 | `yegor-architect` | Separate architect mode (design in writing) from courier mode (execute agreed design). Never mix. |
 | `yegor-velocity` | Velocity = closed tickets per week. Not commits, not hours, not LOC. |
 | `yegor-nohelp` | Knowledge sharing through docs, not by tapping experts. `NOTES.md` is the minimum. |
+| `yegor-spikes` | When scope/code-site is unknown, run a ≤60min research spike before writing a puzzle. |
+| `yegor-review` | **Code review.** Reject, don't bless. Four NOs, 3 critical problems, never run the code. |
+| `yegor-unit-tests` | **Test quality.** Tests must be able to fail. Anti-pattern catalog + fakes over mocks. |
 
 Each skill ships `SKILL.md` + `VERSION` + `CHANGELOG.md` and can be bumped independently. The `research/` folder contains the deep-reference doc each skill is distilled from, citing Yegor's primary sources.
 
@@ -26,7 +29,7 @@ Clone the repo, then symlink each skill into your Claude Code user-wide skills f
 ```powershell
 git clone git@github.com:avidrucker/yegor-pm-skills.git
 $root = (Resolve-Path .\yegor-pm-skills).Path
-foreach ($s in @("yegor-pm","yegor-pdd","yegor-bdd","yegor-microtasks","yegor-tickets","yegor-architect","yegor-velocity","yegor-nohelp")) {
+foreach ($s in @("yegor-pm","yegor-pdd","yegor-bdd","yegor-microtasks","yegor-tickets","yegor-architect","yegor-velocity","yegor-nohelp","yegor-spikes","yegor-review","yegor-unit-tests")) {
   cmd /c mklink /J "$env:USERPROFILE\.claude\skills\$s" "$root\skills\$s"
 }
 ```
@@ -39,7 +42,7 @@ foreach ($s in @("yegor-pm","yegor-pdd","yegor-bdd","yegor-microtasks","yegor-ti
 git clone git@github.com:avidrucker/yegor-pm-skills.git
 ROOT="$(pwd)/yegor-pm-skills"
 mkdir -p "$HOME/.claude/skills"
-for s in yegor-pm yegor-pdd yegor-bdd yegor-microtasks yegor-tickets yegor-architect yegor-velocity yegor-nohelp; do
+for s in yegor-pm yegor-pdd yegor-bdd yegor-microtasks yegor-tickets yegor-architect yegor-velocity yegor-nohelp yegor-spikes yegor-review yegor-unit-tests; do
   ln -s "$ROOT/skills/$s" "$HOME/.claude/skills/$s"
 done
 ```
@@ -49,7 +52,7 @@ done
 In any Claude Code session:
 
 - `/yegor-pm` — meta orchestrator (the daily entry point)
-- `/yegor-pdd`, `/yegor-bdd`, `/yegor-microtasks`, `/yegor-tickets`, `/yegor-architect`, `/yegor-velocity`, `/yegor-nohelp` — individual rule sets
+- `/yegor-pdd`, `/yegor-bdd`, `/yegor-microtasks`, `/yegor-tickets`, `/yegor-architect`, `/yegor-velocity`, `/yegor-nohelp`, `/yegor-spikes`, `/yegor-review`, `/yegor-unit-tests` — individual rule sets
 
 Each skill's `SKILL.md` is the action layer (triggers + rules). Each `research/philosophy_NN_*.md` is the context layer (sources + rationale). When in doubt, the SKILL.md links to its research doc.
 
@@ -97,6 +100,12 @@ All philosophies are distilled from [Yegor Bugayenko](https://www.yegor256.com/)
 - *Let the Bug Reporter Have the Last Word* (2025)
 - *Stop Asking and Suggesting — Just Complain* / Bug Driven Development (2025)
 - *Couriers, Not Coders* (2026)
+- *Four NOs of a Serious Code Reviewer* (2015)
+- *Does Code Review Involve Testing?* (2019)
+- *You Do Need Independent Technical Reviews!* (2014)
+- *Unit Testing Anti-Patterns, Full List* (2018)
+- *Built-in Fake Objects* (2014)
+- *Write Unit Tests, Don't Waste Our Money!* (2025)
 
 Each `research/philosophy_NN_*.md` includes the full source list for its skill.
 

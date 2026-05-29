@@ -1,8 +1,8 @@
 ---
 name: yegor-bdd
-description: Apply Bug Driven Development. Frame every piece of work as a complaint with shape "have X / should have Y / repro". No feature requests, no suggestions, no questions. Use when filing, reviewing, or closing issues. Only the reporter closes a ticket.
-version: 0.1.0
-last_reviewed: 2026-05-23
+description: Apply Bug Driven Development. Frame every piece of work as a complaint with shape "have X / should have Y / repro". No feature requests, no suggestions, no questions. The complaint is best expressed as a failing/disabled test that proves the bug. Use when filing, reviewing, or closing issues. Only the reporter closes a ticket.
+version: 0.2.0
+last_reviewed: 2026-05-28
 ---
 
 # Yegor Bug Driven Development
@@ -28,6 +28,15 @@ Every piece of work is a complaint with shape "have X / should have Y / repro." 
 | "Add settings menu" | "Settings are inaccessible from the main UI" |
 | "Improve date parsing" | "Date parser fails on ISO inputs with milliseconds" |
 | "Write Windows install docs" | "Windows installation is undocumented" |
+
+## Test-as-proof (the complaint as code)
+
+The strongest form of a complaint is a **test that fails on the current code**. It is precise, unambiguous, and doubles as the regression guard once fixed.
+
+- **Report a bug as a failing or disabled test**, not (only) prose. A `@Disabled`/`it.skip` test annotated with the issue number is a machine-checkable complaint anyone can run.
+- **No code PR without a proving test.** A fix's PR must include a test that *fails against the old code* and passes against the new. A test that would have passed before the change proves nothing (see `yegor-unit-tests` → the Liar).
+- **Code and tests in separate PRs.** First PR: add/enable the test (which fails or is disabled). Second PR: change the code to make it pass and remove the `disabled` marker, without touching the test. This proves the requirement wasn't bent to fit the implementation.
+- **Solo flow:** as reporter, write the failing/disabled test. As solver, make it green in a separate change. As reporter, verify it's genuinely the test that drove the fix before closing.
 
 ## Rules for Claude
 
@@ -55,6 +64,8 @@ Every piece of work is a complaint with shape "have X / should have Y / repro." 
 - `yegor-tickets` — complaints live in the issue tracker, not in chat.
 - `yegor-velocity` — closure (by reporter) is the unit that counts.
 - `yegor-microtasks` — each complaint must be ≤60min to resolve.
+- `yegor-unit-tests` — the proving test must be a real test (able to fail), not a Liar.
+- `yegor-review` — a runtime-only bug found in review becomes a disabled-test complaint.
 
 ## Deep reference
 

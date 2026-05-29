@@ -1,8 +1,8 @@
 ---
 name: yegor-pdd
 description: Apply Puzzle Driven Development. Convert deferred sub-problems into structured @todo puzzle comments at the code site. Use when writing stubs, reviewing TODO comments, or deferring sub-problems during implementation. Each puzzle references a parent ticket and has an estimate in minutes.
-version: 0.1.0
-last_reviewed: 2026-05-23
+version: 0.3.0
+last_reviewed: 2026-05-28
 ---
 
 # Yegor Puzzle Driven Development
@@ -52,16 +52,39 @@ Fields:
 - Recommended: run `pdd` in a pre-push hook to surface unresolved puzzles before they ship.
 - Do NOT rely on the `0pdd.com` hosted bot — its latest release is marked "web-service is broken" (Feb 2024).
 - For local issue sync, pipe `pdd` XML into a small script that calls `gh issue create`.
+- Mind the scan's coverage: a puzzle is only tracked if its file falls within pdd's source set and outside its `--exclude` globs. Puzzles in excluded paths (e.g. `*.md`, `docs/**`) are silently ignored — the pre-push hook can print "0 puzzle(s) tracked" while many exist. Before trusting the count, confirm the puzzle's path is actually scanned; otherwise the parent GH issue is the only real backstop.
+
+## Blocked puzzles
+
+A puzzle is **blocked** when it cannot be resolved without an external dependency (oracle research, upstream fix, decision from another party).
+
+**How to handle:**
+1. Add a comment to the GH issue: "Blocked on X — skipping per Yegor-PM priority order."
+2. Leave the `@todo` in the code untouched (removing it would lose the obligation).
+3. In the priority queue, skip blocked puzzles and move to the next highest-severity unblocked one.
+4. When the blocker clears, re-enter the puzzle at its original priority.
+
+**Never** remove a `@todo` just because it's blocked. It remains in the code as a visible obligation until it's actually resolved.
+
+## Puzzle lifecycle (close checklist)
+
+When a puzzle is resolved:
+1. Remove the `@todo` comment from the code site.
+2. Commit with `Closes #N` in the message body.
+3. Close the GH issue with a resolution comment: what was done, commit reference, any follow-up @todos created.
+4. Verify `pdd --source . --file puzzles.xml` no longer lists the issue number.
 
 ## Pitfalls
 - Don't pile puzzles like bookmarks. Each one names a concrete deferred sub-problem.
 - Don't write puzzles bigger than 60min. Decompose first.
 - Don't let puzzles age past 30 days. Resolve, escalate to a real ticket, or delete with justification in the parent ticket.
+- Never put a bare `@todo`, `TODO`, or `TODO:` token inside a puzzle's *description text*. The parser reads the second marker as the start of a new (malformed) puzzle and aborts the whole scan with "puzzle can't be parsed". Write "puzzles"/"todos" without the marker syntax (e.g. "decompose into build puzzles", not "build @todos"). This also applies when a puzzle describes follow-up puzzles it will spawn.
 
 ## Cross-references
 - `yegor-microtasks` — sized puzzles fit the ≤60-min rule.
 - `yegor-tickets` — every puzzle references a parent ticket.
 - `yegor-architect` — couriers drop puzzles instead of redesigning mid-implementation.
+- `yegor-spikes` — when the code site or scope is unknown, run a spike first to produce the information a puzzle needs.
 
 ## Deep reference
 

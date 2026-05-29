@@ -6,6 +6,9 @@
 > - Yegor Bugayenko, *Stop Asking and Suggesting — Just Complain* (2025-05-25) — https://www.yegor256.com/2025/05/25/bug-driven-development.html
 > - Yegor Bugayenko, *Five Principles of Bug Tracking* (2014-11-24) — https://www.yegor256.com/2014/11/24/principles-of-bug-tracking.html
 > - Yegor Bugayenko, *Let the Bug Reporter Have the Last Word* (2025-04-24) — https://www.yegor256.com/2025/04/24/dont-close-their-tickets.html
+> - Yegor Bugayenko, *Write Unit Tests, Don't Waste Our Money!* (2025-06-08) — https://www.yegor256.com/2025/06/08/pull-request-without-test.html
+> - Yegor Bugayenko, *A Disabled Test In Lieu of a Bug Report* (2023-07-25) — https://www.yegor256.com/2023/07/25/contribute-disabled-tests.html
+> - Yegor Bugayenko, *The Code and Its Tests in Different Pull Requests* (2022-08-04) — https://www.yegor256.com/2022/08/04/code-and-tests-different-pull-requests.html
 
 ---
 
@@ -44,6 +47,31 @@ Example titles (bad — rewrite before working):
 - "Add settings menu" → rewrite: "Settings are inaccessible from the main UI"
 - "Improve date parsing" → rewrite: "Date parser fails on ISO inputs with milliseconds"
 - "Write Windows install docs" → rewrite: "Windows installation is undocumented"
+
+## Test-as-proof: the complaint expressed as code
+
+A prose complaint is good; a *failing test* is better. It is unambiguous,
+machine-checkable, and becomes the regression guard once the bug is fixed.
+Yegor sharpens this across three later posts:
+
+- **A disabled test in lieu of a bug report (2023).** A contributor who finds a
+  bug but can't (or won't) fix it should submit a `@Disabled`/skipped test
+  annotated with the issue number. That's a more precise complaint than any
+  paragraph — anyone can enable it and watch it fail.
+- **No PR without a test (2025).** Every code change must be motivated by a test
+  that *fails against the old code* and passes against the new. If the test
+  would have passed before the change, it proves nothing — it's a Liar (see
+  philosophy 09).
+- **Code and tests in different PRs (2022).** First PR adds/enables the test
+  (which fails or is disabled). Second PR changes the code to make it pass and
+  removes the disabled marker *without touching the test*. This assures the
+  reviewer that the requirement was fixed in place and not quietly bent to suit
+  the implementation.
+
+For a solo developer the role-switching still applies: as **reporter** you write
+the failing/disabled test; as **solver** you make it green in a separate change;
+as **reporter** you verify it's genuinely the test that drove the fix before
+closing.
 
 ## Actionable guidelines
 
