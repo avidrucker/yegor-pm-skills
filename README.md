@@ -1,6 +1,6 @@
 # yegor-pm-skills
 
-Eight versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](https://www.xdsd.org/) methodology — practical project-management rules a solo developer (and the AI agents helping them) can actually follow.
+Eleven versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](https://www.xdsd.org/) methodology — practical project-management rules a solo developer (and the AI agents helping them) can actually follow.
 
 ## What's inside
 
@@ -19,6 +19,8 @@ Eight versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](https
 | `yegor-unit-tests` | **Test quality.** Tests must be able to fail. Anti-pattern catalog + fakes over mocks. |
 
 Each skill ships `SKILL.md` + `VERSION` + `CHANGELOG.md` and can be bumped independently. The `research/` folder contains the deep-reference doc each skill is distilled from, citing Yegor's primary sources.
+
+See [`GLOSSARY.md`](./GLOSSARY.md) for short definitions of the vocabulary these skills use — PDD, puzzle, spike, microtask, complaint, velocity, architect/courier, the Four NOs, and more.
 
 ## Install
 
