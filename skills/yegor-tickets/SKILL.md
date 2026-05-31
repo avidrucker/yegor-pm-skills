@@ -1,8 +1,8 @@
 ---
 name: yegor-tickets
 description: All meaningful project communication lives in the issue tracker. No Slack, DMs, or meetings as the primary channel. Decisions don't exist until written as a ticket comment. Use when making a design decision, changing direction, answering a project question, or proposing a new approach.
-version: 0.1.0
-last_reviewed: 2026-05-23
+version: 0.2.0
+last_reviewed: 2026-05-31
 ---
 
 # Yegor Ticket-as-Conversation
@@ -32,6 +32,16 @@ If it isn't in the issue tracker, it didn't happen. Write the comment first; cha
 - Every comment is **addressed** to a specific person via `@`-mention.
 - Every comment advocates closing the ticket OR keeping it open until a specific condition.
 - "+1" / "agreed" / "thanks" → use reactions, not comments.
+
+## Correcting an existing description
+
+A ticket description is an authored artifact. When you find an error in someone else's description — a wrong cross-reference, a stale dependency, an outdated premise — **do not silently rewrite the body.** Redline it instead, so the correction stays additive and auditable like every other decision here:
+
+1. Add a banner at the very top: `> ⚠️ **SEE COMMENTS FOR CORRECTIONS**`.
+2. `~~Strike through~~` the wrong/outdated text **in place** — leave it visible, marked as superseded. Never delete it.
+3. Post the correction as one or more comments — what was wrong, the right value, and why.
+
+This keeps the original visible (the audit trail), the author's voice intact, and the authoritative fix in the timestamped comment stream — the same "additive, in-the-tracker" discipline as the rest of this skill. The issue's **own owner** doing normal scope/spec edits is unaffected; this targets a *second party* fixing a *factual error*.
 
 ## Rules for Claude
 
