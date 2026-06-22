@@ -9,6 +9,8 @@ last_reviewed: 2026-05-28
 
 Coordinated set of skills based on Yegor Bugayenko's eXtremely Distributed Software Development (XDSD), adapted for solo and AI-augmented work.
 
+> **Stack-agnostic.** This skill family has no language or build-tool coupling — it works for Python/pytest, Node/npm, Clojure, or any stack. Its only external dependencies are an issue tracker (`gh`/GitHub assumed; any tracker works conceptually) and, for `yegor-pdd`, the `pdd` gem — which scans source in any language. Examples below happen to use `gh`; substitute your tracker as needed.
+
 ## The 10 sub-skills
 
 | Skill | One-liner |
