@@ -69,24 +69,28 @@ Each skill's `SKILL.md` is the action layer (triggers + rules). Each `research/p
 
 ## Codex skills
 
-The Codex ports are installed separately from the Claude Code skills. To install the first port:
+The Codex ports are installed separately from the Claude Code skills. To install the current ports:
 
 ```bash
 git clone git@github.com:avidrucker/yegor-pm-skills.git
 ROOT="$(pwd)/yegor-pm-skills"
 mkdir -p "$HOME/.codex/skills"
-ln -s "$ROOT/codex-skills/yegor-pm" "$HOME/.codex/skills/yegor-pm"
+for s in yegor-pm yegor-pdd; do
+  ln -s "$ROOT/codex-skills/$s" "$HOME/.codex/skills/$s"
+done
 ```
 
 Current Codex port status:
 
 - `codex-skills/yegor-pm/` — Codex-native meta-orchestrator port of `skills/yegor-pm/`.
+- `codex-skills/yegor-pdd/` — Codex-native Puzzle Driven Development port of `skills/yegor-pdd/`.
 
-Verification checklist for the first port:
+Verification checklist for the current ports:
 
 - `skills/yegor-pm/` remains the original Claude Code skill.
 - `codex-skills/yegor-pm/` is the matching Codex skill.
-- No other `yegor-*` Codex ports have been added yet.
+- `skills/yegor-pdd/` remains the original Claude Code skill.
+- `codex-skills/yegor-pdd/` is the matching Codex skill.
 
 ## Bumping a skill
 
