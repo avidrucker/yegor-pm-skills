@@ -75,7 +75,7 @@ The Codex ports are installed separately from the Claude Code skills. To install
 git clone git@github.com:avidrucker/yegor-pm-skills.git
 ROOT="$(pwd)/yegor-pm-skills"
 mkdir -p "$HOME/.codex/skills"
-for s in yegor-pm yegor-pdd yegor-bdd; do
+for s in yegor-pm yegor-pdd yegor-bdd yegor-microtasks; do
   ln -s "$ROOT/codex-skills/$s" "$HOME/.codex/skills/$s"
 done
 ```
@@ -85,6 +85,7 @@ Current Codex port status:
 - `codex-skills/yegor-pm/` — Codex-native meta-orchestrator port of `skills/yegor-pm/`.
 - `codex-skills/yegor-pdd/` — Codex-native Puzzle Driven Development port of `skills/yegor-pdd/`.
 - `codex-skills/yegor-bdd/` — Codex-native Bug Driven Development port of `skills/yegor-bdd/`.
+- `codex-skills/yegor-microtasks/` — Codex-native microtasking port of `skills/yegor-microtasks/`.
 
 Verification checklist for the current ports:
 
@@ -94,6 +95,8 @@ Verification checklist for the current ports:
 - `codex-skills/yegor-pdd/` is the matching Codex skill.
 - `skills/yegor-bdd/` remains the original Claude Code skill.
 - `codex-skills/yegor-bdd/` is the matching Codex skill.
+- `skills/yegor-microtasks/` remains the original Claude Code skill.
+- `codex-skills/yegor-microtasks/` is the matching Codex skill.
 
 ## Bumping a skill
 
