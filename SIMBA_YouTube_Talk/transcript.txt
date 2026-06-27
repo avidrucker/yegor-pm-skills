@@ -1,0 +1,1121 @@
+Speaker: [speaking in Russian] Today we have the first speaker - this is Yegor Bugaenko, he will tell you about his SIMBA. Let's support him, clap...
+Speaker: (audience applauding)
+Speaker: [speaking in English] I will do it in English, if you don't mind.
+Speaker: I made it on purpose,
+Speaker: 'cause it's supposed to be an international conference
+
+Speaker: and the content will be in English.
+Speaker: So, we'll practice language, and you will learn something new.
+Speaker: I am a head of a small, middle-sized,
+Speaker: research and development laboratory
+Speaker: in Huawei Moscow Research Center.
+
+Speaker: Moscow Research Center is quite large resource organization
+Speaker: in Russia, in Moscow.
+Speaker: We have more than 1000 people,
+Speaker: and I am the head of a small research lab,
+Speaker: which I will tell you right now what we do.
+
+Speaker: We invent tools to improve the quality of code programmers write.
+Speaker: We have huge amount of programmers in the Huawei,
+Speaker: almost 100,000 people, who write code inside the company.
+Speaker: And we, in our small lab, we create instruments to improve the quality they write.
+Speaker: For example, new static analyzers, or new compilers,
+
+Speaker: or maybe new programming languages, things like that.
+Speaker: The thing is that our projects are research and development with a big R.
+Speaker: You probably know the difference between research and development.
+Speaker: Development is what you've heard in the previous talks probably.
+Speaker: When the requirements are quite clearly explicitly defined by some product owners.
+
+Speaker: So, they know what to do, and they tell you what you need to write.
+Speaker: All you need is just the programming language, a computer,
+Speaker: and you implement that, this is development.
+Speaker: Research is when we don't know what we're supposed to get.
+Speaker: For example, we would like to get a new programming language.
+
+Speaker: It has to be better than all other programming languages.
+Speaker: How better, we don't know.
+Speaker: It's your part to do the research.
+Speaker: So, research is when we don't know
+Speaker: what's gonna be the result in the end.
+
+Speaker: So, we do research with a big R,
+Speaker: so we focus on the research part,
+Speaker: which makes a lot of problems for us,
+Speaker: which I will tell you about.
+Speaker: There's about 30 people right now in-house.
+
+Speaker: So, we have this amount of people working in Huawei.
+Speaker: And what's interesting, we have nine teams/projects in five universities in Russia.
+Speaker: We have a few teams in the policy university as well.
+Speaker: Probably if some of you are a student, or you're a teacher
+Speaker: in the policy university and you would love to work with us,
+
+Speaker: you can find me and we will talk.
+Speaker: So, it's possible.
+Speaker: So, we have outside teams.
+Speaker: We have a core team inside Huawei Research Center,
+Speaker: and we have teams, which work for us and which work with us,
+
+Speaker: staying outside of the company.
+Speaker: So, they are...
+Speaker: It's not outsourcing, they are research teams.
+Speaker: So, they do research for us
+Speaker: and they are in five universities, and high school economics,
+
+Speaker: and the policy university,
+Speaker: and St. Petersburg State University, and others,
+Speaker: About 40 professors, students, post docs, they work with us.
+Speaker: So, our internal team is smaller, [and the] outside teams
+Speaker: in total, they are bigger inside.
+
+Speaker: And my role is to make sure the projects don't fail,
+Speaker: let's put it this way, and they do fail sometimes.
+Speaker: And I will tell you how we fail and how we fix that.
+Speaker: So, what's going on right now?
+Speaker: Most of the people who we work with,
+
+Speaker: they're quite smart people, professors.
+Speaker: They're much smarter than I am,
+Speaker: much smarter than our people.
+Speaker: So, they're smart people, which is a problem.
+Speaker: Second, they're busy with other projects.
+
+Speaker: Some of them are professors, so they teach students.
+Speaker: So they do something else.
+Speaker: They're not full-time with us.
+Speaker: They're busy with many other things.
+Speaker: They write papers, they write books, they teach people,
+
+Speaker: they do many things,
+Speaker: and they also participate with our projects.
+Speaker: So, imagine, again, me sitting inside Huawei
+Speaker: and I work with the professor in a policy university,
+Speaker: and this professor is very smart and busy.
+
+Speaker: And I need to make sure this professor,
+Speaker: actually, does something for me.
+Speaker: It's quite difficult.
+Speaker: Next one, these guys, they struggle to decompose research tasks.
+Speaker: Create a new programming language.
+
+Speaker: How do I start?
+Speaker: I don't know.
+Speaker: They don't know how to break it down into parts.
+Speaker: It's very difficult, research tests.
+Speaker: If it's a development task, it's much easier.
+
+Speaker: You know more or less the steps you need to do.
+Speaker: If it's a research task,
+Speaker: these guys, professors, students, postdocs,
+Speaker: they don't know how to do.
+Speaker: I don't know either, but it's hard.
+
+Speaker: And another problem, big problem, they enjoy the process.
+Speaker: So, in most cases, they love what they do.
+Speaker: And this is a big problem, because they get carried away.
+Speaker: They just enjoy what they do.
+Speaker: They enjoy writing code.
+
+Speaker: Sometimes they enjoy writing papers.
+Speaker: They just feel fun in what they do.
+Speaker: And this is what makes it hard to control that,
+Speaker: because when you control a programmer, who hates the job,
+Speaker: it's easy.
+
+Speaker: You just tell him to do this,
+Speaker: exactly this amount of work in this amount of time,
+Speaker: he does it, or she does it, then go back home.
+Speaker: But the objective is obvious, to get home.
+Speaker: But for them, the objective is quite opposite,
+
+Speaker: to stay here, to stay in the project,
+Speaker: to stay there as long as possible,
+Speaker: to make the scope as large as possible.
+Speaker: So, they enjoy it, and that's a problem.
+Speaker: And the biggest problem is that they're are very good excuse makers.
+
+Speaker: So, when you ask them why...
+Speaker: I mean, where's the results you promised last month?
+Speaker: They tell you very interesting stories about why the result is not there.
+Speaker: And they do it professionally.
+Speaker: They are not like those programmers who hate their jobs.
+
+Speaker: They don't know what to say.
+Speaker: They say, "Sorry, I failed."
+Speaker: They don't say, "Sorry, I failed."
+Speaker: They just tell you how they didn't fail.
+Speaker: So many interesting other results they do,
+
+Speaker: but they didn't deliver what you expected.
+Speaker: So, they are very professional in making excuse.
+Speaker: So, this is the situation.
+Speaker: That's what's going on.
+Speaker: So, how do we manage them before.
+
+Speaker: I actually joined Huawei two years ago.
+Speaker: In my first year I was doing it the traditional way,
+Speaker: and I'll tell you this traditional way.
+Speaker: The traditional way sounds like this.
+Speaker: First, contract-based objectives.
+
+Speaker: So, we had a contract between Huawei company
+Speaker: and, for example, the policy university.
+Speaker: So, we give you the money,
+Speaker: we're expecting you to deliver some results,
+Speaker: and we have a contract,
+
+Speaker: and in this contract, we have objectives.
+Speaker: We need a new programming language from you.
+Speaker: So, there you go, new programming language.
+Speaker: If there is no programming language, we don't pay.
+Speaker: If there is one, then we pay.
+
+Speaker: Pretty clear.
+Speaker: Second, we have big milestones.
+Speaker: So, show us something in three months
+Speaker: and then show us something in another three months,
+Speaker: and then show us something in another six months.
+
+Speaker: You show, we pay you, you show, we pay.
+Speaker: That's how we did.
+Speaker: We did occasional meetings.
+Speaker: So, sometimes we call them and say, hey guys,
+Speaker: how about we get together on a call?
+
+Speaker: We see each other and you tell us about your progress.
+Speaker: Give very good excuses, which you know how to do,
+Speaker: show your results, we discuss, and we finish the meeting,
+Speaker: and you continue doing what you're doing.
+Speaker: And we gave a lot of trust, a lot of freedom,
+
+Speaker: a lot of autonomy to this team.
+Speaker: So, the team is outside of our company.
+Speaker: They do what they do autonomously.
+Speaker: They have a lot of freedom, we trust them completely,
+Speaker: and in the end, we failed, actually.
+
+Speaker: So, how did we fail?
+Speaker: First, we had from them...
+Speaker: I mean, I'm not giving names right now.
+Speaker: It was not the story in the policy university.
+Speaker: The policy university was quite a successful story.
+
+Speaker: So, I'm telling you a story about another team, which was less successful.
+Speaker: So, what we've got from them,
+Speaker: from a few teams which were less successful,
+Speaker: a lot of reporting documentation.
+Speaker: So, there is a no programming language, but look at the report.
+
+Speaker: We have 100 pages for you, which explains everything
+Speaker: about how new programming language
+Speaker: is important for the industry,
+Speaker: and how other people do programming languages,
+Speaker: and how Java is better than C++.
+
+Speaker: But in the end, where is the programming language
+Speaker: we're expecting from you?
+Speaker: It's actually not there, but the documentation is there.
+Speaker: So, we got something which we didn't actually need.
+Speaker: We, actually, lack practical results.
+
+Speaker: So, they were not delivering those practical results as much as we expected.
+Speaker: We had missed deliveries.
+Speaker: So, very often there was a deadline, a deadline was not met.
+Speaker: Only excuses were made, and disappointment.
+Speaker: So, basically, bottom line, we were quite disappointed
+
+Speaker: with this autonomous amount of work,
+Speaker: with this freedom, trust, and everything.
+Speaker: So, we understood, me and, I mean, my team,
+Speaker: we realized that we need more control.
+Speaker: We need to stay tightly connected with the team,
+
+Speaker: which is outside of us.
+Speaker: I mean, they don't go to our office.
+Speaker: We don't see them every day.
+Speaker: But we need more or less tighter control.
+Speaker: But at the same time, remember they're professors.
+
+Speaker: So, they hate control, they even hate this work.
+Speaker: If you tell them that we would like to control to you,
+Speaker: it's gonna be a problem.
+Speaker: So, you cannot tell a professor that, you know what?
+Speaker: Tomorrow you're gonna report to me every day.
+
+Speaker: I'm gonna call you in the morning, ask you what you [are] doing.
+Speaker: It's not gonna happen.
+Speaker: But some amount of control has to be established.
+Speaker: So, we designed this SIMBA framework.
+Speaker: I recall it's a funny name,
+
+Speaker: but there are four elements of this framework.
+Speaker: First one, we have a plan.
+Speaker: I will tell you about this one by one, four elements,
+Speaker: and then I will tell you the problems we've got
+Speaker: and pros and cons, and that will be the end,
+
+Speaker: then we will be able to ask questions.
+Speaker: First, it's the plan.
+Speaker: I will show you how our plan looks, which may surprise you,
+Speaker: because it looks quite straightforward.
+Speaker: Second, we have Monday reports.
+
+Speaker: Also, I will explain how they work.
+Speaker: Then I will show you so-called status calls, which we do.
+Speaker: And we have demo sessions, demos.
+Speaker: So, four elements, four components,
+Speaker: of how we manage the team, which is outside of our office,
+
+Speaker: which is outside of my control,
+Speaker: which I cannot tell them what to do.
+Speaker: I don't check them in when they join the office.
+Speaker: I don't know how they spend their day.
+Speaker: And they're very smart and good excuse makers.
+
+Speaker: So, four elements.
+Speaker: Element number one, the plan.
+Speaker: The plan looks like this.
+Speaker: And actually this is a funny picture
+Speaker: which we use for the SIMBA tiger, or whatever [it is].
+
+Speaker: So, the plan, when we build the plan, we make a document.
+Speaker: Usually, it's a Google Document, Google Doc,
+Speaker: which is shared among everybody, which consists of,
+Speaker: just an example, which consists of artifacts.
+Speaker: So, we plan based on artifacts,
+
+Speaker: which is quite contradicting idea for most people
+Speaker: who are in the research area.
+Speaker: They will tell you, most of them will tell you,
+Speaker: that we don't know what's gonna be the artifact,
+Speaker: [but] we know what [it is that] we will do.
+
+Speaker: Tomorrow we will be in the office thinking.
+Speaker: The next day we'll be in the office brainstorming.
+Speaker: The next day we'll be in the office writing code.
+Speaker: And then the week is over, that's it.
+Speaker: That was the work.
+
+Speaker: But we try to turn it upside down and make the plan based on artifacts.
+Speaker: So, we list the tangible, visible things, which are supposed to be created.
+Speaker: A piece of a module in the source code.
+Speaker: Some scientific paper, which you write.
+Speaker: Some technical reports.
+
+Speaker: Some dataset you collect.
+Speaker: Some amount of analysis you produce.
+Speaker: But something which you can deliver to me,
+Speaker: and I will look at it,
+Speaker: and I will say, yes, it's been delivered.
+
+Speaker: So, this is what...
+Speaker: It's very difficult in the beginning, when the team is just starting working with you.
+Speaker: It's very difficult for everybody to think in terms of artifacts instead of activities.
+Speaker: So, for example, here, we have [a] data set with 500 files.
+Speaker: And then for each artifact, we assigned two people.
+
+Speaker: One person is [the] responsible person, another one is [the] reviewer,
+Speaker: which is also quite difficult
+Speaker: for [people in the] research community to admit the fact
+Speaker: that there has to be one responsible person per artifact.
+Speaker: They're used to the "AGILE" idea.
+
+Speaker: We all are responsible for everything.
+Speaker: So, it means nobody's responsible for anything.
+Speaker: So, they just say, "No, no, don't assign me,
+Speaker: because we all do together.
+Speaker: It's a team activity, it's a team effort.
+
+Speaker: I cannot do a dataset myself."
+Speaker: Look here, it's Anna and Jeff.
+Speaker: So, Anna is the responsible person, Jeff is the reviewer.
+Speaker: So, Anna will say, "I'm not doing it myself.
+Speaker: Everybody will help me.
+
+Speaker: I cannot do this data set collection myself."
+Speaker: But we say, no, you Anna are the person who we blame,
+Speaker: no matter how much you hate this work,
+Speaker: but who we blame if there will be no dataset.
+Speaker: It becomes like a micro project for Anna.
+
+Speaker: It's like her own project, own domain.
+Speaker: So, she's responsible for delivering that.
+Speaker: And that happens for each artifact.
+Speaker: So, each time we assign the micro deliverable,
+Speaker: we say, okay, it's yours, it's yours, it's yours.
+
+Speaker: And usually they just volunteer.
+Speaker: They say, "Okay, it's gonna be mine.
+Speaker: It's gonna be mine."
+Speaker: And then we know who to ask, what's the status,
+Speaker: what's going on, why it's not delivered.
+
+Speaker: And then we assign the reviewer.
+Speaker: So, we say, look,
+Speaker: when you are responsible for the artifact, the dataset,
+Speaker: don't bring it to me, like a leader or the project manager,
+Speaker: bring it to another, to Jeff.
+
+Speaker: And these two people, one person delivers to another person.
+Speaker: So, they have to check each other.
+Speaker: I mean, the second person checks the first one.
+Speaker: And then when the second person says,
+Speaker: "Yes, I've checked that.
+
+Speaker: I've seen that data set.
+Speaker: It looks okay."
+Speaker: Then we close this task and we say, okay,
+Speaker: now it seems to be delivered.
+Speaker: So, Anna is not delivering to the whole team,
+
+Speaker: she's delivering to Jeff.
+Speaker: And Jeff says, "yes" or "no"
+Speaker: And then we put the deadline for the artifact.
+Speaker: For example here, it's the 3rd of September,
+Speaker: in the first line, September the 3rd.
+
+Speaker: So, we don't push.
+Speaker: In this case, usually, we just ask Anna,
+Speaker: "Anna, what do you think? When is it going to be delivered?"
+Speaker: And usually she says...
+Speaker: I mean, Anna is just a fictional character here,
+
+Speaker: but usually Anna says, "Okay, it's the 3rd of September."
+Speaker: We don't push her, because usually it will just fail,
+Speaker: no matter how pessimistic they are
+Speaker: with their milestones or their problems, they fail anyway.
+Speaker: So, no need to push them and say, "No, no, no.
+
+Speaker: "3rd of September is too late.
+Speaker: I mean, do it early."
+Speaker: Accept the 3rd of September.
+Speaker: She will fail anyway.
+Speaker: That's my experience.
+
+Speaker: So, it's better to ask them, what's the estimate?
+Speaker: They give the estimate, accept it,
+Speaker: and then keep bugging them with the questions.
+Speaker: I'll show you how bug people,
+Speaker: how we annoy them with the questions.
+
+Speaker: And then the final status is the status of completion,
+Speaker: which usually the responsible person gives us when we ask.
+Speaker: And we ask it on the status call, I'll show you in a second.
+Speaker: So, usually, our plan has for large projects,
+Speaker: which are like half a million dollar projects for a year,
+
+Speaker: the plan, it's our rule, has to fit in one page.
+Speaker: So, it has to be one page, no more.
+Speaker: Half a million dollar project, one year long.
+Speaker: A team of 10 people, one page.
+Speaker: That's the rule.
+
+Speaker: I mean, we tried to not to do that.
+Speaker: We tried to make it longer, but that's just the...
+Speaker: I mean, that's a good idea to fit it into one page.
+Speaker: So, we open it up, we see the full scope
+Speaker: in just one look at it.
+
+Speaker: I just look at it and say,
+Speaker: I see the full scope of the entire project.
+Speaker: If you have more deliverables than that,
+Speaker: you probably need to rethink how you decompose your scope
+Speaker: and decompose it differently.
+
+Speaker: That's the first.
+Speaker: And we share this plan with everybody.
+Speaker: Every single person on the team
+Speaker: has access to this Google Docs.
+Speaker: They all see what's going on,
+
+Speaker: they see their names, and they know what's expected.
+Speaker: The second element is called the "Monday Report".
+Speaker: This is how it looks.
+Speaker: There's a "team coordinator" in each project.
+Speaker: We call it "team coordinator".
+
+Speaker: It's not a "project manager", because we don't do proper project management.
+Speaker: It's not a team lead or technical lead, because it's not...
+Speaker: Usually, it's not the most technically competent person on the team.
+Speaker: It's just a team coordinator.
+Speaker: Usually, it's just a more or less the most organized, the most disciplined person.
+
+Speaker: So, this team coordinator, every Monday,
+Speaker: sends a report by email to everybody who is involved,
+Speaker: including me, including them, including everybody.
+Speaker: There are many, many people in the address line.
+Speaker: They send the team a Monday report,
+
+Speaker: summarizing the results of the last week,
+Speaker: making the plan or promises for the next week,
+Speaker: and listing the risks.
+Speaker: So, there are three sections in the report.
+Speaker: Section number one,
+
+Speaker: what we've managed to achieve during the last week.
+Speaker: The second section says what we're planning to achieve
+Speaker: in the next week, in this week which has started.
+Speaker: And then the section number three
+Speaker: is what are the risks which may happen,
+
+Speaker: which will ruin the project, which may ruin the project.
+Speaker: And I can tell you how many problems...
+Speaker: I cannot tell you how many problems people have with doing these reports.
+Speaker: So, the first, the key problem, I will mention that again later, is that they don't...
+Speaker: They cannot really...
+
+Speaker: It's very hard for people to summarize achievements instead of activities.
+Speaker: So, when people start writing this report, they write it like, "we were writing code".
+Speaker: "We were thinking."
+Speaker: "We were brainstorming."
+Speaker: "We were going to the office."
+
+Speaker: "We were drinking coffee."
+Speaker: "We were doing something."
+Speaker: And it's so easy to some.
+Speaker: Of course, we were doing something.
+Speaker: We were not sleeping, we were in the office,
+
+Speaker: we were actually doing something,
+Speaker: but the result is completely different.
+Speaker: So, when we ask them, we want in the first section,
+Speaker: when we say...
+Speaker: When we phrase our results,
+
+Speaker: we tell them that there should be verbs in the past tense,
+Speaker: like "edited", "fixed", "refined",
+Speaker: to tell us what was done, not what [it] was [that they were] doing,
+Speaker: like "writing", "thinking", "brainstorming".
+Speaker: It's not acceptable.
+
+Speaker: What we accept is "edited", "fixed", "written", "delivered",
+Speaker: and then the noun, like "a report" something, something [title name].
+Speaker: So, it has to be visible, tangible achievement.
+Speaker: I think that, that's what I feel,
+Speaker: even the way we structure the text,
+
+Speaker: disciplines the team a lot.
+Speaker: And I actually command you to use this,
+Speaker: even if you don't work with the research projects
+Speaker: with professors and all that,
+Speaker: even if you just do traditional enterprise development
+
+Speaker: or just development,
+Speaker: asking your team to do this, every Monday,
+Speaker: your team leader, or even each programmer,
+Speaker: because in-house when we have the 30 people I told you about,
+Speaker: we asked them, all of them,
+
+Speaker: to write this monthly reports to their team leaders.
+Speaker: And I do the same to my manager
+Speaker: like a summary of what was done over the week.
+Speaker: It very much disciplines you.
+Speaker: It helps you to focus on achievement instead of process.
+
+Speaker: So, you know that there will be Monday in a few days,
+Speaker: and you will have to say something what you've done.
+Speaker: And it will not possible to say, "I was," I don't know,
+Speaker: "I was traveling over the world."
+Speaker: I will [instead] say, "I've done a presentation in the Merge conference.
+
+Speaker: That was my achievement on Saturday."
+Speaker: I mean, on this week.
+Speaker: Or, "I wrote this amount of lines of code.
+Speaker: This is the link, look at it."
+Speaker: My lines of code stay here in GitHub repository or whatever.
+
+Speaker: So, I will have to report achievement.
+Speaker: And because I'm thinking like this,
+Speaker: about the Monday which is coming, I will make more progress,
+Speaker: and I will be more, more constructive,
+Speaker: I will be more effective in my work, I believe so.
+
+Speaker: And then the section for the planning,
+Speaker: we asked them to structure the text, starting with "to,"
+Speaker: "to publish", "to review", "to", "to", "to".
+Speaker: So, to do something, to do something.
+Speaker: And then [the] very difficult section is called "the risks",
+
+Speaker: where people have to structure what may go wrong.
+Speaker: And here it's...
+Speaker: We asked them to structure...
+Speaker: I'm not sure how much you know about risk management,
+Speaker: I strongly recommend you to learn about risk management.
+
+Speaker: It's like a separate area of science inside project management.
+Speaker: But here, the bottom line is that we ask them
+Speaker: to formulate risks in the format,
+Speaker: "cause - risk - effect"
+Speaker: Probably you've heard about this.
+
+Speaker: Who [has] ever heard about this "cause - risk - effect"t?
+Speaker: One, two, yeah, three.
+Speaker: It's a project management section.
+Speaker: So, you all have to know about this.
+Speaker: So, "cause - risk - effect" means that,
+
+Speaker: when you formulate the problem,
+Speaker: risk is something which may happen, let's start from that.
+Speaker: It's not something which happened already.
+Speaker: It's something which may happen.
+Speaker: So, you cannot say, "There is no electricity in the office."
+
+Speaker: It's a problem, it's not the risk.
+Speaker: You can say, "There could be no electricity next week."
+Speaker: That's a risk.
+Speaker: So, it's a different thing.
+Speaker: So, here we ask them to report risks.
+
+Speaker: And in this example, it says,
+Speaker: "The server is weak, we may fail to deliver the dataset.
+Speaker: The report milestone will be missed."
+Speaker: So, there are three components in this sentence.
+Speaker: The first one says "states effect".
+
+Speaker: It's called "cause".
+Speaker: The fact is the server is weak.
+Speaker: So, we have a small server.
+Speaker: It's a situation, it's [an] effect.
+Speaker: Then we say the risk: What may happen.
+
+Speaker: We phrase it with the word "may".
+Speaker: We may fail the delivery of the dataset.
+Speaker: The server is slow.
+Speaker: The server is small, weak.
+Speaker: The risk: We may fail to deliver.
+
+Speaker: And final part is the effect.
+Speaker: I mean, who cares?
+Speaker: We need to say who cares.
+Speaker: We say, "Report milestone will be missed."
+Speaker: So, on the left, on the first part, we say, "is": "The server is weak."
+
+Speaker: It's in present tense.
+Speaker: Then we say, "We may fail."
+Speaker: And the last part, "Report will be missed."
+Speaker: It's in future tense.
+Speaker: So, every time you write a risk,
+
+Speaker: I suggest to use this format, three-part,
+Speaker: "cause - risk - effect".
+Speaker: That's how we...
+Speaker: I mean, we asked our partners to do it the same way.
+Speaker: And it's also quite difficult for them to think this way,
+
+Speaker: because they're not used to it.
+Speaker: And we tell them that [the] risk section,
+Speaker: and I tell you this as well,
+Speaker: is actually a lifesaver for you.
+Speaker: The more risks you report to your management in your report,
+
+Speaker: the more protection you get for yourself.
+Speaker: I mean, I told you about the problems.
+Speaker: You knew about the weak server.
+Speaker: I told you that the server is small.
+Speaker: I told you that the report could not be delivered.
+
+Speaker: So, it's not my fault anymore if I don't deliver.
+Speaker: But if you didn't tell us,
+Speaker: the management will come to you and you will say,
+Speaker: "You know, the server was quite small, so that's why I didn't deliver."
+Speaker: Why didn't you tell us?
+
+Speaker: Maybe you're lying, maybe it was not the server.
+Speaker: So, the more risk you identify, the more you open,
+Speaker: the more protection you get from your management,
+Speaker: I mean, for yourself, from future problems.
+Speaker: So, people who don't report risk, and most people don't,
+
+Speaker: when you ask them, when the new team joins us,
+Speaker: and we tell them, please report risks.
+Speaker: Usually, they call me, personally, and say,
+Speaker: "Are you sure that we should put it in the report?
+Speaker: Are you sure?
+
+Speaker: Maybe I just text you this somehow in private.
+Speaker: I mean, I don't want to make it public
+Speaker: that the server's slow, there are problems there.
+Speaker: How about I make it [private]?"
+Speaker: No, I say no, make it open, make it public,
+
+Speaker: so we all know about this.
+Speaker: It's good for you, first of all.
+Speaker: But people tend to think about risks like something scary.
+Speaker: So, this is [the] Monday report.
+Speaker: And we send it to everybody.
+
+Speaker: Of course, it goes to the big boss.
+Speaker: In this case, it could be me or someone who is in charge of the control.
+Speaker: And then the subject is usually the week number.
+Speaker: We use calendar week number, which is quite convenient, like week 13.
+Speaker: Today is, who knows what's the week number for this week?
+
+Speaker: It's probably like 40 something, 50 something, maybe 42 or something.
+Speaker: So, there are always 53 weeks in each year, 53, one to 53.
+Speaker: So, it's quite convenient.
+Speaker: When you send an email, in the report you say,
+Speaker: "This is the report for week 13."
+
+Speaker: We immediately understand what's the date of this week,
+Speaker: because you can look at the calendar,
+Speaker: you will know what was that week.
+Speaker: So, this is the second part, Monday report,
+Speaker: which very much disciplines everybody.
+
+Speaker: Weekly call.
+Speaker: Weekly call is something which we...
+Speaker: Sorry.
+Speaker: Weekly call is something, which we do every week.
+Speaker: So, we just say, how about we sit together in Zoom,
+
+Speaker: spend 30 minutes every week, everybody, all people in the team,
+Speaker: me, you, there are usually like 10 people, 15 people, on the call in Zoom.
+Speaker: And what we do in this call, we, of course,
+Speaker: we try to see each other, to see how we feel,
+Speaker: how we think about the project,
+
+Speaker: and we ask ourselves these questions.
+Speaker: You don't need to read them all, but in general, quickly,
+Speaker: it's like the main question is, we look at the plan.
+Speaker: That's what's important.
+Speaker: So, we open our Google Docs and we see this one page.
+
+Speaker: Remember, we have Google Docs, one page,
+Speaker: we see all the deliverables, and we ask ourselves,
+Speaker: "Is it everything we need?
+Speaker: We have 12 deliverables right now, 12 artifacts.
+Speaker: Is it enough?
+
+Speaker: Imagine, we're just starting now.
+Speaker: But if we complete all of them in one year, will it mean that the project is successful?"
+Speaker: Yes? No?
+Speaker: And usually we say, "No, we forgot something."
+Speaker: "How about we add these artifacts and maybe delete that one?"
+
+Speaker: So, we basically, every week, we restructure the plan.
+Speaker: We open the Google Docs.
+Speaker: Everybody just jumps with ideas and says,
+Speaker: maybe "yes", maybe "no", we remove something, we add something.
+Speaker: So, we work with the plan every week, quickly, half an hour maximum.
+
+Speaker: We also talk to the owners, to responsible people,
+Speaker: who's responsible for these artifacts.
+Speaker: We ask them quickly, "Okay, what's the status?
+Speaker: What's the status?"
+Speaker: We don't listen to excuses.
+
+Speaker: We don't listen to long explanations.
+Speaker: We just ask what's going on.
+Speaker: And if there is something missing,
+Speaker: like I missed the milestone,
+Speaker: "Yes, I promised you the 3rd of September,
+
+Speaker: but now it's already the 3rd of September,
+Speaker: it's not delivered."
+Speaker: So, we just [say], "Okay, move the date, move the date, move the deadline."
+Speaker: We don't punish them.
+Speaker: We don't blame them right there in the meeting.
+
+Speaker: But they just feel it.
+Speaker: I mean, people feel.
+Speaker: It's called "peer pressure", I don't know what it's called,
+Speaker: but people feel guilt if they keep missing milestones.
+Speaker: And when they do it publicly or the meeting,
+
+Speaker: then they [start] blaming themselves.
+Speaker: We don't need to blame them.
+Speaker: So, we don't do public punishment.
+Speaker: We don't say, "Hey, how could you do that?
+Speaker: That's irresponsible."
+
+Speaker: We don't do that.
+Speaker: It just happens automatically.
+Speaker: And of course, we'll look at the risks.
+Speaker: So, we think, okay, "What problems didn't we anticipate?
+Speaker: What may we anticipate in the future?"
+
+Speaker: So, we discuss the risks.
+Speaker: [They are] quite productive meetings.
+Speaker: Without [those] meetings, we would not have success.
+Speaker: That's for sure.
+Speaker: So, one part is "plan", another part is "monthly reports",
+
+Speaker: and the third part of the report is the "status calls", which we do in Zoom.
+Speaker: And the final part is "demos".
+Speaker: That's the most interesting part, number four.
+Speaker: This is where we actually talk business.
+Speaker: This is where actually we talk technical things.
+
+Speaker: And technical things mean that we say...
+Speaker: Okay, one point of time, and usually we try to do it, maybe not every week, but every second week.
+Speaker: We ask... [actually,] we don't ask.
+Speaker: We allow anyone from the team [to] pick the artifact they work with and [to] make a presentation about it
+Speaker: For example, I'm the responsible person, I'm Anna,
+
+Speaker: I'm working with the dataset, I'm collecting the dataset.
+Speaker: I want to tell you everybody like how it's going.
+Speaker: I mean, what's interesting in there.
+Speaker: I wanna show you my dataset.
+Speaker: I wanna show you what's in there, how much data I put there.
+
+Speaker: So, I wanna really show off myself, demonstrate my results, and listen to your opinion.
+Speaker: I don't do it by email.
+Speaker: I don't do it on the status quo.
+Speaker: We allocate the full hour for that,
+Speaker: and allow one person to make a local presentation.
+
+Speaker: So, it's like a presentation on the conference.
+Speaker: So, during the project,
+Speaker: we will allow project participants to make presentations
+Speaker: as if they would be a really normal conference.
+Speaker: So, they make slides.
+
+Speaker: They open up.
+Speaker: They say, "Hello everybody.
+Speaker: I would like to present you the data set I was working with.
+Speaker: I was solving this problem.
+Speaker: This is how I solved it.
+
+Speaker: This is who participated.
+Speaker: This is how much result we have."
+Speaker: So on and so on and so forth.
+Speaker: So, it's like a normal presentation.
+Speaker: And we do recording of this meeting and we publish them on YouTube in our private playlist.
+
+Speaker: So, when the project is over in a year or half a year,
+Speaker: then we have a playlist of multiple demo sessions,
+Speaker: which are like conference presentations.
+Speaker: It helps people to train their skills in making presentations.
+Speaker: It helps us to understand technical problems better,
+
+Speaker: to suggest solutions, and so on and so forth.
+Speaker: It really helps, these demo sessions instead of discussions.
+Speaker: So, discussion is more like presentation.
+Speaker: So, in this one hour,
+Speaker: they usually talk for at least half an hour, and then we start discussing.
+
+Speaker: So, it really goes full presentation first, and then questions.
+Speaker: So, I'm finishing, this is my final step.
+Speaker: So, it is...
+Speaker: Now, I'll show you four problems, which we see, and then I'm done.
+Speaker: So, it is hard, what I told you. What is hard for everybody?
+
+Speaker: First, what is hard is to decompose research activities.
+Speaker: I told you that in the beginning.
+Speaker: So, how to build this list of artifacts, it's super hard.
+Speaker: This is problem number one.
+Speaker: How do you decompose your larger work into elements?
+
+Speaker: The second problem is, it's difficult, I already said it.
+Speaker: It's difficult to report results instead of actions.
+Speaker: And we keep telling them, no actions.
+Speaker: We don't care what you've done...
+Speaker: What you were doing, sorry.
+
+Speaker: We don't care what you were doing.
+Speaker: We only care about what you've done.
+Speaker: So, don't report, "I was analyzing the code.
+Speaker: I was thinking about the future idea, I was analyzing,
+Speaker: I was developing, coding," and so on and so forth.
+
+Speaker: Tell us the result.
+Speaker: And it's so hard for people.
+Speaker: Try it with your team, you will see.
+Speaker: It's hard to stop making excuses at meeting.
+Speaker: People love to feel guilt, that's what I think.
+
+Speaker: So, when you ask them...
+Speaker: When they present something technical
+Speaker: and you ask them why it works this way,
+Speaker: they immediately feel that I'm blaming them for this decision.
+Speaker: I don't know why it happens.
+
+Speaker: Maybe that's a topic for a separate discussion, but people usually quickly jump into excuse making.
+Speaker: They start explaining, "Sorry, I did it because of this."
+Speaker: And I'm saying, "No, no, don't be sorry.
+Speaker: Just explain why you did it. Just explain the situation."
+Speaker: But people in these meetings, I see it very often,
+
+Speaker: they love to make excuses.
+Speaker: I don't know why.
+Speaker: And the final, people are scared to talk about risks openly.
+Speaker: I told you about this already, again.
+Speaker: People love to hide them.
+
+Speaker: They feel bad when they say that there's something could go wrong.
+Speaker: They feel ashamed of that, I don't know.
+Speaker: But this is what I see what is difficult in this framework.
+Speaker: But aside of that, everything works just fine.
+Speaker: We tested it on nine projects over, I don't know, maybe $2 million already.
+
+Speaker: A number of universities, teams, professors, students.
+Speaker: [It] worked quite well.
+Speaker: I suggest you try it as well.
+Speaker: That's it, your questions.
+Speaker: (audience applauding)
+
+Speaker: Maybe the microphone for the question.
+Speaker: You can do either in Russian or in English.
+Speaker: Yeah, and don't forget to follow me if you want.
+Speaker: Man 1 - Thank you for speech. I have a small question.
+Speaker: What do you think about time gaps between artifacts (indistinct)?
+
+Speaker: Yegor - Time gaps, you mean we deliver one and then we deliver another or?
+Speaker: Man 1 - I have to go back to the Monday report.
+Speaker: It's just one hour ago, or a day ago?
+Speaker: Yegor - Ah, okay, you mean, what is the size of these artifacts?
+Speaker: How big they are?
+
+Speaker: Man 1 - No.
+Speaker: How best time between [deliverable] elements?
+Speaker: Yegor - Between [deliverable] elements?
+Speaker: Well, in our case,
+Speaker: each artifact is about usually one month of work,
+
+Speaker: probably, something like that.
+Speaker: And they go in parallel.
+Speaker: So, it's not like one artifact,
+Speaker: and another one, another one.
+Speaker: So, they work in parallel because the team is big.
+
+Speaker: It's not just two people.
+Speaker: So, they go in parallel.
+Speaker: And one artifact would take, I mean, at least one month,
+Speaker: usually more, one month, two months, three months.
+Speaker: They're pretty large pieces of work.
+
+Speaker: Man 1 - Okay, thanks.
+Speaker: Yegor - Sorry for this microphone.
+Speaker: Man 2 - Hello.
+Speaker: Do you have any experience on applying your framework to data science teams management?
+Speaker: Yegor - Yes, we have two teams, which we manage like this,
+
+Speaker: and they are data science teams.
+Speaker: So, they use machine learning to predict...
+Speaker: Actually, they use machine learning to predict the situation in software projects.
+Speaker: And they do this dataset collection,
+Speaker: that's why I mentioned dataset,
+
+Speaker: because I know how they do it.
+Speaker: So, some of them, they collect dataset.
+Speaker: Another one is training the model.
+Speaker: Another one is trying to make the model
+Speaker: predict the results as we expect.
+
+Speaker: So, yes, out of these nine teams,
+Speaker: two of them are data science teams.
+Speaker: Man 3 - Okay, another question.
+Speaker: Yeah, so, I would like to ask a bit more about demo stat that you're talking about.
+Speaker: The first question was regarding the process itself.
+
+Speaker: Is it like a voluntary demonstration of the results or it's like some kind of schedule?
+Speaker: That's the first one, and the second one about the frequency of this kind of meetings or the demos.
+Speaker: So, is it each week or is it like each iterations, demo, or how is this process conducted?
+Speaker: Yegor - Yeah, the first question is, is it voluntary?
+Speaker: Do we make it mandatory for them,
+
+Speaker: or they just vote for that?
+Speaker: It's voluntary.
+Speaker: So, we just let them do it.
+Speaker: And about the frequency, if we would allow them,
+Speaker: we would have like, I don't know, 10 meetings every week,
+
+Speaker: because everybody would love to do that.
+Speaker: Actually people feel like they, it's no surprise to me,
+Speaker: but people love to do that.
+Speaker: They love to be heard.
+Speaker: So, if you are the member of the team,
+
+Speaker: there are 10 other people in the team
+Speaker: you're working with one artifact,
+Speaker: not so many people pay attention to what you do.
+Speaker: You've quite an isolated piece of work.
+Speaker: I mean, somebody, some people help you.
+
+Speaker: So, you will want to be heard.
+Speaker: And when you schedule this meeting, and I will join,
+Speaker: my friends from Huawei will join,
+Speaker: some other people will join.
+Speaker: So, there'll be like 20 people in the call room in Zoom,
+
+Speaker: we'll all listen to you,
+Speaker: and you will be the key person on the presentation.
+Speaker: It's like a micro conference for you.
+Speaker: So, they love to have that, but we don't have so much time.
+Speaker: So, we put them in the pipeline,
+
+Speaker: and we say, okay, one, maybe two presentations a week.
+Speaker: But remember, I have nine projects right now.
+Speaker: So, you can do the math, right?
+Speaker: So you can imagine.
+Speaker: Man 3 - This is exactly what I was talking about.
+
+Speaker: It will become a mess if several people will be presenting during those demos.
+Speaker: And how do you deal with the scheduled time,
+Speaker: and how do you deal with the deadlines for the presentations?
+Speaker: Yegor - We just say we don't have time.
+Speaker: I mean, we look at the priorities.
+
+Speaker: So, if you made a presentation two weeks ago, and you want to do it again,
+Speaker: then we probably tell you to wait because there are other people.
+Speaker: Man 3 - Are those decisions controlled by?
+Speaker: Yegor - It is a decision made by us, yeah, the whole way, yeah.
+Speaker: Man 3 - Thanks for those answers.
+
+Speaker: [speaking in Russian] Woman 1 - May I? Good afternoon.
+Speaker: Say, on the previous slide, point 4 was about mistakes, yes, openly about risks,
+Speaker: but often risks, that's right, I understand that it's hard for people to talk about their own mistakes, right?
+Speaker: And this means that, in order to speak openly about mistakes, we need to create an atmosphere such where
+Speaker: people feel that they have the right to make mistakes. Is that (my understanding) correct?
+
+Speaker: How do you achieve such an atmosphere?
+Speaker: Yegor - Well, we scare them. (audience laughs)
+Speaker: Seriously, though. We explain it to people in this way: “If you don't tell us about the risks,
+Speaker: we will tell you about them when they have already become a problem”. We tell people: “Look, there is a contract,
+Speaker: there are obligations, and when the time comes to pay the bills,
+
+Speaker: we will raise the issue, and will tell you that you didn't do this, you didn't do this, you didn't do that.
+Speaker: So that's why we can, for example, withhold money or pay less."
+Speaker: Well, I'm exaggerating, but maybe, well, somehow we will begin to put pressure on you under the contract.
+Speaker: And we will say: "You don't want this." And they don't.
+Speaker: And we will say: "Look, we will give you a way out, we will give you a loophole in order to avoid this situation.
+
+Speaker: How can you avoid it? Write to us in advance that we are to blame,
+Speaker: Come up with a reason why we, or the weather, or the electrical system, or COVID, are guilty. Imagine a situation.
+Speaker: And people very quickly become quite inventive.
+Speaker: Yes, it doesn’t take people long to learn how to do it. But at first, yes, they are afraid.
+Speaker: But as soon as they understand that, through this path, through risks, they can make something like an alibi for themselves,
+
+Speaker: they start getting creative.
+Speaker: Woman 1 - That was a great answer. Thank you very much. Then I'll continue a little.
+Speaker: What do you do when you are in the same scenario [that you just mentioned]? When you report about your projects to your shareholders,
+Speaker: you probably also need to reserve the right to make a mistake.
+Speaker: How do you achieve the same result in this scenario?
+
+Speaker: Yegor - Well, first of all, I do the same [thing that I tell my customers to do]. I also write about risks in my reports.
+Speaker: When I write reports to my managers, I say:
+Speaker: "Look, this one is responsible, and that one is responsible, and if they let me down, I will consider the project a failure."
+Speaker: And sometimes my managers answer these emails. I mean, I do it too [writing reports and escalating risks].
+Speaker: This is what we call, “risk escalation”. I escalate risks and responsibility up and up, higher and higher,
+
+Speaker: For example, I might write: “I have a shortage of staff now,
+Speaker: and if this shortage of staff continues…” Well, for instance, I might not have enough qualified engineers.
+Speaker: Therefore, it would be highly likely that we would fail the project by the end of the year.
+Speaker: The leadership then read this and then start calling HR and saying: "Well, give Yegor some help"
+Speaker: And hype begins to form among the leadership.
+
+Speaker: Because they understand at the end of the year I will say: “Look, I wrote to you six times about these problems”. It's not my fault, right?
+Speaker: This is how I recommend doing in the general case: Raise the problem through risks.
+Speaker: Do not complain, do not say, “I don't have enough employees, give them to me right away.” You will be ignored.
+Speaker: It is necessary to say this: “I don't have enough employees, and if this continues, the project will collapse.”
+Speaker: Then leadership will start paying attention to you. This is a constructive report of the problem, and not in the form of a complaint, but in the form of a call to action.
+
+Speaker: Woman 1 - Thank you.
+Speaker: Yegor - Do we have another question?
+Speaker: Man 4 - Thank you. That was an excellent presentation.
+Speaker: Here’s what I wanted to ask:
+Speaker: Have you tried to apply such a system,
+
+Speaker: roughly speaking with a hierarchy of “levels”?
+Speaker: That is, you make a report, your superiors make a report, and so on.
+Speaker: “SIMBA” at all levels, so to speak.
+Speaker: That is, roughly speaking, such a “ladder” (or hierarchy).
+Speaker: Yegor - Well, if I was the CEO at Huawei, I would probably start implementing this framework everywhere, at all levels.
+
+Speaker: I’m currently experimenting at my own level.
+Speaker: That particular experiment is only 1 year old.
+Speaker: If the project is successful we will be able to expand it to a higher level.
+Speaker: Here I make a presentation. Afterwards, I will send the video to my bosses.
+Speaker: I'll tell them: “Look, I took part in the conference, and I received some feedback. Let's think about how we can implement this further," for example.
+
+Speaker: But SIMBA may not be suitable for just anything. I can't say that this approach is for all projects.
+Speaker: So far, it’s working for our R&amp;D projects.
+Speaker: That is, it’s not Scrum, it’s not Agile. I'm not sure what to call the collection of
+Speaker: components that comprise SIMBA. Probably for R&amp;D projects this is a good model where we need to be more flexible in our job role.
+Speaker: Please note that in our R&amp;D projects there aren’t guarantees such as those in the provision of IT services (design, development, deployment, maintenance, decommission).
+
+Speaker: If a software project doesn't work in a week or two, the deployments (publishing of technology for private or public use) will fail.
+Speaker: Customers can't wait a year for a new programming language to be created.
+Speaker: They have other work tasks. They need to do real, practical business things.
+Speaker: And our job is to do more research. SIMBA is more for “R&amp;D” [research] teams. We need a new programming language. And here's how to control it.
+Speaker: For development it is suitable to use a Kanban system, to take a task from the board and release it to production in half an hour.
+
+Speaker: SIMBA is not suitable for this.
+Speaker: Raise your hand those who work with R&amp;D or are engaged in research. Or manages teams with a research component. Well, here are a few people.
+Speaker: I hope that more of you will do research. I would like Russian IT to become more “R” (research) than “D” (development). I'd really like that.
+Speaker: Yes.
+Speaker: Man 5 - May I ask a question?
+
+Speaker: Yegor - Please speak up.
+Speaker: Man 5 - Did you add any steps to SIMBA that you had to remove later?
+Speaker: Yegor - Good question. Yes, we had such a component that we [later decided to] remove.
+Speaker: We initially tried to have daily reports.
+Speaker: We asked for very short daily reports. Literally one or two paragraphs, just at the end of the day, to summarize what was done.
+
+Speaker: But this caused an uproar.
+Speaker: This is probably why over-reporting is bad.
+Speaker: But the weekly video report is fine for anyone. The daily report was the element that we removed.
+Speaker: Man 5 - Thanks. I'd like to decline on the daily reports - that's OK, right?
+Speaker: Yegor - Yes. They are probably good in hostile situations, [such as] in a situation of intense development [(AKA “crunch”)].
+
+Speaker: Daily reports are probably especially necessary for remote development. In this case I think the daily report is good. When your team is away. The cameras are all off.
+Speaker: And people tend more to not work than to work. And then, probably, the daily reports will stimulate them a little,
+Speaker: because people need to write something one way or another. And writing nonsense will not work. Someone will read it.
+Speaker: Therefore, the daily reports are a bit of a disciplinary measure. More like a carrot than a stick. But it seems to me that it is needed
+Speaker: in a situation where you need to spur the team to such an intense development. But under normal circumstances, it’s probably not necessary.
+
+Speaker: Woman 2 - May I continue the question about the daily report? You just said you have it in written format, but there were more speaking format reports in my experience.
+Speaker: Why did you initially have the daily report done in a written format?
+Speaker: Yegor - Well, I'm generally a supporter of written reporting. Why? Because it's harder to sweet-talk the situation. It's harder to make excuses.
+Speaker: When a person speaks verbally, he expresses his emotions. And you pay attention to them. You put yourselves in this person's place. He says a lot of difficult words.
+Speaker: He says words that you don't want to understand. He talks about his specific scope I don’t want to understand.
+
+Speaker: I'll say "Ok, sit down". And when he writes, I can show this report to someone else. Other people can understand [what’s written].
+Speaker: I can forward a report to someone to check the information. The person feels responsible.
+Speaker: All the same, he signed up, he sent it, he said: "I made that amount of code that day." I will send a report to my friends and ask: "Is this amount of code done in a day or 20 minutes?"
+Speaker: They tell me: “20 minutes”. I'll bring it all up. In the case of a speaking report, it will be longer. I'll be spending more of my time.
+Speaker: Yegor - I am against speaking reports in general. Woman 2 - Thanks.
+
+Speaker: Moderator - Is that all? We have a question over here.
+Speaker: Man 6 - In general, to understand whether a method works or not you need to measure something and the data should be the same.
+Speaker: You said that you had different experiences with this university as well as with another one.
+Speaker: Does this mean that you tested the new method exactly the same on each group?
+Speaker: Yegor - Yes, I understand the question. It’s an excellent question.
+
+Speaker: In fact, yes, we had a project result from one university that we did not like.
+Speaker: We didn't like the results because we didn’t have control [over the process]. We didn't know how professors could be "controlled".
+Speaker: I think that this word, well, I already said, it offends the professor. And so we introduced this method, started a new project with the same team, and it was a complete success.
+Speaker: That is, it was a great result in my opinion. The students themselves later said that the project was great, that they enjoyed [the experience], and that they liked the mechanism of self-control.
+Speaker: Man 6 - One more question about your previous answer. One of the answers was about escalation. You said that problems need to be escalated,
+
+Speaker: but there is another aspect - a person with more authority than you can simply say, "Why am I paying you if you are throwing all the problems at me?"
+Speaker: Yegor - Well, yes, that's possible. There is such a situation. And I should probably end on this note.
+Speaker: We actually have few managers who are willing to read the risks which are sent to them.
+Speaker: Unfortunately, management is not really prepared for this. And to train your manager in risk management is a rather dangerous thing.
+Speaker: I was once in a situation when I worked in Europe in a company and I was so full of energy at that time and I made a risk-list for my boss.
+
+Speaker: That is, I made a document in Excel and wrote down all the risks that could happen: and this could happen, this could happen, and that could happen. There were about 20 pieces, the most terrible risks.
+Speaker: So I foresaw everything, made a list, and sent it to him. He called me into the office and said:
+Speaker: "Please don’t show this to anyone else. Thank you for sending me this, but don't show it to anyone else."
+Speaker: And I understood - [He meant,] “Stop it.” There would be no risk management happening here. And so I stopped.
+Speaker: Well, people are not ready to read these risks, and to manage the risks. Risk management is a super heavy technique that is only for professional managers.
+
+Speaker: This is how we slowly learn it, but of course, full-fledged risk management is a really hard skill [to master].
+Speaker: Isn't it better for them [workers/employees] to bring not risks, but to demand more authority for themselves in order to resolve something?
+Speaker: Let's say, when there is a problem with hiring, they could go and say - give me the authority to hire because…
+Speaker: Well, in general, this is the risk management that I proposed. And I propose this in the format of risk.
+Speaker: I say what the matters are, [and then] I explain why the matters are as they are. Because otherwise everything will fall apart. Because I will lose the project. Because we will miss the deadline.
+
+Speaker: Only I offer it in the form of a risk format. Well, here it is. [And] I do the same for my work.
+Speaker: In fact, good risk management is when we [explicitly] say the causes, the risks, what could happen, and our contingency plan.
+Speaker: Then there are the strategies or steps that can be taken to avoid risk (it's called "mitigation planning").
+Speaker: First we offer the mitigation plan, and then we offer the cost of this mitigation plan.
+Speaker: And we discuss the matter. “This is the situation. If the server is bad, then we won't be able to collect data, and the project will be a failure.
+
+Speaker: [in order to prevent that] We will need another $500 a month. Or even better - we will need a new server, [and] it costs $500 a month."
+Speaker: It remains for the customer to just say "yes" and that's it.
+Speaker: And the customer understands that by saying "yes" that the risk has been destroyed and the team will continue to work. This is proper risk management.
+Speaker: Man 6 - Yes, thank you. May I ask another question?
+Speaker: Moderator - You can ask further questions after the session. A round of applause everyone for Yegor.
