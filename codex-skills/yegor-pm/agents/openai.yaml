@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor PM"
+  short_description: "Route work through Yegor PM rules"
+  default_prompt: "Use $yegor-pm to route this project-management situation to the right Yegor discipline."

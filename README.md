@@ -25,7 +25,9 @@ Eighteen versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](ht
 | `yegor-small-repos` | **Small repos.** One repo, one purpose, ~50k LOC, one language — small enough to fit one mind and an agent's context window. |
 | `yegor-personas` | **Decision council.** Run a hard call through the relevant skills' strict lenses (+ the PO/REQ/QA/TST roles), then converge via an authority ladder. |
 
-Each skill ships `SKILL.md` + `VERSION` + `CHANGELOG.md` and can be bumped independently. The `research/` folder contains the deep-reference doc each skill is distilled from, citing Yegor's primary sources.
+Each Claude skill ships `SKILL.md` + `VERSION` + `CHANGELOG.md` and can be bumped independently. The `research/` folder contains the deep-reference doc each skill is distilled from, citing Yegor's primary sources.
+
+Codex-usable ports live separately under `codex-skills/`. These ports do not replace or mutate the Claude Code skills under `skills/`.
 
 See [`GLOSSARY.md`](./GLOSSARY.md) for short definitions of the vocabulary these skills use — PDD, puzzle, spike, microtask, complaint, velocity, architect/courier, the Four NOs, and more.
 
@@ -64,6 +66,27 @@ In any Claude Code session:
 - `/yegor-pdd`, `/yegor-bdd`, `/yegor-microtasks`, `/yegor-tickets`, `/yegor-architect`, `/yegor-velocity`, `/yegor-nohelp`, `/yegor-spikes`, `/yegor-review`, `/yegor-unit-tests`, `/yegor-stuck`, `/yegor-merge-gate`, `/yegor-builds`, `/yegor-simba`, `/yegor-projections`, `/yegor-small-repos`, `/yegor-personas` — individual rule sets
 
 Each skill's `SKILL.md` is the action layer (triggers + rules). Each `research/philosophy_NN_*.md` is the context layer (sources + rationale). When in doubt, the SKILL.md links to its research doc.
+
+## Codex skills
+
+The Codex ports are installed separately from the Claude Code skills. To install the first port:
+
+```bash
+git clone git@github.com:avidrucker/yegor-pm-skills.git
+ROOT="$(pwd)/yegor-pm-skills"
+mkdir -p "$HOME/.codex/skills"
+ln -s "$ROOT/codex-skills/yegor-pm" "$HOME/.codex/skills/yegor-pm"
+```
+
+Current Codex port status:
+
+- `codex-skills/yegor-pm/` — Codex-native meta-orchestrator port of `skills/yegor-pm/`.
+
+Verification checklist for the first port:
+
+- `skills/yegor-pm/` remains the original Claude Code skill.
+- `codex-skills/yegor-pm/` is the matching Codex skill.
+- No other `yegor-*` Codex ports have been added yet.
 
 ## Bumping a skill
 
