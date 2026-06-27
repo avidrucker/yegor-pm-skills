@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor Velocity"
+  short_description: "Measure progress by closed tickets"
+  default_prompt: "Use $yegor-velocity to review project progress from closed tickets and evidence-backed metrics."
