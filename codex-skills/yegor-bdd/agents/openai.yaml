@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor BDD"
+  short_description: "Shape work as actionable complaints"
+  default_prompt: "Use $yegor-bdd to rewrite this work into a concrete have/should/repro complaint."
