@@ -1,8 +1,8 @@
 ---
 name: yegor-bdd
-description: Apply Bug Driven Development. Frame every piece of work as a complaint with shape "have X / should have Y / repro". No feature requests, no suggestions, no questions. The complaint is best expressed as a failing/disabled test that proves the bug. Use when filing, reviewing, or closing issues. Only the reporter closes a ticket.
-version: 0.2.0
-last_reviewed: 2026-05-28
+description: Apply Bug Driven Development. Frame every piece of work as a complaint with shape "have X / should have Y / repro". No feature requests, no suggestions, no questions. The complaint is best expressed as a failing/disabled test that proves the bug. A bug title must be a complaint (names the breakage), not a question or a topic — lint and rewrite weak titles at filing time. A good report is also reproducible, rich (expected vs actual + environment), and carries visible reporter effort. Use when filing, reviewing, or closing issues. Only the reporter closes a ticket.
+version: 0.4.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor Bug Driven Development
@@ -28,6 +28,34 @@ Every piece of work is a complaint with shape "have X / should have Y / repro." 
 | "Add settings menu" | "Settings are inaccessible from the main UI" |
 | "Improve date parsing" | "Date parser fails on ISO inputs with milliseconds" |
 | "Write Windows install docs" | "Windows installation is undocumented" |
+
+## Title lint (a title is a complaint, not a question)
+
+A good bug title names the **gap between expectation and reality** in a single declarative line. A title that asks a question, states a topic, or wishes for a feature is not a complaint — it's noise that hides what's actually broken. This is cheap and near-deterministic, so lint it at filing time and **auto-propose a rewrite**:
+
+- **Reject interrogative titles.** A title containing `?` or opening with *why / how / what / when / where / can / does / is* is a question, not a complaint. "Why do I get a CSV instead of a PNG?" → **"PNG download is broken — returns a CSV instead."**
+- **Reject topic/wish titles.** A bare noun phrase ("Date parsing", "Settings menu") or a wish ("Add dark mode") names a subject, not a defect. Require a **breakage signal** — a word like *broken / fails / wrong / missing / crashes / instead / should / undocumented* — so the title asserts that something is wrong.
+- **Keep it specific and declarative.** Name the concrete current behavior, not a vague area. "Login is buggy" → **"Login rejects valid emails containing a `+`."**
+
+| Weak title | Linted complaint |
+|---|---|
+| "Why is the export empty?" | "CSV export produces an empty file for filtered views" |
+| "Date parsing" | "Date parser fails on ISO inputs with milliseconds" |
+| "Can we make startup faster?" | "Cold startup takes 8s — should be under 2s" |
+
+An AI agent is the ideal enforcer here: it can flag a weak title and offer the rewritten complaint in the same breath, before the ticket is even filed.
+
+## Report richness (a good title isn't a good report)
+
+A sharp title gets the complaint *noticed*; the body is what makes it *actionable*. A one-line "X is broken" with no body wastes the solver's time re-discovering what the reporter already knew. Three qualities separate a real bug report from a drive-by:
+
+- **Reproducible.** Steps from a **clean, known state** to the wrong behavior — exact inputs, exact commands, exact version/commit. "It sometimes fails" is not a repro; "on `main@abc123`, run `foo --bar`, get Y" is. If it can't be reproduced, that itself is a finding (see `yegor-stuck` rung 4: prove-absent).
+- **Rich.** State **expected vs actual** explicitly (the have/should gap, spelled out), plus the **environment** that matters (OS, runtime version, config, data). The reader should not have to ask a single clarifying question to start work.
+- **Effortful.** A good report shows the reporter **did the legwork** — narrowed the case, attached the failing output/log/screenshot, removed the noise. A complaint that offloads all the investigation onto the solver is a low-effort report; push it back for narrowing before it's worked.
+
+**The strongest report carries the proof inline** — a failing/disabled test *is* a reproducible, rich, effortful report in one artifact (next section). When a test isn't yet possible, the body must still hit all three qualities.
+
+> An AI agent can lint a report for these the same way it lints the title: no repro steps? no expected-vs-actual? no environment? — flag it and ask for them, or draft them, before the ticket is worked.
 
 ## Test-as-proof (the complaint as code)
 
@@ -69,4 +97,6 @@ The strongest form of a complaint is a **test that fails on the current code**. 
 
 ## Deep reference
 
-`research/philosophy_02_bdd_bug_driven_development.md`
+- `research/philosophy_02_bdd_bug_driven_development.md`
+- `research/philosophy_17_bug_tracking_hygiene.md` (title lint + the Five Principles of Bug Tracking)
+- `research/philosophy_23_bug_report_richness.md` (reproducible / rich / effortful reports)

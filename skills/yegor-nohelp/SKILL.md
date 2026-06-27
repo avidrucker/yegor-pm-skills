@@ -1,8 +1,8 @@
 ---
 name: yegor-nohelp
-description: Knowledge sharing happens through documentation, not by tapping experts. Questions become tickets; answers land in docs (NOTES.md minimum). When you'd search or ask twice, write it down. Use when answering project-specific questions, debugging, or discovering non-obvious behavior.
-version: 0.1.0
-last_reviewed: 2026-05-23
+description: Knowledge sharing happens through documentation, not by tapping experts. Questions become tickets; answers land in docs (NOTES.md minimum). When you'd search or ask twice, write it down. Docs are kept short, ordered, and non-duplicative (a README is ≤~2 pages with sections in a fixed order); quality requirements are written as measurable numbers, not adjectives. Use when answering project-specific questions, debugging, discovering non-obvious behavior, or writing/reviewing a README or spec.
+version: 0.2.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor NoHelp / Documentation-First
@@ -45,6 +45,16 @@ NOT enough:
 - Verbal explanations.
 - Your head.
 
+## Doc structure — short, ordered, measurable
+
+Writing it down isn't enough — a bloated, rambling, or duplicative doc rots as fast as no doc. Discipline the *shape*, not just the existence:
+
+- **Short and bounded.** A README is **≤~2 pages**. Past that, it's a manual pretending to be a README — split the detail into `docs/` and keep the entry point skimmable.
+- **Sections in a fixed order.** Lead with a **one-paragraph pitch** (what is this, why care), then quick-start, then usage/use-cases, then how-to-contribute, then where releases/changelog live. A reader should hit the pitch first and the contribution rules last, every time.
+- **No duplication of generated content.** Don't hand-copy API docs, CLI `--help`, or the changelog into the README — link to the generated source. Anything maintained in two places is wrong in one of them.
+- **Quality requirements are measurable numbers, not adjectives.** "Fast" / "scalable" / "secure" are not requirements — they're wishes. Write the threshold: "page loads in <300ms," "handles 1k concurrent sessions," "zero high-severity CVEs at release." A quality requirement an agent can't check is not a requirement.
+- **Trim, don't append.** When a doc grows, the default move is to *cut and link out*, not to bolt on another section. A long doc is a smell, not an achievement.
+
 ## Rules for Claude
 
 **Before answering "how does X work in this codebase" from memory:**
@@ -84,7 +94,10 @@ Rituals:
 - `yegor-tickets` — questions become tickets; answers land in docs.
 - `yegor-bdd` — "X is undocumented" is a valid complaint and a real ticket.
 - `yegor-pdd` — a puzzle can defer documentation: `@todo #N:15m/DEV Document why we chose Y over X here.`
+- `yegor-small-repos` — a small, single-purpose repo is what makes a ≤2-page README possible.
+- `yegor-architect` — measurable quality requirements are the spec the architect designs against.
 
 ## Deep reference
 
-`research/philosophy_07_nohelp_documentation_first.md`
+- `research/philosophy_07_nohelp_documentation_first.md`
+- `research/philosophy_22_doc_structure.md` (short/ordered/non-duplicative docs + measurable requirements)

@@ -1,8 +1,8 @@
 ---
 name: yegor-architect
-description: Separate architect mode (design in writing) from courier mode (execute agreed design). One person decides, others deliver. Never mix the two modes in one session. When tempted to redesign mid-implementation, stop and drop a puzzle. Use when starting fuzzy work, mid-implementation, or reviewing a PR.
-version: 0.1.0
-last_reviewed: 2026-05-23
+description: Separate architect mode (design in writing) from courier mode (execute agreed design). One person decides, others deliver. Never mix the two modes in one session. When tempted to redesign mid-implementation, stop and drop a puzzle. The architect's only boss is the requirements; the architect enforces design through two instruments — filing bugs and reviewing code — and when the call is contested, more eyes are added in proportion to the risk. Use when starting fuzzy work, mid-implementation, reviewing a PR, or resolving who decides a design conflict.
+version: 0.2.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor Architect-then-Courier
@@ -41,6 +41,15 @@ One architect, decides in writing, doesn't need to convince anyone. Couriers del
 - **Decompose, don't solve.** Break complex problems into ≤60-minute courier tasks.
 - **Blame, not credit.** Quality issues are the architect's personal fault. That's the price of authority.
 
+## The architect's authority
+
+The architect's authority is real but **bounded** — and knowing its boundary is what makes it usable as a tie-breaker (see `yegor-personas`).
+
+- **Requirements are the architect's only boss.** The architect decides *how*, but the *what* is owned by the requirements/spec. When someone challenges a design call, the right move is not "because I'm the architect" — it's to point at the requirement that demands it, or, if the spec is silent, to **amend the requirements** so the rule is documented rather than personal. An architect arguing from authority instead of from the spec has already lost.
+- **Two instruments, and only two.** The architect enforces the design through exactly two tools: **filing bugs** (proactive — "the code should do X, it does Y") and **doing code reviews** (reactive — rejecting what diverges). Not meetings, not DMs, not standing over shoulders. If a design rule can't be expressed as a bug or a review comment, it isn't enforceable — make it a requirement instead.
+- **What if the architect is wrong?** The architect is not infallible; the safeguard is **eyes in proportion to risk**. The lower the project's tolerance for a bad call, the more independent reviewers look at the architect's decisions before they're acted on. A high-stakes design decision gets a second (and third) reviewer; a low-stakes one doesn't. Disagreement is resolved by the requirements (amend them) or by adding reviewers — never by overriding the architect through a committee vote.
+- **Decides, doesn't persuade — but is accountable.** The architect collects input and decides without needing to convince anyone (forcing persuasion causes responsibility leakage). The flip side is total accountability: if the call was wrong, it's the architect's fault (blame, not credit), and the fix is a documented requirement change, not a quiet redesign.
+
 ## Courier rules
 - **Don't open a PR before the design is accepted.** The acceptance is the ticket comment saying "this is the design — implement it."
 - **Speed + cleanliness over creativity.** A clean 30-min delivery beats a clever 4-hour delivery.
@@ -77,10 +86,13 @@ One architect, decides in writing, doesn't need to convince anyone. Couriers del
 - Architect coding without switching hats deliberately.
 
 ## Cross-references
-- `yegor-tickets` — architect output lives as ticket comments.
+- `yegor-tickets` — architect output lives as ticket comments; design rules are amended requirements, not verbal authority.
 - `yegor-microtasks` — architect's decomposition produces ≤60-minute tickets for couriers.
 - `yegor-pdd` — couriers hitting unresolved sub-problems drop puzzles instead of redesigning.
+- `yegor-review` — code review is one of the architect's two instruments; the architect is the tie-breaker when a review deadlocks.
+- `yegor-personas` — the architect is the standing tie-breaker for design/technical conflicts (rung 5); "requirements are the boss" is rung 1.
 
 ## Deep reference
 
-`research/philosophy_05_architect_then_courier.md`
+- `research/philosophy_05_architect_then_courier.md`
+- `research/philosophy_21_architect_authority.md` (requirements-are-the-boss, two instruments, what-if-the-architect-is-wrong)

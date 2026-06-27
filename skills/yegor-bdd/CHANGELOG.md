@@ -3,6 +3,29 @@
 All notable changes to this skill are documented here.
 Versioning follows Semantic Versioning (https://semver.org/).
 
+## [0.4.0] -- 2026-06-26
+
+### Added
+- "Report richness" section: a sharp title gets a complaint noticed, but the
+  body makes it actionable. Three qualities — reproducible (clean-state steps,
+  exact version/commit), rich (expected vs actual + environment), and effortful
+  (reporter narrowed the case, attached output) — with the note that a
+  failing/disabled test is all three in one artifact, and that an agent can lint
+  a report for these like it lints the title.
+- Distilled from Yegor Bugayenko's "The Right Way to Report a Bug" (2018).
+- Deep reference: research/philosophy_23_bug_report_richness.md
+
+## [0.3.0] -- 2026-06-26
+
+### Added
+- "Title lint" section: a bug title must be a declarative complaint, not a
+  question, topic, or wish. Reject interrogative titles (`?` / why/how/what…),
+  require a breakage signal (broken/fails/wrong/missing/instead/should/…), and
+  auto-propose a rewrite at filing time — an agent is the ideal enforcer.
+- Distilled from Yegor Bugayenko's "Good Title, Good Bug Report" (2025) and
+  "Five Principles of Bug Tracking" (2014).
+- Deep reference: research/philosophy_17_bug_tracking_hygiene.md
+
 ## [0.2.0] -- 2026-05-28
 
 ### Added

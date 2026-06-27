@@ -1,8 +1,8 @@
 ---
 name: yegor-review
-description: Code-review discipline from Yegor Bugayenko. The reviewer's job is to REJECT, not to bless — burden of proof is on the reviewer. Apply the Four NOs (no fear, no compromise, no bullshit, no offense), find the 3 most critical problems, and never run the code (a runtime-only bug is a missing test, file it). Use when reviewing a PR/diff, giving or receiving review feedback, or deciding how to respond to a review.
-version: 0.1.0
-last_reviewed: 2026-05-28
+description: Code-review discipline from Yegor Bugayenko. The reviewer's job is to REJECT, not to bless — burden of proof is on the reviewer. Apply the Four NOs (no fear, no compromise, no bullshit, no offense), find the 3 most critical problems, never run the code (a runtime-only bug is a missing test, file it), and auto-reject any PR that changes production code but ships no test. Use when reviewing a PR/diff, giving or receiving review feedback, or deciding how to respond to a review.
+version: 0.2.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor Code Review
@@ -30,6 +30,7 @@ A reviewer's job is to **reject bad code**, not to confirm good code. The burden
 - **Don't run the code.** The reviewer is a *visual inspector* in the pipeline, alongside the linter and the test suite — not a manual QA stage. Running branches locally is slow and doesn't scale.
 - **A runtime-only bug is a missing test.** If a defect can only be found by executing the code, the real bug is in the test suite. File the missing test as a separate ticket; don't hand-QA every PR.
 - **Style belongs to the linter.** Humans review design, naming, and structure — not whitespace. If a style point isn't automated, that's a tooling ticket.
+- **A PR without a test is a waste — reject it.** A change that touches production code but adds or changes **zero tests** fails review on sight, regardless of how good the code looks. Tests protect the employer's *investment* in working code — untested code is the first to break on the next refactor, so contributing it without a test quietly wastes the very value it adds. This is a binary, diff-checkable gate: prod files changed, test files untouched → reject. (The one honest exception is a change that is *only* tests, docs, or config.)
 
 ## Comment hygiene
 
@@ -49,6 +50,7 @@ Every review comment is `problem + evidence + suggested fix`. "I don't like this
 - **Nit-flooding.** 40 style comments hide the 3 that matter.
 - **Manual QA creep.** Running the branch instead of strengthening tests doesn't scale and produces findings that are hard to express as comments.
 - **Compromise.** "Let's just half-do it" degrades quality — resolve, stand firm, or escalate.
+- **Blessing a testless PR.** Approving a production change because "the code looks right" when it ships no test — the binary gate exists precisely to catch this.
 
 ## Cross-references
 - `yegor-architect` — the architect is the tie-breaker when a review deadlocks (Four NOs #2c).

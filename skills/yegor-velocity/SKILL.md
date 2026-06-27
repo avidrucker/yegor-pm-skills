@@ -1,8 +1,8 @@
 ---
 name: yegor-velocity
-description: Velocity is closed tickets per week, full stop. Commits don't count. Hours don't count. Lines don't count. Reporter verifies; closure comment names the deliverable. Use when reviewing progress, answering "how's it going", or measuring productivity.
-version: 0.1.0
-last_reviewed: 2026-05-23
+description: Velocity is closed tickets per week, full stop. Commits don't count. Hours don't count. Lines don't count. Reporter verifies; closure comment names the deliverable. For a richer picture, a multi-dimensional scorecard (PRs merged, bugs fixed, bugs reported, Cost-of-PR = open→merge time, docs) supplements the headline number — each dimension carrying an anti-gaming validator. Use when reviewing progress, answering "how's it going", or measuring productivity.
+version: 0.2.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor Velocity = Closed Tickets
@@ -53,6 +53,26 @@ ratio = commits / max(closed, 1)
 
 Bad closures: "done", "fixed", just clicking the close button.
 
+## Beyond one number — the multi-metric scorecard
+
+Closed-tickets-per-week stays the **headline**. But one number is easy to misread (a slow week of hard tickets looks like a bad week), so for a fuller picture, supplement it with a small scorecard of dimensions that are all derivable from git + the tracker the agent already operates. The problem with metrics was never *measuring* — it was measuring the wrong thing (LOC). These are the right things:
+
+| Dimension | Source | Anti-gaming validator |
+|---|---|---|
+| **Tickets closed** (headline) | tracker | closure comment names a deliverable; `closed_by` = reporter |
+| **PRs merged** | git/host | each merged via the gate, not self-merged (`yegor-merge-gate`) |
+| **Bugs fixed** | tracker label | linked to a proving test that failed before the fix |
+| **Bugs reported** | tracker label | a valid complaint shape, not a duplicate |
+| **Cost-of-PR** = open→merge time | host timestamps | lower is better; a long tail flags stuck/oversized work |
+| **Docs published** | git (docs paths) | a real doc/section, not a one-line stub |
+| **Reviews done** | host review events | substantive (findings or explicit approval), not rubber-stamp |
+
+**The one rule that makes the scorecard honest: every count needs a validator.** A raw count invites gaming (split tickets to inflate "closed", open trivial bugs to inflate "reported"). Each dimension above pairs its count with a check that the count represents real delivery — most reduce to "a *second actor* validated it" (`closed_by != opener`, merged-by-gate-not-self), the same no-self-blessing logic as the merge gate.
+
+**Cost-of-PR is the highest-signal addition.** Open→merge time per PR is a pure timestamp subtraction an agent can compute, and a growing Cost-of-PR is an early warning that work is sprawling or stuck — well before the closed-count drops. Watch its trend, not any single value.
+
+> Solo + agent: don't let the scorecard dilute the headline. Lead with closed tickets; bring in Cost-of-PR and the bug-fixed/reported split only when the single number is hiding something (a slow week that was actually hard, or a fast week that was actually trivial).
+
 ## Rules for Claude
 
 **When the user asks "how's progress?":**
@@ -83,7 +103,11 @@ Bad closures: "done", "fixed", just clicking the close button.
 - `yegor-microtasks` — small tickets close more often, cleaner velocity trend.
 - `yegor-tickets` — if it's not a ticket, it can't be counted.
 - `yegor-bdd` — the reporter who validates closure was the one who filed the complaint.
+- `yegor-simba` — the scorecard's "every count needs a validator" is SIMBA's "every claim links to evidence"; both reject unbacked progress.
+- `yegor-merge-gate` — the anti-gaming validators are the no-self-blessing rule applied to metrics (`closed_by != opener`, merged-by-gate).
+- `yegor-projections` — the measured close-rate is exactly what a projection forecasts from.
 
 ## Deep reference
 
-`research/philosophy_06_velocity_closed_tickets.md`
+- `research/philosophy_06_velocity_closed_tickets.md`
+- `research/philosophy_18_multi_metric_velocity.md` (the scorecard + anti-gaming validators)

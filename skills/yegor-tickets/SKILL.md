@@ -1,8 +1,8 @@
 ---
 name: yegor-tickets
 description: All meaningful project communication lives in the issue tracker. No Slack, DMs, or meetings as the primary channel. Decisions don't exist until written as a ticket comment. Use when making a design decision, changing direction, answering a project question, or proposing a new approach.
-version: 0.2.0
-last_reviewed: 2026-05-31
+version: 0.3.0
+last_reviewed: 2026-06-26
 ---
 
 # Yegor Ticket-as-Conversation
@@ -32,6 +32,20 @@ If it isn't in the issue tracker, it didn't happen. Write the comment first; cha
 - Every comment is **addressed** to a specific person via `@`-mention.
 - Every comment advocates closing the ticket OR keeping it open until a specific condition.
 - "+1" / "agreed" / "thanks" → use reactions, not comments.
+
+## Closing discipline (Five Principles of Bug Tracking)
+
+Two rules govern *when and how* a ticket ends:
+
+- **Keep it one-on-one.** A ticket is a transaction between **one reporter and
+  one solver**, not a forum. Others are secondary. Don't let a ticket sprawl into
+  a committee thread — if it needs many voices, that's a smell to split or
+  escalate, then land the outcome back here.
+- **Never close it empty-handed.** Close fast — long-lived tickets waste
+  attention — but **never close a ticket without delivering *some* solution**,
+  even a temporary or partial one (a workaround, a disable, a "can't reproduce"
+  proof test, a follow-up ticket). "Closing with nothing" is forbidden; closing
+  with the smallest honest deliverable is the goal.
 
 ## Correcting an existing description
 
@@ -78,4 +92,5 @@ This keeps the original visible (the audit trail), the author's voice intact, an
 
 ## Deep reference
 
-`research/philosophy_04_tickets_ticket_as_conversation.md`
+- `research/philosophy_04_tickets_ticket_as_conversation.md`
+- `research/philosophy_17_bug_tracking_hygiene.md` (the Five Principles of Bug Tracking, shared with `yegor-bdd`)
