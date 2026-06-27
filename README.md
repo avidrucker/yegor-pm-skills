@@ -75,7 +75,7 @@ The Codex ports are installed separately from the Claude Code skills. To install
 git clone git@github.com:avidrucker/yegor-pm-skills.git
 ROOT="$(pwd)/yegor-pm-skills"
 mkdir -p "$HOME/.codex/skills"
-for s in yegor-pm yegor-pdd yegor-bdd yegor-microtasks yegor-tickets yegor-architect; do
+for s in yegor-pm yegor-pdd yegor-bdd yegor-microtasks yegor-tickets yegor-architect yegor-nohelp; do
   ln -s "$ROOT/codex-skills/$s" "$HOME/.codex/skills/$s"
 done
 ```
@@ -88,6 +88,7 @@ Current Codex port status:
 - `codex-skills/yegor-microtasks/` — Codex-native microtasking port of `skills/yegor-microtasks/`.
 - `codex-skills/yegor-tickets/` — Codex-native ticket-as-conversation port of `skills/yegor-tickets/`.
 - `codex-skills/yegor-architect/` — Codex-native architect/courier mode port of `skills/yegor-architect/`.
+- `codex-skills/yegor-nohelp/` — Codex-native documentation-first port of `skills/yegor-nohelp/`.
 
 Verification checklist for the current ports:
 
@@ -103,6 +104,8 @@ Verification checklist for the current ports:
 - `codex-skills/yegor-tickets/` is the matching Codex skill.
 - `skills/yegor-architect/` remains the original Claude Code skill.
 - `codex-skills/yegor-architect/` is the matching Codex skill.
+- `skills/yegor-nohelp/` remains the original Claude Code skill.
+- `codex-skills/yegor-nohelp/` is the matching Codex skill.
 
 ## Bumping a skill
 

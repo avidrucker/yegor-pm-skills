@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor NoHelp"
+  short_description: "Turn reusable answers into docs"
+  default_prompt: "Use $yegor-nohelp to answer this project question and decide where the durable documentation belongs."
