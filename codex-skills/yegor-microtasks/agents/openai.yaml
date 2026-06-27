@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor Microtasks"
+  short_description: "Split work into bounded tasks"
+  default_prompt: "Use $yegor-microtasks to split this work into bounded, independently finishable tasks."

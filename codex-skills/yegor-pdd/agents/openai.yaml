@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor PDD"
+  short_description: "Turn deferrals into tracked puzzles"
+  default_prompt: "Use $yegor-pdd to convert this deferred implementation work into tracked puzzle comments."

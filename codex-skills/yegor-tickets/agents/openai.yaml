@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor Tickets"
+  short_description: "Keep decisions in tracker tickets"
+  default_prompt: "Use $yegor-tickets to turn this project decision or status update into a durable tracker comment."
