@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yegor Architect"
+  short_description: "Separate design from delivery"
+  default_prompt: "Use $yegor-architect to decide whether this work needs architect mode or courier mode."
