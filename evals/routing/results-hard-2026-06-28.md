@@ -42,7 +42,7 @@ The adversarial set's payoff. The router is reliable on explicit phrasing but **
 
 **Why it matters:** this is the dominant real-world failure mode for this family — not cross-firing to the *wrong* skill, but failing to fire at all when a user speaks casually. Consistent with skill-creator's documented "skills tend to under-trigger" caveat.
 
-**Candidate fix (separate ticket, separate review):** make `yegor-unit-tests`' description claim informal test-quality phrasing ("clean up / improve / fix flaky / make tests better"), not just "writing, reviewing, or refactoring unit tests." Do NOT edit description text under #31 — file a follow-up so the change gets its own review.
+**Candidate fix (separate ticket, separate review):** make `yegor-unit-tests`' description claim informal test-quality phrasing ("clean up / improve / fix flaky / make tests better"), not just "writing, reviewing, or refactoring unit tests." Filed as **#32** (not edited under #31 — routing changes get their own review).
 
 ## Finding 2 — the personas / bdd / architect boundary is actually well-drawn
 The pilot's open #11 question resolves favorably. Across four straddlers the router separated three adjacent decision skills consistently:
