@@ -1,0 +1,118 @@
+{
+  "suite": "yegor-pm routing pilot",
+  "note": "Each prompt is judged by an independent router subagent that sees the real family descriptions. expected_primary = the skill that should own it; acceptable = also-defensible routes; trap = the overlapping skill we worry it mis-fires to.",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "our CSV export drops the last row whenever there are exactly 100 records. can you file this in our tracker so it doesn't get lost?",
+      "expected_primary": "yegor-bdd",
+      "acceptable": ["yegor-tickets"],
+      "trap": "yegor-tickets",
+      "should_trigger": true
+    },
+    {
+      "id": 2,
+      "prompt": "I'm stubbing out the payment retry handler but the exponential-backoff-with-jitter part is a whole sub-problem on its own. drop a marker at the call site so we come back to it later.",
+      "expected_primary": "yegor-pdd",
+      "acceptable": [],
+      "trap": "yegor-microtasks",
+      "should_trigger": true
+    },
+    {
+      "id": 3,
+      "prompt": "someone filed 'make search faster' and that's the whole ticket. I don't even know what's slow or which files are involved. how should I approach this before I start writing tasks?",
+      "expected_primary": "yegor-spikes",
+      "acceptable": [],
+      "trap": "yegor-pdd",
+      "should_trigger": true
+    },
+    {
+      "id": 4,
+      "prompt": "the client keeps asking when the entire reporting module will be finished. I don't want to just make up a date. how do I give them an honest answer?",
+      "expected_primary": "yegor-projections",
+      "acceptable": [],
+      "trap": "yegor-velocity",
+      "should_trigger": true
+    },
+    {
+      "id": 5,
+      "prompt": "how's the team actually doing this week? I want a real productivity number to put in the status email, not a gut feeling.",
+      "expected_primary": "yegor-velocity",
+      "acceptable": ["yegor-simba"],
+      "trap": "yegor-projections",
+      "should_trigger": true
+    },
+    {
+      "id": 6,
+      "prompt": "here's the diff from my coworker's PR adding a new discount calculator (about 200 lines, no tests touched). give it a proper review.",
+      "expected_primary": "yegor-review",
+      "acceptable": [],
+      "trap": "yegor-unit-tests",
+      "should_trigger": true
+    },
+    {
+      "id": 7,
+      "prompt": "this test file has three tests that mock every collaborator and then assert on a private getter. tidy them up so they're actually testing something.",
+      "expected_primary": "yegor-unit-tests",
+      "acceptable": [],
+      "trap": "yegor-review",
+      "should_trigger": true
+    },
+    {
+      "id": 8,
+      "prompt": "CI is green on my feature branch and I already looked over my own diff. ok to merge into main now?",
+      "expected_primary": "yegor-merge-gate",
+      "acceptable": [],
+      "trap": "yegor-builds",
+      "should_trigger": true
+    },
+    {
+      "id": 9,
+      "prompt": "I've been fighting this flaky integration test for three hours straight. honestly tempted to just throw a sleep(2) in there and move on. talk me through it.",
+      "expected_primary": "yegor-stuck",
+      "acceptable": [],
+      "trap": "yegor-unit-tests",
+      "should_trigger": true
+    },
+    {
+      "id": 10,
+      "prompt": "our CI runs everything — unit, integration, load tests, security scan — in one 25-minute job on every single push. it's wrecking my inner loop. how should this be structured?",
+      "expected_primary": "yegor-builds",
+      "acceptable": [],
+      "trap": "yegor-merge-gate",
+      "should_trigger": true
+    },
+    {
+      "id": 11,
+      "prompt": "I keep flip-flopping on whether 'the dashboard feels slow' should be filed as a bug or treated as a feature request. be strict and settle it for me.",
+      "expected_primary": "yegor-personas",
+      "acceptable": ["yegor-bdd"],
+      "trap": "yegor-bdd",
+      "should_trigger": true
+    },
+    {
+      "id": 12,
+      "prompt": "in standup we agreed to swap the auth library from passport to lucia. where should that decision actually get written down so it counts?",
+      "expected_primary": "yegor-tickets",
+      "acceptable": ["yegor-nohelp"],
+      "trap": "yegor-nohelp",
+      "should_trigger": true
+    },
+    {
+      "id": 13,
+      "prompt": "write me a python script that parses our nginx access logs and counts how many 404s each endpoint got in the last 24 hours.",
+      "expected_primary": "none",
+      "acceptable": [],
+      "trap": "yegor-builds",
+      "should_trigger": false
+    },
+    {
+      "id": 14,
+      "prompt": "quick conceptual question — what's the actual difference between git merge and git rebase, and when would I pick one over the other?",
+      "expected_primary": "none",
+      "acceptable": [],
+      "trap": "yegor-merge-gate",
+      "should_trigger": false
+    }
+  ]
+}
