@@ -1,0 +1,114 @@
+{
+  "suite": "yegor-pm routing — adversarial set (issue #31)",
+  "note": "Built to BREAK routing, not confirm it. Categories: under-specified, two-skills-in-sequence, meta-route-down, harder-negatives, boundary-straddlers. Some expected_primary labels are genuinely contestable — that is deliberate; a router disagreeing with a soft label is a finding about description clarity, not necessarily a bug. 'soft' flags evals where reasonable humans would disagree on the primary.",
+  "evals": [
+    {
+      "id": "H1", "category": "under-specified",
+      "prompt": "ugh this ticket has been sitting open forever and nobody's touched it in like two weeks. what do i even do with it",
+      "expected_primary": "yegor-stuck", "acceptable": ["yegor-simba"], "trap": "yegor-velocity",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H2", "category": "under-specified",
+      "prompt": "honestly can you just make this test suite less embarrassing",
+      "expected_primary": "yegor-unit-tests", "acceptable": [], "trap": "yegor-review",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H3", "category": "under-specified",
+      "prompt": "how do i actually know when this is done done, not just done",
+      "expected_primary": "yegor-merge-gate", "acceptable": ["yegor-simba", "yegor-bdd"], "trap": "yegor-simba",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H4", "category": "under-specified",
+      "prompt": "we keep going back and forth about this in our group chat and nothing sticks",
+      "expected_primary": "yegor-tickets", "acceptable": ["yegor-personas"], "trap": "yegor-personas",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H5", "category": "two-in-sequence",
+      "prompt": "the ticket just says 'fix the dashboard'. i want to dig into what's actually wrong and where, and then drop markers for the sub-tasks i find.",
+      "expected_primary": "yegor-spikes", "acceptable": ["yegor-pdd"], "trap": "yegor-pdd",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H6", "category": "two-in-sequence",
+      "prompt": "i was reviewing Sara's PR and noticed the tax rounding is off by a cent on large orders. what should i do with that finding?",
+      "expected_primary": "yegor-bdd", "acceptable": ["yegor-review"], "trap": "yegor-review",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H7", "category": "two-in-sequence",
+      "prompt": "before i can tell anyone how long this epic takes, i need to figure out how big it even is",
+      "expected_primary": "yegor-spikes", "acceptable": ["yegor-projections"], "trap": "yegor-projections",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H8", "category": "meta-route-down",
+      "prompt": "help me stand up a sane engineering workflow for my new repo — issue tracking, code review, CI, the whole thing. where do i start?",
+      "expected_primary": "yegor-pm", "acceptable": ["yegor-tickets", "yegor-builds", "yegor-merge-gate", "yegor-small-repos"], "trap": "yegor-builds",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H9", "category": "meta-route-down",
+      "prompt": "what's the yegor way to run a project, in a nutshell?",
+      "expected_primary": "yegor-pm", "acceptable": [], "trap": "yegor-tickets",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H10", "category": "meta-route-down",
+      "prompt": "i want to run my solo side-project like a disciplined team instead of cowboy-coding. give me the starting playbook.",
+      "expected_primary": "yegor-pm", "acceptable": ["yegor-small-repos", "yegor-tickets"], "trap": "yegor-microtasks",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H11", "category": "harder-negative",
+      "prompt": "write me a github actions workflow yaml that runs pytest and ruff on every push to main",
+      "expected_primary": "none", "acceptable": [], "trap": "yegor-builds",
+      "should_trigger": false, "soft": true
+    },
+    {
+      "id": "H12", "category": "harder-negative",
+      "prompt": "quick q — what does WIP actually stand for in a kanban context and why do people cap it?",
+      "expected_primary": "none", "acceptable": [], "trap": "yegor-simba",
+      "should_trigger": false, "soft": false
+    },
+    {
+      "id": "H13", "category": "harder-negative",
+      "prompt": "can you review the bullet points on my resume for a senior backend role and tighten them up?",
+      "expected_primary": "none", "acceptable": [], "trap": "yegor-review",
+      "should_trigger": false, "soft": false
+    },
+    {
+      "id": "H14", "category": "harder-negative",
+      "prompt": "estimate roughly how much disk 10 million user rows will take if each row is about 1.2 KB",
+      "expected_primary": "none", "acceptable": [], "trap": "yegor-projections",
+      "should_trigger": false, "soft": false
+    },
+    {
+      "id": "H15", "category": "boundary-straddler",
+      "prompt": "is 'the app feels sluggish on older phones' a real bug or just a performance wishlist item?",
+      "expected_primary": "yegor-bdd", "acceptable": ["yegor-personas"], "trap": "yegor-personas",
+      "should_trigger": true, "soft": true
+    },
+    {
+      "id": "H16", "category": "boundary-straddler",
+      "prompt": "the team is split right down the middle on whether we should even keep supporting IE11. i need someone to weigh both sides strictly and just make the call.",
+      "expected_primary": "yegor-personas", "acceptable": ["yegor-architect"], "trap": "yegor-bdd",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H17", "category": "boundary-straddler",
+      "prompt": "should slow page load get filed as a bug?",
+      "expected_primary": "yegor-bdd", "acceptable": ["yegor-personas"], "trap": "yegor-personas",
+      "should_trigger": true, "soft": false
+    },
+    {
+      "id": "H18", "category": "boundary-straddler",
+      "prompt": "we're deadlocked on REST vs GraphQL for the new service and need someone with authority to decide and own it.",
+      "expected_primary": "yegor-architect", "acceptable": ["yegor-personas"], "trap": "yegor-personas",
+      "should_trigger": true, "soft": true
+    }
+  ]
+}

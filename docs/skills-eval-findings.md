@@ -74,6 +74,18 @@ Most skill-creator examples are objective file-transforms (xlsx → chart). The 
 
 ---
 
+## Round 2 — adversarial set (issue #31, 2026-06-28)
+
+Built to *break* routing rather than confirm it: 18 prompts across under-specified, two-in-sequence, meta-route-down, harder-negative, and boundary-straddler categories. Full detail in `evals/routing/results-hard-2026-06-28.md`.
+
+**Headline:** negatives **4/4** (no false positives, including a CI-config near-miss); should-trigger **11/14 into expected-or-acceptable**; **3 under-triggered to `none`** (one hard miss). The structured-but-hard cases held perfectly — meta-route-down **3/3**, two-in-sequence picked the correct *first* responder every time, boundary-straddlers **4/4**.
+
+**Finding 1 — under-triggering on terse/colloquial phrasing (the real bug).** The router is reliable on explicit phrasing but conservative when a request is casual/under-specified, declining to a skill it only lists as *secondary*. Clearest case: H2 *"honestly can you just make this test suite less embarrassing"* → `none` (with `yegor-unit-tests` as secondary, reasoned as "generic implementation"). This — failing to fire at all on casual phrasing — is the dominant real-world failure mode for this family, not cross-firing to the wrong skill. Candidate fix: broaden `yegor-unit-tests`' description to claim informal test-quality phrasing. **Filed as a follow-up so the description change gets its own review (do not edit description text under #31).**
+
+**Finding 2 — the personas/bdd/architect boundary is well-drawn; pilot #11 resolves as "working as intended".** Across four straddlers the router cleanly separated three adjacent decision skills: bug-vs-feature *classification* → `bdd` (H15, H17); contested *team-split* call → `personas` (H16); design conflict needing one *owner* → `architect` (H18). The pilot's #11 (routed `bdd` where the label said `personas`) was the label being too strict, not a routing bug.
+
+---
+
 ## Next steps (pick one)
 
 - **Harden the routing set** — write deliberately nastier prompts (under-specified, two-skills-in-sequence, meta-orchestrator-must-route-down) and re-run. Where bugs will actually surface; today's set was too kind. **(Recommended next.)**
@@ -88,7 +100,9 @@ Most skill-creator examples are objective file-transforms (xlsx → chart). The 
 ## Artifacts (version-controlled)
 - `evals/routing/evals.json` — the 14 labeled prompts (expected_primary / acceptable / trap / should_trigger).
 - `evals/routing/skill_descriptions.md` — the 18 real family descriptions the router judged against.
-- `evals/routing/results-2026-06-28.md` — this run's raw scorecard.
+- `evals/routing/results-2026-06-28.md` — pilot scorecard.
+- `evals/routing/evals-hard.json` — the 18-prompt adversarial set (issue #31).
+- `evals/routing/results-hard-2026-06-28.md` — adversarial-round scorecard.
 - `evals/routing/README.md` — how to refresh the snapshot and re-run the suite.
 
 > Promoted from session scratchpad into `evals/routing/` on 2026-06-28 so the suite is durable and re-runnable. Refresh `skill_descriptions.md` whenever any skill's `description:` changes, then re-run.
