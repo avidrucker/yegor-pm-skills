@@ -1,0 +1,10 @@
+{
+  "suite": "assess-request-quality routing regression (pre-mortem Risk-4: no cross-fire)",
+  "note": "Self-contained 3-way boundary check among the nearest neighbours (assess-request-quality, issue-review-skill, assess-goal). Does NOT depend on the full-family evals-hard.json (which is on the unmerged #31 branch). When #31 lands, fold these probes into evals/routing/evals-hard.json for the full-family run.",
+  "competitors": ["assess-request-quality", "issue-review-skill", "assess-goal"],
+  "probes": [
+    {"id": "PR1", "prompt": "ugh can you just clean up this gross config file, it's a mess", "expected_primary": "assess-request-quality", "trap": "none", "why": "vague casual work-request — the skill's home turf"},
+    {"id": "PR2", "prompt": "can you review issue #42 in our github tracker and tell me whether it's ready for an agent to pick up?", "expected_primary": "issue-review-skill", "trap": "assess-request-quality", "why": "an already-FILED issue → issue-review-skill, must NOT cross-fire to assess-request-quality"},
+    {"id": "PR3", "prompt": "help me sharpen my goal to finally get fit this year", "expected_primary": "assess-goal", "trap": "assess-request-quality", "why": "a personal goal → assess-goal, must NOT cross-fire to assess-request-quality"}
+  ]
+}
