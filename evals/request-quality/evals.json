@@ -1,0 +1,11 @@
+{
+  "suite": "assess-request-quality seed",
+  "evals": [
+    {"id": "RQ1", "prompt": "honestly can you just make this test suite less embarrassing", "expected": {"type": "work-request", "verdict": "Under-specified", "N_min": 2, "fires": true}, "note": "the canonical weak request (was H2)"},
+    {"id": "RQ2", "prompt": "how do i actually know when this is done done, not just done", "expected": {"type": "question", "route": "yegor-merge-gate", "fires": false}, "note": "gate routes out — not scored (was H3)"},
+    {"id": "RQ3", "prompt": "we keep going back and forth about this in our group chat and nothing sticks", "expected": {"type": "complaint", "route": "yegor-tickets", "fires": false}, "note": "process complaint (was H4)"},
+    {"id": "RQ4", "prompt": "In src/auth/session.ts the refresh-token rotation throws on expiry; change it so an expired refresh token returns 401 with code TOKEN_EXPIRED instead of throwing, and add a test that asserts the 401. Done when the new test passes and the existing suite stays green.", "expected": {"type": "work-request", "verdict": "Actionable", "fires": false}, "note": "positive control — should NOT fire"},
+    {"id": "RQ5", "prompt": "Rename the function calcTax to calculateTax across the billing module and update its one caller in checkout.ts; no behaviour change, existing tests must still pass.", "expected": {"type": "work-request", "verdict": "Actionable", "fires": false}, "note": "positive control 2 — should NOT fire"},
+    {"id": "RQ6", "prompt": "I want to get the codebase healthy this quarter", "expected": {"type": "goal", "route": "assess-goal", "fires": false}, "note": "goal — gated out to assess-goal"}
+  ]
+}
