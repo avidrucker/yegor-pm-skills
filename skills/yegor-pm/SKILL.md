@@ -159,3 +159,9 @@ This skill family is git-source-controlled in the standalone `yegor-pm-skills` r
 Companion docs:
 - `research/zerocracy_2026_status_and_evolution.md` — context on Yegor's tooling in 2026.
 - `research/yegor_ideas_for_solo_dev_workflow.md` — synthesis for solo dev use.
+
+## Related / sibling skills
+
+| Skill | When to use | Notes |
+|---|---|---|
+| `assess-request-quality` | A live, in-conversation work-request is vague or thin and you need to know what's missing before acting. | Diagnoses a **live, in-conversation request** (gate → ambiguity count → six checks → clarifying questions, never fabricate). Distinct from `issue-review-skill`, which reviews an **already-filed GitHub issue** for process/agent-readiness. |

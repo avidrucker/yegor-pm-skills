@@ -446,3 +446,10 @@ The daily entry point. Doesn't carry rules itself — it **routes** a situation 
 the right sub-skill(s) (planning → architect+microtasks, fuzzy issue → spikes,
 writing stubs → pdd, reviewing → review, etc.). See [`README.md`](./README.md)
 for the full routing table.
+
+---
+
+## Request clarity — `assess-request-quality`
+
+### `assess-request-quality`
+Diagnoses whether a **live, in-conversation work-request** is clear enough to act on: runs a front gate (request vs goal vs question vs complaint), counts how many materially-different deliverables the request could mean (the ambiguity test), and checks six concrete elements (target, now-state→outcome, done-check, acceptor, bounds) — then emits the specific clarifying questions to close the gaps rather than fabricating a sharper version. **Boundary with `issue-review-skill`:** `issue-review-skill` reviews an already-filed GitHub issue for process/agent-readiness; `assess-request-quality` diagnoses a live request before it's even a ticket.

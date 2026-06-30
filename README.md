@@ -24,6 +24,7 @@ Eighteen versioned Claude Code skills distilled from Yegor Bugayenko's [XDSD](ht
 | `yegor-projections` | **No-estimates.** Forecast from measured velocity (open ÷ close-rate), with an as-of date — never a spec-derived promise. |
 | `yegor-small-repos` | **Small repos.** One repo, one purpose, ~50k LOC, one language — small enough to fit one mind and an agent's context window. |
 | `yegor-personas` | **Decision council.** Run a hard call through the relevant skills' strict lenses (+ the PO/REQ/QA/TST roles), then converge via an authority ladder. |
+| `assess-request-quality` | **Request clarity gate.** Diagnose whether a live, in-conversation work-request is clear enough to act on — gate → ambiguity count → six checks → clarifying questions, never fabricate. |
 
 Each Claude skill ships `SKILL.md` + `VERSION` + `CHANGELOG.md` and can be bumped independently. The `research/` folder contains the deep-reference doc each skill is distilled from, citing Yegor's primary sources.
 
